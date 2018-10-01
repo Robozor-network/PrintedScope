@@ -15,6 +15,11 @@ m6_d = 6.5;
 m6_dk = 10.5;  // prumer hlavy sroubu
 m6_k = 6;   // delka hlavy sroubu
 m6_e = 10.5; // prumer hexa hlavy
+// matice M6
+n6_s = 10.5; // matice vzdalenost plosek
+n6_e = 11.5; // matice vnejsi prumer (pro diry)
+n6_m = 6;
+
 // sroub M3
 m3_d = 3.4;
 m3_dk = 6.5;  // prumer hlavy sroubu
@@ -160,6 +165,36 @@ module spike_center_pipe(){
 }
 
 
+
+/*
+    Alternativní model k spike_center_pipe_outer, měl by být pevnější
+    Dil pro pridelani tyce nejspodnejsi casti ke stredovemu dilu.
+
+*/
+module spike_center_pipe_outer(){
+    difference(){union(){
+        translate([-25,0,0]) cube([50, 18, gr_ph_h]);
+        translate([0,0,gr_ph_h/2]) rotate([-90,0,0]) cylinder(h=20+30, d=pipe_out+2*4);
+    }
+    
+    
+    // diry pro srouby a matici
+    translate([-gr_ph_dist/2,-cl,gr_ph_h/2]) rotate([-90,0,0]) cylinder(h=15, d=m6_d);
+    translate([-gr_ph_dist/2 - n6_s/2,5,gr_ph_h/2 + n6_s/2 +1]) rotate([-90,0,0]) cube([n6_s, 100, n6_m]);
+    
+    translate([gr_ph_dist/2 ,-cl,gr_ph_h/2]) rotate([-90,0,0]) cylinder(h=15, d=m6_d);
+    translate([gr_ph_dist/2 - n6_s/2,5,gr_ph_h/2 + n6_s/2 +1]) rotate([-90,0,0]) cube([n6_s, 100, n6_m]);
+    
+    // drazka pro stazeni dilu
+    translate([-1,20,-10]) cube([2, 50, 50]);
+    
+    // dira pro tyc
+    translate([0,12,gr_ph_h/2]) rotate([-90,0,0]) cylinder(h=20+31, d=pipe_out+2*0.2);
+    }
+}
+
+
+
 module ground_pipes(){
     for(i=[1:3]){
         rotate([0,0,360/3*i]) translate([0, gr_center_d/2, grc_h+2.5+gr_ph_h/2]) rotate([-90, 0, 0]) cylinder(h=200, d=pipe_out);
@@ -184,7 +219,8 @@ difference(){union(){
 color("green") translate([0,0,grc_h]) groundp_center();
 // color("blue") translate([0,0,0]) groundp_shield();
 for(i=[1:3]){
-    rotate([0,0,360/3*i]) translate([0, gr_center_d/2-10, grc_h+2.5]) spike_center_pipe();
+    rotate([0,0,360/3*i]) translate([0, gr_center_d/2-10, grc_h+2.5]) //spike_center_pipe(); // alternativa
+      spike_center_pipe_outer();
 }
 translate([0,0,gr_rail_h+grc_h]) base_center();
 
