@@ -3,6 +3,9 @@
 difference() {
 	cylinder(d = 40.4000000000, h = 5.2000000000);
 	translate(v = [0, 0, -0.0250000000]) {
+		cylinder(d = 25, h = 3);
+	}
+	translate(v = [0, 0, -0.0250000000]) {
 		cylinder(d = 13.4000000000, h = 5.2500000000);
 	}
 	rotate(a = [180, 0, 0.0000000000]) {
@@ -112,6 +115,8 @@ def s111g1p01():
 				down(clear/2)(cylinder(h=10+clear, d=80-3, segments=cq))
 			)
 		)
+	
+	m-=(up(pipe_height/2-g1_pipe['min_wall']+1)(cylinder(h=5+clear, d1=80-3-5, d2=80-3, segments=cq)))
 
 
 	for x in range(3):
@@ -157,6 +162,9 @@ def s111g1p01():
 	m -= translate([20, base_pipe['D'], bottom+pipe_height/2+clear])(
 			cylinder(d=10, h=pipe_height/2+clear)
 		)
+	m -= translate([20, -base_pipe['D'], bottom+pipe_height/2+clear])(
+			cylinder(d=10, h=pipe_height/2+clear)
+		)
 
 	# diry skrz pro loziska a sroub M5 a osazeni pro pridelani loziska
 	m -= up(bottom)(
@@ -191,6 +199,7 @@ def s111g1p02():
 
 def s111g1p03():
 	m = cylinder(d=g1p1_bearing['D']+4*M3['dk'], h=M3['k']+2)
+	m-= down(clear/2)(cylinder(h=3, d=25))
 	m-= down(clear/2)(cylinder(d=g1p1_bearing['D']-3, h=M3['k']+2+clear))
 	for x in range(3):
 		m-=rotate([180, 0, 360/3*x])(
@@ -309,6 +318,23 @@ def s111g1p05():
 
 	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
 
+
+
+def s111g1p06():
+	m = s111g1p05()
+	return m
+
+def s111g1p07():
+	m = up(5/2)(cube([g1_pipe_distance+M3['dk']*2, g1_foot_bridge_height+base_pipe['D']/2+5, 5], center=True))
+	for x in [-10, 10]:
+		for y in [-5, 5]:
+			m-=translate([x,y,0])(cylinder(d=M3['d'], h=10, segments=cq))
+			m-=translate([x,y,2+clear])(cylinder(d=M3['dk'], h=3, segments=cq))
+	return m
+
+
+
+
 def s111g1d01():
 	m = translate([-g1_pipe['D'], -g1_pipe['D'], -2])(cube([g1_pipe['D']*2, g1_pipe['D']*2, 35]))
 	m-= cylinder(h=g1p1_diameter, d=g1_pipe['D'])
@@ -329,6 +355,17 @@ scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
 scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
 scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
 scad_render_to_file(s111g1p04(), '../scad/111_1004.scad')
-scad_render_to_file(s111g1p05(), '../scad/111_1005.scad') 
+scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
+scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
+scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
+
+cq = 100
+generate(s111g1p01(), '111_1001')
+generate(s111g1p02(), '111_1002')
+generate(s111g1p03(), '111_1003')
+generate(s111g1p04(), '111_1004')
+generate(s111g1p05(), '111_1005')
+generate(s111g1p06(), '111_1006')
+generate(s111g1p07(), '111_1007') 
  
 ************************************************/

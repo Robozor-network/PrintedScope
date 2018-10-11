@@ -35,6 +35,9 @@ translate(v = [0, 0, -15]) {
 							}
 						}
 					}
+					translate(v = [0, 0, 10.1000000000]) {
+						cylinder($fn = 20, d1 = 72, d2 = 77, h = 5.0500000000);
+					}
 					rotate(a = [0, 90, 0.0000000000]) {
 						translate(v = [0, -20.0000000000, 20]) {
 							cylinder($fn = 20, d = 16, h = 100);
@@ -269,6 +272,9 @@ translate(v = [0, 0, -15]) {
 					translate(v = [20, 16, 0.9000000000]) {
 						cylinder(d = 10, h = 14.1500000000);
 					}
+					translate(v = [20, -16, 0.9000000000]) {
+						cylinder(d = 10, h = 14.1500000000);
+					}
 					translate(v = [0, 0, -13.2500000000]) {
 						cylinder(d = 41.4000000000, h = 5.2000000000);
 					}
@@ -344,6 +350,9 @@ translate(v = [0, 0, -15]) {
 				rotate(a = [0, 180, -30]) {
 					difference() {
 						cylinder(d = 40.4000000000, h = 5.2000000000);
+						translate(v = [0, 0, -0.0250000000]) {
+							cylinder(d = 25, h = 3);
+						}
 						translate(v = [0, 0, -0.0250000000]) {
 							cylinder(d = 13.4000000000, h = 5.2500000000);
 						}
@@ -1129,6 +1138,20 @@ def s111g1s01():
 
 scad_render_to_file(s111g1s01(), '../scad/111_1101.scad')
 
+def s111g0s01():
+
+	m = color([0.9,0.2,0.2])(down(16)(rotate(-30)(s111g1p01())))
+	m += color([0.9,0.5,0.2])(up(-1)(rotate([0,180,-30])(s111g1p03())))
+	m += color([0.9,0.5,0.2])(up(-30)(s111g1p02()))
+
+	m += color([0.3,0.3,0.5])(up(g2p2_thickness+g2p03_guider_bolt['dk'])(rotate([180,0,0])(s111g2p01())))
+	m += color([0.3,0.5,0.5])(up(0)(rotate([180,0,0])(s111g2p02())))
+
+	m -= down(250)(cube(500))
+	return m
+
+scad_render_to_file(s111g0s01(), '../scad/111_0102.scad')
+
 
 def s111g2s01():
 	m = color([0.2,0.2,0.3])(tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D']))
@@ -1140,7 +1163,7 @@ def s111g2s01():
 	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D']))
 	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, g2_octangle_f-base_pipe['D']-15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2+base_pipe['D'], 30], d = base_pipe['D']))
 
-	m += s111g2p02()
+	m += color([0.3,0.3,0.5])(up(g2p2_thickness+g2p03_guider_bolt['dk'])(rotate([180,0,0])(s111g2p01())))
 
 	for x in range(4):
 		m += rotate([0, 0, x*90+45])(s111g2p05())

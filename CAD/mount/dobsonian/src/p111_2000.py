@@ -19,27 +19,69 @@ g2p03_guider_width = 40
 g2p03_guider_bolt = M5 # srouby pro spojeni dilu kolejnice
 g2p03_guider_bolt['l'] = 40
 
-g1p2_column_d = 30
-g1p2_border_ind = 85
-g1p2_border_thickness = 15
-g1p2_border_wall = g1p2_border_thickness-1.5
-g1p2_height = 20
-g1p1_thickness = 5
+g2p2_column_d = 30
+g2p2_border_ind = 85
+g2p2_border_thickness = 10
+g2p2_border_wall = g2p2_border_thickness-1.5
+#g2p2_height = 20
+g2p2_thickness = 5
 
 
-def s111g2p02():
-	m = cylinder(h=g1p1_thickness+g2p03_guider_bolt['dk']*1.5, d=g1p2_border_ind+2*g1p2_border_thickness)
-	m-= up(g1p1_thickness+5)(cylinder(d=g1p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear))
-	m-= (up(g1p1_thickness)(cylinder(d1=g1p2_border_ind-10, d2=g1p2_border_ind, h=5+clear)))
+def s111g2p01():
+	m = cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=g2p2_border_ind+2*g2p2_border_thickness, segments=cq)
+	m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
+	m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
 	
 	for i in range(8):
 		m-=rotate([0,0,360/8*i])(
-			translate([g1p2_border_ind/2,0,g1p1_thickness+g2p03_guider_bolt['dk']*0.5])(
+			translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
 				(bolt_hole(g2p03_guider_bolt, align='head', rotation=[0,-1,0]))
 			),
-			translate([g1p2_border_ind/2+g1p2_border_wall,-50,0])(
+			translate([g2p2_border_ind/2+g2p2_border_wall,-50,0])(
 				(cube(100))
 			)
+		)
+
+	m+= cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=24)
+	m-= up(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=M5['d'], segments=cq))
+	m-= rotate(30)(down(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk']+clear-5, d=M5['e'], segments=6)))
+
+	for i in range(3):
+		m-=rotate([0,0,360/3*i])(
+			translate([8, 0, -clear])(
+				cylinder(h=M3['k'], d=M3['dk'], segments=cq),
+				cylinder(h=50, d=M3['d'], segments=cq),
+				)
+		)
+
+	return m
+
+def s111g2p02():
+	m = cylinder(h=4, d=24, segments=cq)
+	#m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
+	#m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
+	
+	for i in range(8):
+		m-=rotate([0,0,360/8*i])(
+			translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
+				(bolt_hole(g2p03_guider_bolt, align='head', rotation=[0,-1,0]))
+			),
+			translate([g2p2_border_ind/2+g2p2_border_wall,-50,0])(
+				(cube(100))
+			)
+		)
+
+	#m+= cylinder(h=5, d=10)
+	m+= (rotate(30)(cylinder(h=6, d2=M5['d']+4, d1=M5['d']+6, segments=cq)))
+	m-= (rotate(30)(cylinder(h=3, d=M5['e'], segments=6)))
+	m-= (rotate(30)(cylinder(h=10, d=M5['d'], segments=cq)))
+
+	for i in range(3):
+		m-=rotate([0,0,360/3*i])(
+			translate([8, 0, -clear])(
+				up(2)(rotate(30)(cylinder(h=M3['k'], d=M3['e'], segments=6))),
+				cylinder(h=50, d=M3['d'], segments=cq)
+				)
 		)
 
 	return m
@@ -383,10 +425,12 @@ for x in [0, 1]:
 
 
 #scad_render_to_file(model, '../scad/111_2003.scad')
-#enerate_stl(model, '111_2003', '../scad', '../stl')
-#generate_preview(model, '111_2003', '../scad', '../preview')
+#generate_stl(s111g2p01(), '111_2001', '../scad', '../stl')
+#generate_preview(s111g2p01(), '111_2001', '../scad', '../preview')
+#generate_stl(s111g2p02(), '111_2002', '../scad', '../stl')
+#generate_preview(s111g2p02(), '111_2002', '../scad', '../preview')
 
-#scad_render_to_file(s111g2p02(), '../scad/111_2001.scad')
+scad_render_to_file(s111g2p01(), '../scad/111_2001.scad')
 scad_render_to_file(s111g2p02(), '../scad/111_2002.scad')
 scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
@@ -396,5 +440,15 @@ scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
 scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
+
+
+
+generate(s111g2p01(), '111_2001')
+generate(s111g2p02(), '111_2002')
+generate(s111g2p03(), '111_2003')
+generate(s111g2p04(), '111_2004')
+generate(s111g2p05(), '111_2005')
+generate(s111g2p06(), '111_2006')
+generate(s111g2p07(), '111_2007')
 
 #s111g1_info()
