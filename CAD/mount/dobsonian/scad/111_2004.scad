@@ -5,25 +5,25 @@ difference() {
 		difference() {
 			union() {
 				difference() {
-					cylinder($fn = "50", d = 514.9747468306, h = 20.0100000000);
-					translate(v = [0, 0, -0.0100000000]) {
-						cylinder($fn = "50", d = 432.2970377067, h = 20.0300000000);
+					cylinder($fn = 20, d = 514.9747468306, h = 20.0500000000);
+					translate(v = [0, 0, -0.0500000000]) {
+						cylinder($fn = 20, d = 432.2970377067, h = 20.1500000000);
 					}
 				}
-				translate(v = [0, 0, -0.0100000000]) {
-					cylinder($fn = "50", d = 377.2970377067, h = 20.0300000000);
+				translate(v = [0, 0, -0.0500000000]) {
+					cylinder($fn = 20, d = 377.2970377067, h = 20.1500000000);
 				}
 			}
-			translate(v = [0, 0, -0.0100000000]) {
-				cylinder($fn = "50", d = 337.2970377067, h = 20.0300000000);
+			translate(v = [0, 0, -0.0500000000]) {
+				cylinder($fn = 20, d = 337.2970377067, h = 20.1500000000);
 			}
 		}
 		hull() {
 			rotate(a = [0, 0, 7.4000000000]) {
-				cube(size = [500, 0.1000000000, 20.0100000000]);
+				cube(size = [500, 0.1000000000, 20.0500000000]);
 			}
 			rotate(a = [0, 0, -7.4000000000]) {
-				cube(size = [500, 0.1000000000, 20.0100000000]);
+				cube(size = [500, 0.1000000000, 20.0500000000]);
 			}
 		}
 	}
@@ -33,10 +33,14 @@ difference() {
 				translate(v = [227.4873734153, 13.8000000000, 0]) {
 					union() {
 						rotate(a = [90, 0, 0]) {
-							union() {
-								cylinder($fn = 13, d = 6.5000000000, h = 31.2000000000);
-								translate(v = [0, 0, -31.1900000000]) {
-									cylinder($fn = 13, d = 10.5000000000, h = 31.2000000000);
+							rotate(a = [180, 0, 0]) {
+								union() {
+									translate(v = [0, 0, false]) {
+										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+									}
+									translate(v = [0, 0, -16.1500000000]) {
+										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+									}
 								}
 							}
 						}
@@ -63,10 +67,14 @@ difference() {
 				translate(v = [178.6485188534, 13.8000000000, 0]) {
 					union() {
 						rotate(a = [90, 0, 0]) {
-							union() {
-								cylinder($fn = 13, d = 6.5000000000, h = 31.2000000000);
-								translate(v = [0, 0, -31.1900000000]) {
-									cylinder($fn = 13, d = 10.5000000000, h = 31.2000000000);
+							rotate(a = [180, 0, 0]) {
+								union() {
+									translate(v = [0, 0, false]) {
+										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+									}
+									translate(v = [0, 0, -16.1500000000]) {
+										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+									}
 								}
 							}
 						}
@@ -93,10 +101,14 @@ difference() {
 				translate(v = [227.4873734153, 13.8000000000, 0]) {
 					union() {
 						rotate(a = [90, 0, 0]) {
-							union() {
-								cylinder($fn = 13, d = 6.5000000000, h = 31.2000000000);
-								translate(v = [0, 0, -31.1900000000]) {
-									cylinder($fn = 13, d = 10.5000000000, h = 31.2000000000);
+							rotate(a = [180, 0, 0]) {
+								union() {
+									translate(v = [0, 0, false]) {
+										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+									}
+									translate(v = [0, 0, -16.1500000000]) {
+										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+									}
 								}
 							}
 						}
@@ -123,10 +135,14 @@ difference() {
 				translate(v = [178.6485188534, 13.8000000000, 0]) {
 					union() {
 						rotate(a = [90, 0, 0]) {
-							union() {
-								cylinder($fn = 13, d = 6.5000000000, h = 31.2000000000);
-								translate(v = [0, 0, -31.1900000000]) {
-									cylinder($fn = 13, d = 10.5000000000, h = 31.2000000000);
+							rotate(a = [180, 0, 0]) {
+								union() {
+									translate(v = [0, 0, false]) {
+										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+									}
+									translate(v = [0, 0, -16.1500000000]) {
+										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+									}
 								}
 							}
 						}
@@ -153,7 +169,7 @@ difference() {
 ************************************************
  
 import os
-cq = 13
+cq = 20
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
 from lib.global_parameters import *
@@ -477,7 +493,7 @@ def s111g2p07():
 
 
 model = cube(0)
-'''
+
 for x in range(8):
 	model += rotate([0, 0, 360/8*x+360/16])(s111g2p03())
 for x in range(4):
@@ -489,10 +505,10 @@ vector = [-g2_octangle_f/2+30, 0, 600]
 origin = [g2_octangle_f/2, g2_octangle_f/2, 30]
 
 
-#model += tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
-#model += tube(vector=[-g2_octangle_f/2+30, 15, 600], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
-#model += tube(vector=[g2_octangle_f/2-30, -15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
-#model += tube(vector=[g2_octangle_f/2-30, 15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[-g2_octangle_f/2+30, 15, 600], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[g2_octangle_f/2-30, -15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[g2_octangle_f/2-30, 15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
 
 
 model += tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D'])
@@ -509,192 +525,23 @@ model += rotate([0, 0, 3*90+45])(s111g2p05())
 for x in [0, 1]:
 	model += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
 	model += mirror([0, x, 0])(up(632)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
-'''
 
 
+#scad_render_to_file(model, '../scad/111_2003.scad')
+#enerate_stl(model, '111_2003', '../scad', '../stl')
+#generate_preview(model, '111_2003', '../scad', '../preview')
 
-
-g1p1_bearing = bearing_625
-g1g1_space = 3 # jak velka bude mezera mezi zakladnou na zemi a AZ sestavou
-g1p1_pipe_distance = 20 # jak daleko konci trubka od stredu
-g1_pipe_in = 40
-g1p1_diameter = 60
-g1_foot_height = 60
-g1_pipe_bolt = get_optimal_bolt(3, base_pipe['D']*2)
-
-# kostka, na ktere to lezi na zemi...
-g1p2_width = 50
-g1p2_length = 100
-g1p2_height = g1_foot_height
-
-def s111g1p01():
-	pipe_bolt = g1_pipe_bolt
-	pipe_height = pipe_bolt['l']
-	#pipe_height += pipe_height['k']
-
-	m = cube(0)
-	for x in range(3):
-		m+= rotate([0, 0, 360/3*x])(
-			translate([0, -base_pipe['D']*2,0])(cube([g1p1_diameter, base_pipe['D']*4, pipe_height]))
-		)
-	m = hull()(m)
-
-	m+= up(pipe_height)(
-			difference()(
-				cylinder(h=10, d=110),
-				down(clear/2)(cylinder(h=10+clear, d=110-3))
-			)
-		)
-
-
-	for x in range(3):
-		m-= rotate([0, 90, 360/3*x])(
-			# diry pro zastrceni trubky
-			translate([-pipe_height/2, -base_pipe['D'],g1p1_pipe_distance])(
-				cylinder(d= base_pipe['D'], h=100)
-			),
-			translate([-pipe_height/2, base_pipe['D'],g1p1_pipe_distance])(
-				cylinder(d= base_pipe['D'], h=100)
-			),
-			# diry pro pridelani trubek
-			translate([-pipe_bolt['k'], base_pipe['D'], g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					bolt_hole(pipe_bolt, nut=-pipe_bolt['k']-3)
-				)
-			),
-			translate([-pipe_bolt['k'], -base_pipe['D'], g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					bolt_hole(pipe_bolt, nut=-pipe_bolt['k']-3)
-				)
-			),
-
-			# otvor pro srouby pro pridelani lozisek
-			translate([0, 0, -(g1p1_bearing['D'])])(
-				left(pipe_height-2-M3['k']-g1p1_bearing['B'])(
-					rotate([0, 0, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
-					)
-				),
-				left(2+M3['k']+g1p1_bearing['B'])(
-					rotate([0, 0, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
-					)
-				),
-				left(50)(rotate([0, 90, 0])(
-					cylinder(d=M3['d'], h=100)
-				))
-			)
-		)
-
-	# stredove diry pro osu a loziska samotna
-	m -= translate([22, base_pipe['D'], pipe_height/2])(
-			cylinder(d=10, h=pipe_height/2+clear)
-		)
-	m -= up(-clear)(
-			cylinder(d=g1p1_bearing['D']+4*M3['dk']+1, h=M3['k']+2)
-		)
-	m -= up(M3['k']+2+layer)(
-			cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B'])
-		)
-	m -= up(M3['k']+2+layer)(
-			cylinder(d=g1p1_bearing['D']-5, h=50)
-		)
-	m -= up(pipe_height-M3['k']-2- g1p1_bearing['B'])(
-			cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B'])
-		)
-	m -= up(pipe_height-M3['k']-2-clear)(
-			cylinder(d=g1p1_bearing['D']+4*M3['dk']+1, h=50)
-		)
-
-	return m
-
-def s111g1p02():
-	m = cylinder(d=g1p1_bearing['D']+4*M3['dk'], h=M3['k']+2)
-	m-= down(clear/2)(cylinder(d=g1p1_bearing['bolt']['dk']+1, h=M3['k']+2+clear))
-	for x in range(3):
-		m-=rotate([180, 0, 360/3*x])(
-			translate([-g1p1_bearing['D'], 0, -M3['k']])(
-				bolt_hole(M3, l=30)
-			)
-		)
-
-	return m
-
-def s111g1p03():
-	m = cylinder(d=g1p1_bearing['D']+4*M3['dk'], h=M3['k']+2)
-	m-= down(clear/2)(cylinder(d=g1p1_bearing['bolt']['e']+4, h=M3['k']+2+clear))
-	for x in range(3):
-		m-=rotate([180, 0, 360/3*x])(
-			translate([-g1p1_bearing['D'], 0, -M3['k']])(
-				bolt_hole(M3, l=30)
-			)
-		)
-
-	return m
-
-def s111g1p04():
-	m = translate([-50, -g1p2_width/2, -g1_foot_height])(cube([100, g1p2_width, g1_foot_height]))
-
-	for x in [-1, 1]:
-		m -= translate([base_pipe['D']*x, -g1p2_width/2+2, -(g1_pipe_bolt['l']/2+g1_pipe_bolt['k'])])(
-			rotate([-90,0,0])(
-				cylinder(d=base_pipe['D'], h=100)
-			),
-			rotate([0, 180, 0])(
-				translate([0,g1p1_diameter*0.75-g1p1_pipe_distance,-g1_pipe_bolt['l']/2+g1_pipe_bolt['k']])(
-					(bolt_hole(M3, l =100))
-				)
-			),
-			translate([0, g1p1_diameter*0.75-g1p1_pipe_distance, -g1_pipe_bolt['l']/2+5])(
-				rotate([-90, 0, 0])(
-					nut_pocket(M3)
-				)
-			),
-		)
-
-	m -= (translate([0, 0, -g1p1_bearing['D']/2+g1g1_space])(
-			rotate([-90, 90, 0])(
-				hull()(
-					cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B']+1),
-					left(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B']+1))
-				),
-				translate([0,0,-9])((bolt_hole(M5, l=20, nut=-5)))
-			)
-		)
-	)
-
-
-	return m
-
-def s111g1_info():
-	print("\nInformace o dilech 111_10**.scad")
-	print("===============================")
-	print("Statická základna dalekohledu")
-
-	print("AL tyce o D: {} mm, delka: {} mm, {}ks".format(base_pipe['D'], g2_octangle_do/2+g1p2_width/2-2-g1p1_pipe_distance, 6))
-
-
-s111g1 = down(0)(rotate([0,0,360/12*1])(s111g1p01()))
-s111g1+= down(0-5)(color([.8, .2, .2])(rotate([180, 0, 0])(s111g1p02())))
-s111g1+= down(0)(color([.8, .2, .2])(rotate([0, 0, 0])(s111g1p03())))
-
-s111g1+= down(0)(back(g2_octangle_do/2)(
-			s111g1p04()
-		))
-
-model+= down(g1g1_space)(s111g1)
-
-scad_render_to_file(model, '../scad/111_2003.scad')
-
-scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
-scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
-scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
+#scad_render_to_file(s111g2p02(), '../scad/111_2001.scad')
+#scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
+scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p04(), '../scad/111_2004.scad')
+scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
+scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
+scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-
-s111g1_info() 
+#s111g1_info() 
  
 ************************************************/
