@@ -443,6 +443,7 @@ scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
 
 
 
+cq = 100
 generate(s111g2p01(), '111_2001')
 generate(s111g2p02(), '111_2002')
 generate(s111g2p03(), '111_2003')

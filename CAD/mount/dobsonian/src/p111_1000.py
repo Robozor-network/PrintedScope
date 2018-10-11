@@ -225,8 +225,11 @@ def s111g1p04():
 
 	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
 
-
 def s111g1p05():
+	m = s111g1p04()
+	return m
+
+def s111g1p06():
 
 	## zakladni tvar nohy
 	m = left(g1_pipe_distance/2)(
@@ -261,11 +264,6 @@ def s111g1p05():
 
 	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
 
-
-
-def s111g1p06():
-	m = s111g1p05()
-	return m
 
 def s111g1p07():
 	m = up(5/2)(cube([g1_pipe_distance+M3['dk']*2, g1_foot_bridge_height+base_pipe['D']/2+5, 5], center=True))
