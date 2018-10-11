@@ -230,8 +230,33 @@ g2p03_guider_thickness = 20
 g2p03_guider_width = 40
 
 
-g2p03_guider_bolt = M6 # srouby pro spojeni dilu kolejnice
+g2p03_guider_bolt = M5 # srouby pro spojeni dilu kolejnice
 g2p03_guider_bolt['l'] = 40
+
+g1p2_column_d = 30
+g1p2_border_ind = 85
+g1p2_border_thickness = 15
+g1p2_border_wall = g1p2_border_thickness-1.5
+g1p2_height = 20
+g1p1_thickness = 5
+
+
+def s111g2p02():
+	m = cylinder(h=g1p1_thickness+g2p03_guider_bolt['dk']*1.5, d=g1p2_border_ind+2*g1p2_border_thickness)
+	m-= up(g1p1_thickness+5)(cylinder(d=g1p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear))
+	m-= (up(g1p1_thickness)(cylinder(d1=g1p2_border_ind-10, d2=g1p2_border_ind, h=5+clear)))
+	
+	for i in range(8):
+		m-=rotate([0,0,360/8*i])(
+			translate([g1p2_border_ind/2,0,g1p1_thickness+g2p03_guider_bolt['dk']*0.5])(
+				(bolt_hole(g2p03_guider_bolt, align='head', rotation=[0,-1,0]))
+			),
+			translate([g1p2_border_ind/2+g1p2_border_wall,-50,0])(
+				(cube(100))
+			)
+		)
+
+	return m
 
 def s111g2p03():
 	m = cube(0)
@@ -576,7 +601,7 @@ for x in [0, 1]:
 #generate_preview(model, '111_2003', '../scad', '../preview')
 
 #scad_render_to_file(s111g2p02(), '../scad/111_2001.scad')
-#scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
+scad_render_to_file(s111g2p02(), '../scad/111_2002.scad')
 scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p04(), '../scad/111_2004.scad')

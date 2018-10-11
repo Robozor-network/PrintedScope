@@ -6,10 +6,10 @@ translate(v = [0, 27.0000000000, 0]) {
 			hull() {
 				union() {
 					translate(v = [-20.0000000000, 0, 0]) {
-						cylinder($fn = 20, d = 26, h = 50);
+						cylinder($fn = 20, d = 30, h = 50);
 					}
 					translate(v = [20.0000000000, 0, 0]) {
-						cylinder($fn = 20, d = 26, h = 50);
+						cylinder($fn = 20, d = 30, h = 50);
 					}
 					translate(v = [-50.0000000000, -60, 0]) {
 						cube(size = [100, 5, 50]);
@@ -20,13 +20,13 @@ translate(v = [0, 27.0000000000, 0]) {
 				translate(v = [0, -50.0500000000, -0.0250000000]) {
 					union() {
 						translate(v = [-25.0000000000, 0, 0]) {
-							cylinder($fn = 20, d = 16, h = 50.0500000000);
+							cylinder($fn = 20, d = 20, h = 50.0500000000);
 						}
 						translate(v = [25.0000000000, 0, 0]) {
-							cylinder($fn = 20, d = 16, h = 50.0500000000);
+							cylinder($fn = 20, d = 20, h = 50.0500000000);
 						}
-						translate(v = [-33.0000000000, -10, 0]) {
-							cube(size = [66, 5, 50.0500000000]);
+						translate(v = [-35.0000000000, -10, 0]) {
+							cube(size = [70, 5, 50.0500000000]);
 						}
 					}
 				}
@@ -41,19 +41,19 @@ translate(v = [0, 27.0000000000, 0]) {
 					}
 				}
 				translate(v = [-20.0000000000, 0, 0]) {
-					cylinder(d = 28.5000000000, h = 50);
+					cylinder(d = 32.5000000000, h = 50);
 				}
 				translate(v = [20.0000000000, 0, 0]) {
-					cylinder(d = 28.5000000000, h = 50);
+					cylinder(d = 32.5000000000, h = 50);
 				}
 			}
 			translate(v = [-20.0000000000, 0, 2]) {
-				cylinder($fn = 20, d = 16, h = 50);
+				cylinder($fn = 20, d = 20, h = 50);
 			}
 			translate(v = [20.0000000000, 0, 2]) {
-				cylinder($fn = 20, d = 16, h = 50);
+				cylinder($fn = 20, d = 20, h = 50);
 			}
-			translate(v = [20.0000000000, 13.0000000000, 27.0000000000]) {
+			translate(v = [20.0000000000, 15.0000000000, 27.0000000000]) {
 				rotate(a = [90, 0, 0]) {
 					translate(v = [0, 0, 3.2000000000]) {
 						union() {
@@ -70,7 +70,7 @@ translate(v = [0, 27.0000000000, 0]) {
 					}
 				}
 			}
-			translate(v = [-20.0000000000, 13.0000000000, 27.0000000000]) {
+			translate(v = [-20.0000000000, 15.0000000000, 27.0000000000]) {
 				rotate(a = [90, 0, 0]) {
 					translate(v = [0, 0, 3.2000000000]) {
 						union() {
@@ -87,7 +87,7 @@ translate(v = [0, 27.0000000000, 0]) {
 					}
 				}
 			}
-			translate(v = [0, 4.8000000000, 24.3500000000]) {
+			translate(v = [0, 6.8000000000, 24.3500000000]) {
 				hull() {
 					cylinder(d = 18.4000000000, h = 7.3000000000);
 					translate(v = [0, 16.4000000000, 0]) {
@@ -107,7 +107,7 @@ translate(v = [0, 27.0000000000, 0]) {
 								rotate(a = [90, 0, 180]) {
 									union() {
 										rotate(a = [-90, 90, 0]) {
-											cylinder($fn = 6, d = 9.5000000000, h = 4.6000000000);
+											cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
 										}
 										translate(v = [-4.2500000000, 0, 0]) {
 											cube(size = [8.5000000000, 4.6000000000, 100]);
@@ -145,6 +145,20 @@ g1p1_diameter = 60
 g1_foot_height = 60
 g1_pipe_bolt = get_optimal_bolt(3, base_pipe['D']+5)
 
+
+
+g1_foot_length = 100
+g1_foot_width = 50
+g1_pipe_distance = 40
+g1_pipe = pipe_20_2
+g1_pipe['min_wall'] = 5
+g1p4_wall = 2
+
+g1_foot_bridge_height = 10
+g1_foot_bridge_length =  g1_foot_length-50
+
+#g1_foot_length = g1_pipe_distance+g1_pipe['D']+2*g1_pipe['min_wall']
+
 # kostka, na ktere to lezi na zemi...
 g1p2_width = 50
 g1p2_length = 100
@@ -168,7 +182,7 @@ def s111g1p01():
 
 	m+= up(pipe_height/2-1.1)(
 			difference()(
-				cylinder(h=10, d=80, segments=cq),
+				cylinder(h=5, d=80, segments=cq),
 				down(clear/2)(cylinder(h=10+clear, d=80-3, segments=cq))
 			)
 		)
@@ -261,18 +275,6 @@ def s111g1p03():
 
 	return m
 
-g1_foot_length = 100
-g1_foot_width = 50
-g1_pipe_distance = 40
-g1_pipe = base_pipe
-g1_pipe['min_wall'] = 5
-g1p4_wall = 2
-
-g1_foot_bridge_height = 10
-g1_foot_bridge_length =  g1_foot_length-50
-
-#g1_foot_length = g1_pipe_distance+g1_pipe['D']+2*g1_pipe['min_wall']
-
 def s111g1p04():
 
 	## zakladni tvar nohy
@@ -345,6 +347,42 @@ def s111g1p04():
 
 	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
 
+
+def s111g1p05():
+
+	## zakladni tvar nohy
+	m = left(g1_pipe_distance/2)(
+			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
+		)
+	m += right(g1_pipe_distance/2)(
+			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
+		)
+	m = hull()(m)
+
+	## diry na trubky a srouby skrz trubky
+	m -= translate([-g1_pipe_distance/2, 0, -clear])(
+			cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
+		)
+	m -= translate([g1_pipe_distance/2, 0, -clear])(
+			cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
+		)
+	m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
+			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+			)
+	m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
+			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+		)
+
+	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2, g1_foot_width/2+2-g1p1_bearing['B']/2])(
+			hull()(
+				cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
+				forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
+			),
+			bolt_hole(M5, l=20, overlap =8, head_overlap=50, align='center', nut = -0.1, nut_type='nut_pocket', nut_rotation=180)
+		)
+
+	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
+
 def s111g1d01():
 	m = translate([-g1_pipe['D'], -g1_pipe['D'], -2])(cube([g1_pipe['D']*2, g1_pipe['D']*2, 35]))
 	m-= cylinder(h=g1p1_diameter, d=g1_pipe['D'])
@@ -364,6 +402,7 @@ def s111g1_info():
 scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
 scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
 scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
-scad_render_to_file(s111g1p04(), '../scad/111_1004.scad') 
+scad_render_to_file(s111g1p04(), '../scad/111_1004.scad')
+scad_render_to_file(s111g1p05(), '../scad/111_1005.scad') 
  
 ************************************************/
