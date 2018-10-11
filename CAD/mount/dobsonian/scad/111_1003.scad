@@ -8,9 +8,9 @@ difference() {
 	rotate(a = [180, 0, 0.0000000000]) {
 		translate(v = [-16.4000000000, 0, -3.2000000000]) {
 			union() {
-				cylinder(d = 3.5000000000, h = 33.2000000000);
+				cylinder($fn = 13, d = 3.5000000000, h = 33.2000000000);
 				translate(v = [0, 0, -33.1900000000]) {
-					cylinder(d = 6.0000000000, h = 33.2000000000);
+					cylinder($fn = 13, d = 6.0000000000, h = 33.2000000000);
 				}
 			}
 		}
@@ -18,9 +18,9 @@ difference() {
 	rotate(a = [180, 0, 120.0000000000]) {
 		translate(v = [-16.4000000000, 0, -3.2000000000]) {
 			union() {
-				cylinder(d = 3.5000000000, h = 33.2000000000);
+				cylinder($fn = 13, d = 3.5000000000, h = 33.2000000000);
 				translate(v = [0, 0, -33.1900000000]) {
-					cylinder(d = 6.0000000000, h = 33.2000000000);
+					cylinder($fn = 13, d = 6.0000000000, h = 33.2000000000);
 				}
 			}
 		}
@@ -28,9 +28,9 @@ difference() {
 	rotate(a = [180, 0, 240.0000000000]) {
 		translate(v = [-16.4000000000, 0, -3.2000000000]) {
 			union() {
-				cylinder(d = 3.5000000000, h = 33.2000000000);
+				cylinder($fn = 13, d = 3.5000000000, h = 33.2000000000);
 				translate(v = [0, 0, -33.1900000000]) {
-					cylinder(d = 6.0000000000, h = 33.2000000000);
+					cylinder($fn = 13, d = 6.0000000000, h = 33.2000000000);
 				}
 			}
 		}
@@ -40,19 +40,15 @@ difference() {
 *********      SolidPython code:      **********
 ************************************************
  
-global draft
-draft = True
+import os
+cq = 13
+os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
 from lib.global_parameters import *
 from lib.model_parameters import *
-
 from solid import *
 from solid.utils import *
-
 import numpy as np
-
-import os
-
 
 g2_guider_diameter = 180*2
 g2p03_floar_thickness = 10
@@ -70,10 +66,10 @@ def s111g2p03():
 
 	# lista pro pohyb lozisek AZ
 	m+= down(0)(
-			cylinder(d=g2_octangle_do+g2p03_guider_width/2, h=g2p03_guider_thickness)
+			cylinder(d=g2_octangle_do+g2p03_guider_width/2, h=g2p03_guider_thickness, segments=cq)
 		)
 	m-= down(clear)(
-			cylinder(d=g2_octangle_do-g2p03_guider_width/2, h=g2p03_guider_thickness+clear*2)
+			cylinder(d=g2_octangle_do-g2p03_guider_width/2, h=g2p03_guider_thickness+clear*2, segments=cq)
 		)
 
 	m+= rotate([0, 0, -360/24])(
@@ -103,12 +99,12 @@ def s111g2p03():
 	mount_a = cube([p_bolt['dk']*2, p_bolt['l']/2+p_bolt['k']-clear, p_bolt['dk']*2])
 	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
 			rotate([90, 0, 0])(
-				cylinder(h=p_bolt['l'], d=p_bolt['d'])
+				cylinder(h=p_bolt['l'], d=p_bolt['d'], segments=cq)
 			)
 		)
 	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+p_bolt['l'], p_bolt['dk']])(
 			rotate([90, 0, 0])(
-				cylinder(h=p_bolt['l'], d=p_bolt['dk'])
+				cylinder(h=p_bolt['l'], d=p_bolt['dk'], segments=cq)
 			)
 		)
 
@@ -121,7 +117,7 @@ def s111g2p03():
 	mount_b = cube([p_bolt['dk']*2, p_bolt['l']/2-clear, p_bolt['dk']*2])
 	mount_b-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
 			rotate([90, 0, 0])(
-				cylinder(h=p_bolt['l'], d=p_bolt['d'])
+				cylinder(h=p_bolt['l'], d=p_bolt['d'], segments=cq)
 			)
 		)
 	mount_b-= translate([p_bolt['dk'], p_bolt['m'], p_bolt['dk']])(
@@ -184,10 +180,10 @@ def s111g2p03():
 def s111g2p04():
 	m = cube(0)
 
-	m = cylinder(h=g2p03_guider_thickness+clear, d=g2_octangle_do+g2p03_guider_width/2)
-	m-= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-25))
-	m+= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-80))
-	m-= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-120))
+	m = cylinder(h=g2p03_guider_thickness+clear, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
+	m-= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-25, segments=cq))
+	m+= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-80, segments=cq))
+	m-= down(clear)(cylinder(h=g2p03_guider_thickness+3*clear, d=g2_octangle_di-120, segments=cq))
 	# oriznuti precnivajicich casti mimo osmiuhelnik
 	m = intersection()(
 		m,
@@ -224,8 +220,8 @@ def s111g2p05():
 	m = s111g2p04() 
 
 
-	t = cylinder(h=base_pipe['D']*2, d=g2_octangle_do+g2p03_guider_width/2)
-	t-= down(clear)(cylinder(h=base_pipe['D']*2+2*clear, d=g2p03_middle_diameter))
+	t = cylinder(h=base_pipe['D']*2, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
+	t-= down(clear)(cylinder(h=base_pipe['D']*2+2*clear, d=g2p03_middle_diameter, segments=cq))
 	# oriznuti precnivajicich casti mimo osmiuhelnik
 	t = intersection()(
 		t,
@@ -253,7 +249,7 @@ def s111g2p05():
 			up(g2p03_guider_thickness+base_pipe['D'])(
 				rotate([0, 90, 45*3])(
 					up(base_pipe['D']/2)(
-						cylinder(d=base_pipe['D'], h=100)
+						cylinder(d=base_pipe['D'], h=100, segments=cq)
 					)
 				)
 			)
@@ -263,7 +259,7 @@ def s111g2p05():
 			up(g2p03_guider_thickness+base_pipe['D'])(
 				rotate([0, 90, -45*3])(
 					up(base_pipe['D']/2)(
-						cylinder(d=base_pipe['D'], h=100)
+						cylinder(d=base_pipe['D'], h=100, segments=cq)
 					)
 				)
 			)
@@ -285,7 +281,7 @@ def s111g2p06():
 
 	m-=translate([0, 0, base_pipe['D']*2+g3_axis_diameter/2])(
 			rotate([-90, 0, 0])(
-				cylinder(d=g3_axis_diameter+2*g3_axis_space, h=30+clear)
+				cylinder(d=g3_axis_diameter+2*g3_axis_space, h=30+clear, segments=cq)
 			)
 		)
 
@@ -299,7 +295,7 @@ def s111g2p06():
 					),
 					translate([0, g2_bearing_az['bolt']['m']+g2_bearing_az['B']+5, -g3_axis_diameter/2-g2_bearing_az['D']/2])(
 						rotate([90, 0, 0])(
-							(cylinder(h=30, d=g2_bearing_az['D']+1))
+							(cylinder(h=30, d=g2_bearing_az['D']+1, segments=cq))
 						)
 					)
 				)
@@ -407,6 +403,7 @@ for x in [0, 1]:
 
 
 g1p1_bearing = bearing_625
+g1g1_space = 3 # jak velka bude mezera mezi zakladnou na zemi a AZ sestavou
 g1p1_pipe_distance = 20 # jak daleko konci trubka od stredu
 g1_pipe_in = 40
 g1p1_diameter = 60
@@ -524,24 +521,35 @@ def s111g1p03():
 	return m
 
 def s111g1p04():
-	m = translate([-50, -g1p2_width/2, -g1_foot_height+g1_pipe_bolt['l']])(cube([100, g1p2_width, g1_foot_height]))
+	m = translate([-50, -g1p2_width/2, -g1_foot_height])(cube([100, g1p2_width, g1_foot_height]))
 
 	for x in [-1, 1]:
-		m -= translate([base_pipe['D']*x, -g1p2_width/2+2, base_pipe['D']])(
+		m -= translate([base_pipe['D']*x, -g1p2_width/2+2, -(g1_pipe_bolt['l']/2+g1_pipe_bolt['k'])])(
 			rotate([-90,0,0])(
 				cylinder(d=base_pipe['D'], h=100)
 			),
 			rotate([0, 180, 0])(
-				translate([0,g1p1_diameter*0.75-g1p1_pipe_distance,-g1_pipe_bolt['l']/2+2])(
+				translate([0,g1p1_diameter*0.75-g1p1_pipe_distance,-g1_pipe_bolt['l']/2+g1_pipe_bolt['k']])(
 					(bolt_hole(M3, l =100))
 				)
 			),
-			rotate([-90, 0, 0])(
-				translate([0, g1_pipe_bolt['l']/2-5, g1_pipe_bolt['l']/2])(
+			translate([0, g1p1_diameter*0.75-g1p1_pipe_distance, -g1_pipe_bolt['l']/2+5])(
+				rotate([-90, 0, 0])(
 					nut_pocket(M3)
 				)
 			),
 		)
+
+	m -= (translate([0, 0, -g1p1_bearing['D']/2+g1g1_space])(
+			rotate([-90, 90, 0])(
+				hull()(
+					cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B']+1),
+					left(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B']+1))
+				),
+				translate([0,0,-9])((bolt_hole(M5, l=20, nut=-5)))
+			)
+		)
+	)
 
 
 	return m
@@ -554,13 +562,15 @@ def s111g1_info():
 	print("AL tyce o D: {} mm, delka: {} mm, {}ks".format(base_pipe['D'], g2_octangle_do/2+g1p2_width/2-2-g1p1_pipe_distance, 6))
 
 
-model += down(0)(s111g1p01())
-model += down(0-5)(color([.8, .2, .2])(rotate([180, 0, 0])(s111g1p02())))
-model += down(0)(color([.8, .2, .2])(rotate([0, 0, 0])(s111g1p03())))
+s111g1 = down(0)(rotate([0,0,360/12*1])(s111g1p01()))
+s111g1+= down(0-5)(color([.8, .2, .2])(rotate([180, 0, 0])(s111g1p02())))
+s111g1+= down(0)(color([.8, .2, .2])(rotate([0, 0, 0])(s111g1p03())))
 
-model += down(0)(back(g2_octangle_do/2-25)(
+s111g1+= down(0)(back(g2_octangle_do/2)(
 			s111g1p04()
 		))
+
+model+= down(g1g1_space)(s111g1)
 
 scad_render_to_file(model, '../scad/111_2003.scad')
 
