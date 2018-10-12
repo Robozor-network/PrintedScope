@@ -1,5 +1,7 @@
+cq = 50
+render = False
+
 import os
-cq = 20
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
 from lib.global_parameters import *
@@ -14,7 +16,6 @@ g2p03_floar_width = 60
 g2p03_guiter_height = 10
 g2p03_guider_thickness = 20
 g2p03_guider_width = 40
-
 
 g2p03_guider_bolt = M5 # srouby pro spojeni dilu kolejnice
 g2p03_guider_bolt['l'] = 40
@@ -42,7 +43,7 @@ def s111g2p01():
 			)
 		)
 
-	m+= cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=24)
+	m+= cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=24, segments=cq)
 	m-= up(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=M5['d'], segments=cq))
 	m-= rotate(30)(down(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk']+clear-5, d=M5['e'], segments=6)))
 
@@ -181,7 +182,7 @@ def s111g2p03():
 			up(g2p03_guider_thickness/2)(
 				rotate([0,0,-360/24])(
 					translate([g2_octangle_do/2-g2p03_guider_thickness, g2p03_guider_thickness-bolt['k'], 0])(
-						rotate([90, 0, 0])(bolt_hole(bolt))	
+						(bolt_hole(bolt, rotation=[-1,0,0]))	
 					)
 				)
 			)
@@ -192,7 +193,7 @@ def s111g2p03():
 			up(g2p03_guider_thickness/2)(
 				rotate([0,0,360/24])(
 					translate([g2_octangle_di/2-g2p03_guider_thickness*2.5, g2p03_guider_thickness-bolt['k']-25, 0])(
-						rotate([-90, 0, 0])(bolt_hole(bolt))
+						(bolt_hole(bolt, rotation=[1,0,0]))
 					)
 				)
 			)
@@ -201,6 +202,60 @@ def s111g2p03():
 
 	return m
 
+def s111g2p08_pipe_rectangle(l = 100):
+	m = translate([0, -base_pipe['D']/2-2, -2])(
+			cube([l, base_pipe['D']+4, 2]),
+			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
+				rotate([0,90,0])(
+					cylinder(d=base_pipe['D']+4, h=l)
+				)
+			)
+	)
+	m = hull()(m)
+
+	m-= translate([0, -base_pipe['D']/2-2, -2])(
+			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
+				rotate([0,90,0])(
+					cylinder(d=base_pipe['D'], h=l+1)
+				)
+			)
+	)
+	return m
+
+def s111g2p08():
+	m = s111g2p03()
+	m+= translate([g2_octangle_do/2, 0, g2p03_floar_thickness+base_pipe['D']/2+2])(
+			rotate([0,0,45+90])(
+				s111g2p08_pipe_rectangle()
+			),
+			rotate([0,0,-45-90])(
+				s111g2p08_pipe_rectangle()
+			)
+		)
+	m+= hull()(translate([g2_octangle_do/2, 0, g2p03_floar_thickness+base_pipe['D']/2+2])(
+			rotate([0,0,45+90])(
+				s111g2p08_pipe_rectangle(1)
+			),
+			rotate([0,0,-45-90])(
+				s111g2p08_pipe_rectangle(1)
+			)
+		))
+
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
+	return m
+
+
+def s111g2p09():
+	m = s111g2p03()
+
+
+	return m
 
 def s111g2p04():
 	m = cube(0)
@@ -438,18 +493,21 @@ scad_render_to_file(s111g2p04(), '../scad/111_2004.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
 scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
+scad_render_to_file(s111g2p08(), '../scad/111_2008.scad')
+scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-
-
-cq = 100
-generate(s111g2p01(), '111_2001')
-generate(s111g2p02(), '111_2002')
-generate(s111g2p03(), '111_2003')
-generate(s111g2p04(), '111_2004')
-generate(s111g2p05(), '111_2005')
-generate(s111g2p06(), '111_2006')
-generate(s111g2p07(), '111_2007')
+render = False
+if render:
+	print("Rendering...")
+	cq = 100
+	generate(s111g2p01(), '111_2001')
+	generate(s111g2p02(), '111_2002')
+	generate(s111g2p03(), '111_2003')
+	generate(s111g2p04(), '111_2004')
+	generate(s111g2p05(), '111_2005')
+	generate(s111g2p06(), '111_2006')
+	generate(s111g2p07(), '111_2007')
 
 #s111g1_info()

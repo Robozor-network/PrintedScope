@@ -544,13 +544,47 @@ translate(v = [0, 0, -15]) {
 										translate(v = [20.0000000000, 0, 0]) {
 											cylinder($fn = 20, d = 30, h = 50);
 										}
+										translate(v = [-50.0000000000, -60, 0]) {
+											cube(size = [100, 5, 50]);
+										}
 									}
 								}
-								translate(v = [-20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								hull() {
+									translate(v = [0, -50.0500000000, -0.0250000000]) {
+										union() {
+											translate(v = [-25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [-35.0000000000, -10, 0]) {
+												cube(size = [70, 5, 50.0500000000]);
+											}
+										}
+									}
 								}
-								translate(v = [20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								difference() {
+									union() {
+										translate(v = [-20.0000000000, -60, 2]) {
+											cube(size = [40, 60, 46]);
+										}
+										translate(v = [-26.0000000000, -60, 2]) {
+											cube(size = [52.0000000000, 23.0000000000, 46]);
+										}
+									}
+									translate(v = [-20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+									translate(v = [20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+								}
+								translate(v = [-20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
+								}
+								translate(v = [20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
 								}
 								translate(v = [20.0000000000, 15.0000000000, 27.0000000000]) {
 									rotate(a = [90, 0, 0]) {
@@ -780,13 +814,47 @@ translate(v = [0, 0, -15]) {
 										translate(v = [20.0000000000, 0, 0]) {
 											cylinder($fn = 20, d = 30, h = 50);
 										}
+										translate(v = [-50.0000000000, -60, 0]) {
+											cube(size = [100, 5, 50]);
+										}
 									}
 								}
-								translate(v = [-20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								hull() {
+									translate(v = [0, -50.0500000000, -0.0250000000]) {
+										union() {
+											translate(v = [-25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [-35.0000000000, -10, 0]) {
+												cube(size = [70, 5, 50.0500000000]);
+											}
+										}
+									}
 								}
-								translate(v = [20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								difference() {
+									union() {
+										translate(v = [-20.0000000000, -60, 2]) {
+											cube(size = [40, 60, 46]);
+										}
+										translate(v = [-26.0000000000, -60, 2]) {
+											cube(size = [52.0000000000, 23.0000000000, 46]);
+										}
+									}
+									translate(v = [-20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+									translate(v = [20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+								}
+								translate(v = [-20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
+								}
+								translate(v = [20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
 								}
 								translate(v = [20.0000000000, 15.0000000000, 27.0000000000]) {
 									rotate(a = [90, 0, 0]) {
@@ -1016,13 +1084,47 @@ translate(v = [0, 0, -15]) {
 										translate(v = [20.0000000000, 0, 0]) {
 											cylinder($fn = 20, d = 30, h = 50);
 										}
+										translate(v = [-50.0000000000, -60, 0]) {
+											cube(size = [100, 5, 50]);
+										}
 									}
 								}
-								translate(v = [-20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								hull() {
+									translate(v = [0, -50.0500000000, -0.0250000000]) {
+										union() {
+											translate(v = [-25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [25.0000000000, 0, 0]) {
+												cylinder($fn = 20, d = 20, h = 50.0500000000);
+											}
+											translate(v = [-35.0000000000, -10, 0]) {
+												cube(size = [70, 5, 50.0500000000]);
+											}
+										}
+									}
 								}
-								translate(v = [20.0000000000, 0, -0.0500000000]) {
-									cylinder($fn = 20, d = 20, h = 50.1000000000);
+								difference() {
+									union() {
+										translate(v = [-20.0000000000, -60, 2]) {
+											cube(size = [40, 60, 46]);
+										}
+										translate(v = [-26.0000000000, -60, 2]) {
+											cube(size = [52.0000000000, 23.0000000000, 46]);
+										}
+									}
+									translate(v = [-20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+									translate(v = [20.0000000000, 0, 0]) {
+										cylinder(d = 32.5000000000, h = 50);
+									}
+								}
+								translate(v = [-20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
+								}
+								translate(v = [20.0000000000, 0, 2]) {
+									cylinder($fn = 20, d = 20, h = 50);
 								}
 								translate(v = [20.0000000000, 15.0000000000, 27.0000000000]) {
 									rotate(a = [90, 0, 0]) {
@@ -1119,6 +1221,7 @@ translate(v = [0, 0, -15]) {
 from p111_1000 import *
 from p111_2000 import *
 
+render = False
 from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
@@ -1165,11 +1268,14 @@ def s111g2s01():
 
 	m += color([0.3,0.3,0.5])(up(g2p2_thickness+g2p03_guider_bolt['dk'])(rotate([180,0,0])(s111g2p01())))
 
-	for x in range(4):
-		m += rotate([0, 0, x*90+45])(s111g2p05())
+	#for x in range(4):
+	#	m += rotate([0, 0, x*90+45])(s111g2p05())
 	
-	for x in range(8):
-		m += rotate([0, 0, 360/8*x+360/16])(s111g2p03())
+	for x in range(4):
+		m += rotate([0, 0, 360/8*(x*2)])(s111g2p03())
+
+	for x in range(4):
+		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
 
 	for x in [0, 1]:
 		m += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))

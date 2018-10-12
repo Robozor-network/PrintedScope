@@ -570,7 +570,7 @@ difference() {
 									}
 								}
 							}
-							cylinder(d = 24, h = 14.0000000000);
+							cylinder($fn = 20, d = 24, h = 14.0000000000);
 						}
 						translate(v = [0, 0, 0.0500000000]) {
 							cylinder($fn = 20, d = 5.5000000000, h = 14.0000000000);
@@ -818,6 +818,7 @@ difference() {
 from p111_1000 import *
 from p111_2000 import *
 
+render = False
 from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
@@ -864,11 +865,14 @@ def s111g2s01():
 
 	m += color([0.3,0.3,0.5])(up(g2p2_thickness+g2p03_guider_bolt['dk'])(rotate([180,0,0])(s111g2p01())))
 
-	for x in range(4):
-		m += rotate([0, 0, x*90+45])(s111g2p05())
+	#for x in range(4):
+	#	m += rotate([0, 0, x*90+45])(s111g2p05())
 	
-	for x in range(8):
-		m += rotate([0, 0, 360/8*x+360/16])(s111g2p03())
+	for x in range(4):
+		m += rotate([0, 0, 360/8*(x*2)])(s111g2p03())
+
+	for x in range(4):
+		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
 
 	for x in [0, 1]:
 		m += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))

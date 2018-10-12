@@ -1,5 +1,7 @@
 import os
 cq = 20
+
+render = False
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
 from lib.global_parameters import *
@@ -300,11 +302,13 @@ scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
 scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
 scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
 
-cq = 100
-generate(s111g1p01(), '111_1001')
-generate(s111g1p02(), '111_1002')
-generate(s111g1p03(), '111_1003')
-generate(s111g1p04(), '111_1004')
-generate(s111g1p05(), '111_1005')
-generate(s111g1p06(), '111_1006')
-generate(s111g1p07(), '111_1007')
+render = False
+if render:
+	cq = 100
+	generate(s111g1p01(), '111_1001')
+	generate(s111g1p02(), '111_1002')
+	generate(s111g1p03(), '111_1003')
+	generate(s111g1p04(), '111_1004')
+	generate(s111g1p05(), '111_1005')
+	generate(s111g1p06(), '111_1006')
+	generate(s111g1p07(), '111_1007')
