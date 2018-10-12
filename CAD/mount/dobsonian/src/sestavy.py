@@ -58,8 +58,8 @@ def s111g2s01():
 		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
 
 	for x in [0, 1]:
-		m += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
-		m += mirror([0, x, 0])(up(632)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
+		m += mirror([0, x, 0])(up(telescope_axis_height)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
+		m += mirror([0, x, 0])(up(telescope_axis_height-89)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
 	return m
 
 scad_render_to_file(s111g2s01(), '../scad/111_2101.scad')

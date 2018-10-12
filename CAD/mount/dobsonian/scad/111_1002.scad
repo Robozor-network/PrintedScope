@@ -342,7 +342,7 @@ def s111g1d01():
 def s111g1_info():
 	print("\nInformace o dilech 111_10**.scad")
 	print("===============================")
-	print("Statická základna dalekohledu")
+	print("Staticka zakladna dalekohledu")
 	print("Skrz trubky je sroub", g1_pipe_bolt)
 	print("Stredy trubek jsou vzdaleny", g1_pipe_distance)
 	print("AL tyce o D: {} mm, delka: {} mm, {}ks".format(base_pipe['D'], g2_octangle_do/2+g1p2_width/2-2-g1p1_pipe_center_distance, 6))

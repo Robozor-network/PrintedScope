@@ -410,12 +410,12 @@ difference() {
 					difference() {
 						union() {
 							difference() {
-								cylinder($fn = 20, d = 105, h = 14.0000000000);
+								cylinder($fn = 100, d = 105, h = 14.0000000000);
 								translate(v = [0, 0, 10]) {
-									cylinder($fn = 20, d = 85, h = 13.5500000000);
+									cylinder($fn = 100, d = 85, h = 13.5500000000);
 								}
 								translate(v = [0, 0, 5]) {
-									cylinder($fn = 20, d1 = 75, d2 = 85, h = 5.0500000000);
+									cylinder($fn = 100, d1 = 75, d2 = 85, h = 5.0500000000);
 								}
 								rotate(a = [0, 0, 0.0000000000]) {
 									translate(v = [42.5000000000, 0, 9.5000000000]) {
@@ -570,10 +570,10 @@ difference() {
 									}
 								}
 							}
-							cylinder($fn = 20, d = 24, h = 14.0000000000);
+							cylinder($fn = 100, d = 24, h = 14.0000000000);
 						}
 						translate(v = [0, 0, 0.0500000000]) {
-							cylinder($fn = 20, d = 5.5000000000, h = 14.0000000000);
+							cylinder($fn = 100, d = 5.5000000000, h = 14.0000000000);
 						}
 						rotate(a = 30) {
 							translate(v = [0, 0, -0.0500000000]) {
@@ -582,20 +582,20 @@ difference() {
 						}
 						rotate(a = [0, 0, 0.0000000000]) {
 							translate(v = [8, 0, -0.0500000000]) {
-								cylinder($fn = 20, d = 6.0000000000, h = 3.2000000000);
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 6.0000000000, h = 3.2000000000);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 						rotate(a = [0, 0, 120.0000000000]) {
 							translate(v = [8, 0, -0.0500000000]) {
-								cylinder($fn = 20, d = 6.0000000000, h = 3.2000000000);
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 6.0000000000, h = 3.2000000000);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 						rotate(a = [0, 0, 240.0000000000]) {
 							translate(v = [8, 0, -0.0500000000]) {
-								cylinder($fn = 20, d = 6.0000000000, h = 3.2000000000);
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 6.0000000000, h = 3.2000000000);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 					}
@@ -608,7 +608,7 @@ difference() {
 					difference() {
 						union() {
 							difference() {
-								cylinder($fn = 20, d = 24, h = 4);
+								cylinder($fn = 100, d = 24, h = 4);
 								rotate(a = [0, 0, 0.0000000000]) {
 									translate(v = [42.5000000000, 0, 9.5000000000]) {
 										rotate(a = [180, -90, 0]) {
@@ -763,14 +763,14 @@ difference() {
 								}
 							}
 							rotate(a = 30) {
-								cylinder($fn = 20, d1 = 11.5000000000, d2 = 9.5000000000, h = 6);
+								cylinder($fn = 100, d1 = 11.5000000000, d2 = 9.5000000000, h = 6);
 							}
 						}
 						rotate(a = 30) {
 							cylinder($fn = 6, d = 9.4900000000, h = 3);
 						}
 						rotate(a = 30) {
-							cylinder($fn = 20, d = 5.5000000000, h = 10);
+							cylinder($fn = 100, d = 5.5000000000, h = 10);
 						}
 						rotate(a = [0, 0, 0.0000000000]) {
 							translate(v = [8, 0, -0.0500000000]) {
@@ -779,7 +779,7 @@ difference() {
 										cylinder($fn = 6, d = 6.5100000000, h = 3.2000000000);
 									}
 								}
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 						rotate(a = [0, 0, 120.0000000000]) {
@@ -789,7 +789,7 @@ difference() {
 										cylinder($fn = 6, d = 6.5100000000, h = 3.2000000000);
 									}
 								}
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 						rotate(a = [0, 0, 240.0000000000]) {
@@ -799,7 +799,7 @@ difference() {
 										cylinder($fn = 6, d = 6.5100000000, h = 3.2000000000);
 									}
 								}
-								cylinder($fn = 20, d = 3.5000000000, h = 50);
+								cylinder($fn = 100, d = 3.5000000000, h = 50);
 							}
 						}
 					}
@@ -875,8 +875,8 @@ def s111g2s01():
 		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
 
 	for x in [0, 1]:
-		m += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
-		m += mirror([0, x, 0])(up(632)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
+		m += mirror([0, x, 0])(up(telescope_axis_height)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
+		m += mirror([0, x, 0])(up(telescope_axis_height-89)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
 	return m
 
 scad_render_to_file(s111g2s01(), '../scad/111_2101.scad')
