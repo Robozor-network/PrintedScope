@@ -1,9 +1,9 @@
 
 
 difference() {
-	cylinder(d = 40.4000000000, h = 5.2000000000);
+	cylinder(d = 41.0000000000, h = 5.2000000000);
 	translate(v = [0, 0, -0.0250000000]) {
-		cylinder(d = 10.0000000000, h = 5.2500000000);
+		cylinder(d = 10.2000000000, h = 5.2500000000);
 	}
 	rotate(a = [180, 0, 0.0000000000]) {
 		translate(v = [-16.4000000000, 0, -3.2000000000]) {
@@ -13,7 +13,7 @@ difference() {
 						cylinder($fn = 20, d = 3.5000000000, h = 43.2000000000);
 					}
 					translate(v = [0, 0, -13.1500000000]) {
-						cylinder($fn = 20, d = 6.0000000000, h = 13.2000000000);
+						cylinder($fn = 20, d = 6.1500000000, h = 13.2000000000);
 					}
 				}
 			}
@@ -27,7 +27,7 @@ difference() {
 						cylinder($fn = 20, d = 3.5000000000, h = 43.2000000000);
 					}
 					translate(v = [0, 0, -13.1500000000]) {
-						cylinder($fn = 20, d = 6.0000000000, h = 13.2000000000);
+						cylinder($fn = 20, d = 6.1500000000, h = 13.2000000000);
 					}
 				}
 			}
@@ -41,7 +41,7 @@ difference() {
 						cylinder($fn = 20, d = 3.5000000000, h = 43.2000000000);
 					}
 					translate(v = [0, 0, -13.1500000000]) {
-						cylinder($fn = 20, d = 6.0000000000, h = 13.2000000000);
+						cylinder($fn = 20, d = 6.1500000000, h = 13.2000000000);
 					}
 				}
 			}
@@ -58,7 +58,6 @@ cq = 20
 render = False
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
-from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
 from solid.utils import *
@@ -78,7 +77,7 @@ g1_pipe_bolt = get_optimal_bolt(3, base_pipe['D']+5)
 g1_foot_length = 100
 g1_foot_width = 50
 g1_pipe_distance = 40
-g1_pipe = pipe_20_2
+g1_pipe = pipe_16_2
 g1_pipe['min_wall'] = 5
 g1p4_wall = 2
 
@@ -127,8 +126,8 @@ def s111g1p01():
 			translate([0, g1_pipe_distance/2, g1p1_pipe_center_distance])(
 				cylinder(d= base_pipe['D'], h=100, segments=cq)
 			),
-			# diry pro pridelani trubek
-			translate([2, -g1_pipe_distance/2, g1p1_diameter*0.75])(
+			# diry pro srouby skrz trubky
+				translate([2, -g1_pipe_distance/2, g1p1_diameter*0.75])(
 				rotate([0, -90, 0])(
 					bolt_hole(pipe_bolt, nut=-3, align='center')
 				)
@@ -224,7 +223,7 @@ def s111g1p04():
 	m = hull()(m)
 
 
-	## odebrani premosteni
+	## odebrani premosteni (spodni oblouk)
 	r = left(g1_foot_bridge_length/2)(
 			cylinder(h=g1_foot_width+clear, d=g1_pipe['D'], segments=cq)
 		)
@@ -252,10 +251,26 @@ def s111g1p04():
 	r -= right(g1_pipe_distance/2)(
 			cylinder(h=g1_foot_width, d=g1_pipe['D']+2.5*g1_pipe['min_wall'])
 		)
-	#r -= up(20)(
-	#		cylinder(h=g1_foot_width-20, d=g1p1_bearing['D']+1)
-	#	)
 	m-=(r)
+
+
+	## Srouby pro pridelani spodniho vicka
+	m-= (union()(
+			translate([g1_foot_width/2-2, -g1_pipe_distance+1, g1_foot_length/2-10])(
+				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=-90, pocket_length=10)
+			),
+			translate([g1_foot_width/2-2, -g1_pipe_distance+1 , 10])(
+				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=-90, pocket_length=10)
+			),
+			translate([-g1_foot_width/2+2, -g1_pipe_distance+1, 10])(
+				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=90, pocket_length=10)
+			),
+			translate([-g1_foot_width/2+2, -g1_pipe_distance+1, g1_foot_length/2-10])(
+				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=90, pocket_length=10)
+			)
+		))
+
+
 
 	## diry na trubky a srouby skrz trubky
 	m -= translate([-g1_pipe_distance/2, 0, 2])(
@@ -271,7 +286,7 @@ def s111g1p04():
 			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
 		)
 
-	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2, g1_foot_width/2+2-g1p1_bearing['B']/2])(
+	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+2-g1p1_bearing['B']/2])(
 			hull()(
 				cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
 				forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
@@ -283,6 +298,10 @@ def s111g1p04():
 
 def s111g1p05():
 	m = s111g1p04()
+
+	# 12V konektor
+	m -= debug(translate([10,g1p2_height/2-2+layer ,-20])(rotate([90,0,0])(cylinder(h=2, d=el_connector_12v_panel['d']))))
+	m -= debug(translate([10,g1p2_height/2-2+layer ,-10])(rotate([90,0,0])(cylinder(h=2, d=3.3))))
 	return m
 
 def s111g1p06():
@@ -310,7 +329,7 @@ def s111g1p06():
 			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
 		)
 
-	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2, g1_foot_width/2+2-g1p1_bearing['B']/2])(
+	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+2-g1p1_bearing['B']/2])(
 			hull()(
 				cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
 				forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
@@ -365,6 +384,10 @@ if render:
 	generate(s111g1p04(), '111_1004')
 	generate(s111g1p05(), '111_1005')
 	generate(s111g1p06(), '111_1006')
-	generate(s111g1p07(), '111_1007') 
+	generate(s111g1p07(), '111_1007')
+
+
+cq = 150
+generate(s111g1p04(), '111_1004') 
  
 ************************************************/

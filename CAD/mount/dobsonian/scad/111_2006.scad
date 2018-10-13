@@ -1,18 +1,18 @@
 
 
-translate(v = [0, 0, -82.0000000000]) {
+translate(v = [0, 0, -77.0000000000]) {
 	difference() {
 		translate(v = [-70, 0, 0]) {
-			cube(size = [140, 30, 65.3333333333]);
+			cube(size = [130, 30, 62.0000000000]);
 		}
-		translate(v = [0, -0.0250000000, 82.0000000000]) {
+		translate(v = [0, -0.0250000000, 77.0000000000]) {
 			rotate(a = [-90, 0, 0]) {
-				cylinder($fn = 50, d = 103.0000000000, h = 30.0500000000);
+				cylinder($fn = 50, d = 93.0000000000, h = 30.0500000000);
 			}
 		}
-		translate(v = [0, 0, 82.0000000000]) {
+		translate(v = [0, 0, 77.0000000000]) {
 			rotate(a = [0, -30, 0]) {
-				translate(v = [0, 10, -58.2000000000]) {
+				translate(v = [0, 10, -53.2000000000]) {
 					rotate(a = [90, 0, 0]) {
 						rotate(a = [180, 0, 0]) {
 							union() {
@@ -38,14 +38,14 @@ translate(v = [0, 0, -82.0000000000]) {
 						}
 					}
 				}
-				translate(v = [0, 14.9000000000, -58.2000000000]) {
+				translate(v = [0, 14.9000000000, -53.2000000000]) {
 					rotate(a = [90, 0, 0]) {
 						cylinder($fn = 50, d = 17.4000000000, h = 30);
 					}
 				}
 			}
 		}
-		translate(v = [-55., 15., 10.]) {
+		translate(v = [-50., 15., 10.]) {
 			rotate(a = [90, 0, 0]) {
 				union() {
 					rotate(a = [-90, 90, 0]) {
@@ -69,9 +69,9 @@ translate(v = [0, 0, -82.0000000000]) {
 				}
 			}
 		}
-		translate(v = [0, 0, 82.0000000000]) {
+		translate(v = [0, 0, 77.0000000000]) {
 			rotate(a = [0, 30, 0]) {
-				translate(v = [0, 10, -58.2000000000]) {
+				translate(v = [0, 10, -53.2000000000]) {
 					rotate(a = [90, 0, 0]) {
 						rotate(a = [180, 0, 0]) {
 							union() {
@@ -97,14 +97,14 @@ translate(v = [0, 0, -82.0000000000]) {
 						}
 					}
 				}
-				translate(v = [0, 14.9000000000, -58.2000000000]) {
+				translate(v = [0, 14.9000000000, -53.2000000000]) {
 					rotate(a = [90, 0, 0]) {
 						cylinder($fn = 50, d = 17.4000000000, h = 30);
 					}
 				}
 			}
 		}
-		translate(v = [55.,15.,10.]) {
+		translate(v = [50.,15.,10.]) {
 			rotate(a = [90, 0, 0]) {
 				union() {
 					rotate(a = [-90, 90, 0]) {
@@ -140,7 +140,6 @@ render = False
 import os
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
-from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
 from solid.utils import *
@@ -492,9 +491,6 @@ def s111g2p05():
 
 	return m
 
-g3_axis_diameter = 100;
-g3_axis_space = 1.5;		## jak velka je mezera mezi osou na dalekohledu a dilu na podstave
-g2_bearing_az = bearing_625
 
 def s111g2p06():
 	m = translate([-70, 0, 0])(
@@ -640,7 +636,7 @@ scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-#render = False
+render = False
 if render:
 	print("Rendering...")
 	cq = 100

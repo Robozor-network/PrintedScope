@@ -3,8 +3,8 @@
 intersection() {
 	difference() {
 		union() {
-			translate(v = [-70.0000000000, -15, -10]) {
-				cube(size = [140, 30, 15]);
+			translate(v = [-65.0000000000, -15, -10]) {
+				cube(size = [130, 30, 15]);
 			}
 			translate(v = [30, 0, 0]) {
 				rotate(a = [0, 166.3442145528, 5.9061411138]) {
@@ -58,7 +58,7 @@ intersection() {
 								cylinder($fn = 50, d = 3.5000000000, h = 38.2000000000);
 							}
 							translate(v = [0, 0, -13.1500000000]) {
-								cylinder($fn = 50, d = 6.0000000000, h = 13.2000000000);
+								cylinder($fn = 50, d = 6.1000000000, h = 13.2000000000);
 							}
 							translate(v = [0, 0, 3.0000000000]) {
 								cylinder($fn = 6, d = 6.5100000000, h = 25);
@@ -77,7 +77,7 @@ intersection() {
 								cylinder($fn = 50, d = 3.5000000000, h = 38.2000000000);
 							}
 							translate(v = [0, 0, -13.1500000000]) {
-								cylinder($fn = 50, d = 6.0000000000, h = 13.2000000000);
+								cylinder($fn = 50, d = 6.1000000000, h = 13.2000000000);
 							}
 							translate(v = [0, 0, 3.0000000000]) {
 								cylinder($fn = 6, d = 6.5100000000, h = 25);
@@ -97,7 +97,7 @@ intersection() {
 									cylinder($fn = 50, d = 3.5000000000, h = 38.2000000000);
 								}
 								translate(v = [0, 0, -13.1500000000]) {
-									cylinder($fn = 50, d = 6.0000000000, h = 13.2000000000);
+									cylinder($fn = 50, d = 6.1000000000, h = 13.2000000000);
 								}
 								translate(v = [0, 0, 3.0000000000]) {
 									cylinder($fn = 6, d = 6.5100000000, h = 25);
@@ -108,7 +108,7 @@ intersection() {
 				}
 			}
 		}
-		translate(v = [-55.,  0., -5.]) {
+		translate(v = [-50.,  0., -5.]) {
 			rotate(a = [180, 0, 0]) {
 				union() {
 					translate(v = [0, 0, false]) {
@@ -120,7 +120,7 @@ intersection() {
 				}
 			}
 		}
-		translate(v = [55., 0.,-5.]) {
+		translate(v = [50., 0.,-5.]) {
 			rotate(a = [180, 0, 0]) {
 				union() {
 					translate(v = [0, 0, false]) {
@@ -147,7 +147,6 @@ render = False
 import os
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
-from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
 from solid.utils import *
@@ -499,9 +498,6 @@ def s111g2p05():
 
 	return m
 
-g3_axis_diameter = 100;
-g3_axis_space = 1.5;		## jak velka je mezera mezi osou na dalekohledu a dilu na podstave
-g2_bearing_az = bearing_625
 
 def s111g2p06():
 	m = translate([-70, 0, 0])(
@@ -647,7 +643,7 @@ scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-#render = False
+render = False
 if render:
 	print("Rendering...")
 	cq = 100

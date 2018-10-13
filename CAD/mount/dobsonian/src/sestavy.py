@@ -12,8 +12,9 @@ def s111g1s01():
 	m += color([0.9,0.5,0.2])(up(-15)(s111g1p02()))
 	m += color([0.9,0.5,0.2])(up(13)(rotate([0,180,-30])(s111g1p03())))
 	for x in range(3):
+		pass
 		m += color([0.2,0.6,0.2])(rotate([0,0,360/3*x])(forward(300)(s111g1p04())))
-		m += color([0.2,0.6,0.2])(rotate([0,0,360/3*x])(forward(g2_octangle_do/2)(s111g1p05())))
+		m += color([0.2,0.6,0.2])(rotate([0,0,360/3*x])(forward(g2_octangle_do/2)(s111g1p06())))
 		m += color([0.2,0.2,0.3])(rotate([-90, 0, 360/3*x])(translate([20,0,g1p1_pipe_center_distance])(cylinder(h=300, d=base_pipe['D']))))
 		m += color([0.2,0.2,0.3])(rotate([-90, 0, 360/3*x])(translate([-20,0,g1p1_pipe_center_distance])(cylinder(h=300, d=base_pipe['D']))))
 

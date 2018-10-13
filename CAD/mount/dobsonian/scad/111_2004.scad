@@ -174,7 +174,6 @@ render = False
 import os
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
-from lib.global_parameters import *
 from lib.model_parameters import *
 from solid import *
 from solid.utils import *
@@ -526,9 +525,6 @@ def s111g2p05():
 
 	return m
 
-g3_axis_diameter = 100;
-g3_axis_space = 1.5;		## jak velka je mezera mezi osou na dalekohledu a dilu na podstave
-g2_bearing_az = bearing_625
 
 def s111g2p06():
 	m = translate([-70, 0, 0])(
@@ -674,7 +670,7 @@ scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-#render = False
+render = False
 if render:
 	print("Rendering...")
 	cq = 100
