@@ -1,0 +1,382 @@
+
+
+difference() {
+	union() {
+		difference() {
+			union() {
+				cylinder(d = 8, h = 5);
+				translate(v = [0, 0, 5]) {
+					cylinder(d = 12, h = 2);
+				}
+				translate(v = [0, 0, 7]) {
+					cylinder(d1 = 12, d2 = 11, h = 15);
+				}
+			}
+			cylinder(d = 5.5000000000, h = 100);
+			translate(v = [0, 0, 7]) {
+				translate(v = [-8.0000000000, -1.0000000000, 0]) {
+					cube(size = [16, 2, 100]);
+				}
+			}
+			rotate(a = [0, 0, 0.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			rotate(a = [0, 0, 60.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			rotate(a = [0, 0, 120.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			rotate(a = [0, 0, 180.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			rotate(a = [0, 0, 240.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			rotate(a = [0, 0, 300.0000000000]) {
+				translate(v = [0, 0, 7]) {
+					translate(v = [-8.0000000000, -0.5000000000, 0]) {
+						cube(size = [16, 1, 100]);
+					}
+				}
+			}
+			translate(v = [0, 0, 7]) {
+				cylinder(d1 = 10, d2 = 10, h = 15.1000000000);
+			}
+		}
+		translate(v = [0, 0, 35]) {
+			rotate(a = [180, 0, 0]) {
+				difference() {
+					union() {
+						cylinder(d1 = 14, d2 = 11, h = 4.6000000000);
+						translate(v = [0, 0, 4.6000000000]) {
+							cylinder(d1 = 11, d2 = 9, h = 10);
+						}
+						translate(v = [-7.5000000000, -0.9000000000, 0]) {
+							cube(size = [15, 1.8000000000, 14.6000000000]);
+						}
+					}
+					cylinder(d = 5.5000000000, h = 100);
+					translate(v = [0, 0, -0.0500000000]) {
+						cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+					}
+				}
+			}
+		}
+	}
+	cube(size = 200);
+}
+/***********************************************
+*********      SolidPython code:      **********
+************************************************
+ 
+from solid import *
+from solid.utils import *
+import numpy as np
+import math 
+import os
+
+cq = int(os.environ.get("PRINTEDSCOPE_QUALITY", 15))
+print("Pouzivam kvalitu", cq)
+
+clear = 0.05
+layer = 0.2
+
+
+## M3
+DIN912_M3 = {
+    'dk': 5.5+0.65,
+    'k' : 3.0+0.2,
+    'd' : 3.0+0.5
+}
+
+DIN934_M3 = {
+    'm': 2.4 + 0.6,
+    's': 5.5 + 0.7,
+    'e': 6.01+ 0.7,
+}
+
+M3 = DIN912_M3.copy()
+M3.update(DIN934_M3)
+
+## M4
+DIN912_M4 = {
+    'dk': 7.0+0.5,
+    'k' : 4.0+0.2,
+    'd' : 4.0+0.5
+}
+
+DIN934_M4 = {
+    'm': 3.2 + 0.6,
+    's': 7.0 + 0.5,
+    'e': 7.66+ 0.5,
+}
+M4 = DIN912_M4.copy()
+M4.update(DIN934_M4)
+
+## M5
+DIN912_M5 = {
+    'dk': 8.5+0.7,
+    'k' : 5.0+0.2,
+    'd' : 5.0+0.5,
+}
+
+DIN934_M5 = {
+    'm': 4.0 + 0.6,
+    's': 8.0 + 0.5,
+    'e': 8.79+ 0.7,
+}
+
+M5 = DIN912_M5.copy()
+M5.update(DIN934_M5)
+
+## M6
+DIN912_M6 = {
+    'dk': 10 +0.5,
+    'k' : 6.0+0.2,
+    'd' : 6.0+0.5,
+}
+
+DIN934_M6 = {
+    'm': 5.0   + 0.6,
+    's': 10.00 + 0.5,
+    'e': 11.05 + 0.7,
+}
+
+M6 = DIN912_M6.copy()
+M6.update(DIN934_M6)
+
+
+#### 
+##  Delky sroubu
+####
+bolts = {
+    3:  [12, 14, 16, 20, 25, 30, 35, 40, 50, 60, 70],
+    4:  [16, 20, 25, 30, 35, 40, 50, 60, 70],
+    5:  [16, 20, 25, 30, 35, 40, 50, 60, 70],
+    6:  [20, 25, 30, 35, 40, 50, 60, 70],
+    8:  [30, 35, 40, 50, 60, 70],
+    10: [30, 35, 40, 50, 60, 70],
+}
+
+
+bearing_625 = {
+    'd': 05.0 + 0.3,
+    'D': 16.0 + 0.4,
+    'B': 05.0 + 0.3,
+    'bolt': M5
+}
+
+
+
+pipe_16_2 = {
+    'D': 16.8,
+    'S': 2 
+}
+
+
+pipe_20_2 = {
+    'D': 20.8,
+    'S': 2 
+}
+
+
+el_connector_12v_panel = {
+    'd': 8.0 + 0.5
+}
+
+def get_optimal_bolt(size = 3, min_length = 10):
+    if size == 3:
+        bolt = M3
+    elif size == 4:
+        bolt = M4
+    elif size == 5:
+        bolt = M5
+    elif size == 6:
+        bolt = M6
+    elif size == 8:
+        bolt = M8
+    else:
+        raise('No bolt')
+
+    for b in bolts[size]:
+        if b >= min_length:
+            bolt['l'] = b
+            return bolt
+
+    raise('No bolt')
+
+
+def get_rotation(vector):
+    vx, vy, vz = np.array(vector)
+    l = math.sqrt(vx*vx+vy*vy+vz*vz)
+    ax = math.degrees(math.acos(vz/l))
+    ay = math.degrees(math.atan2(vy,vx))
+    return np.array([0, ax, ay])
+
+def norm_vector(vector):
+    v = np.array(vector)
+    return v/np.linalg.norm(v)
+
+
+def tube(vector, d = 10, s = False, l = False, center = False, origin = False):
+    '''
+        Tyc/trubka
+
+        vector - zatim nefunguje - vector trubky
+        d - vnejsi prumer trubky/tyce
+        s - false pro tyc, hodnota pro trubku
+    '''
+
+    vx, vy, vz = np.array(vector)
+    vl = math.sqrt(vx*vx+vy*vy+vz*vz)
+    ax = math.degrees(math.acos(vz/vl))
+    ay = math.degrees(math.atan2(vy,vx))
+    if l: vl=l
+    a = rotate([0, ax, ay])(
+            translate([0, 0, 0])(
+                cylinder(d=d, h=vl, segments=cq)
+            )
+        )
+    if origin: a = translate(origin)(a)
+    print("delka", vl)
+
+    return a
+
+
+def bolt_hole(bolt, hex = False, space = False, nut = False, nut_type = 'trougth', l = False, overlap = 10, head_overlap=10,
+        nut_rotation=0, pocket_length = 100, align = 'begin', rotation = [0,0,0]):
+    '''
+    bolt_hole(bolt, hex, space, nut, nut_type, l, overlap):
+
+        bolt - array with bolt parameters
+        hex - hex bolt head
+        space - space between bolt body and bolt head (for one solid layer)
+        nut - True, False
+        nut_tye - type of nut mount ... 'trougth', 'nut_pocket'
+        l - length of bolt
+        overlap - add to bolt length
+        align - head, begin, center, nut, end
+    '''
+
+    b = bolt.copy()
+    
+    if l: b['l'] = l
+    b['l'] = b.get('l', 10)
+    b['overlap'] = b.get('overlap', overlap)
+
+    if nut_type not in ['trougth', 'nut_pocket']: raise('nut_type can by only ["trougth", "nut_pocket"]')
+    if align not in ['head', 'begin', 'center', 'nut', 'end']: raise('align can by only [....]')
+
+    # telo sroubu
+    a = up(space)(
+            cylinder(d=b['d'], h=b['l']+b['k']+b['overlap']-space, segments=cq)
+        )
+    
+    space = int(space)
+    if hex:
+        a += down(-clear+b['k']+head_overlap)(cylinder(d=b['dk'], h=b['k']+head_overlap, segments = 6))
+    else:
+        a += down(-clear+b['k']+head_overlap)(cylinder(d=b['dk'], h=b['k']+head_overlap, segments=cq))
+
+    if nut:
+        if nut < 0: nut = nut + b['l']
+        if nut_type is 'trougth':
+            a += (up(nut)(cylinder(d=b['e'], h=overlap, segments = 6)))
+        elif nut_type is 'nut_pocket':
+            #a += (up(nut)(cylinder(d=b['e'], h=b['l'], segments = 6)))
+            a += (up(nut)(rotate([90, 0, nut_rotation])(nut_pocket(b, pocket_length))))
+    
+    if align == 'head':
+        a = down(-b['k'])(a)
+    elif align == 'begin':
+        pass
+    elif align == 'center':
+        a = down(b['l']/2)(a)
+    elif align == 'nut':
+        a = down(nut)(a)
+    elif align == 'end':
+        a = down(b['l'])(a)
+    return rotate(list(np.array([180, 0, 0])+np.array(rotation)*90))(a)
+
+
+def nut_pocket(bolt, length = 100):
+    a = rotate([-90, 90, 0])(
+        cylinder(d = bolt['e'], h=bolt['m'], segments = 6)
+    )
+    a+= translate([-bolt['s']/2, 0, 0])(
+            cube([bolt['s'], bolt['m'], length])
+        )
+    return a
+
+
+def pipe_holder_a():
+    pipe_in_d = 16-2*2
+    ring_h = 5
+
+    m = cylinder(d=pipe_in_d-4, h = ring_h)
+    m+= translate([0,0,ring_h])(
+            cylinder(d=pipe_in_d, h=2)
+        )
+    m+= translate([0,0,ring_h+2])(
+            cylinder(d1=pipe_in_d, d2 = pipe_in_d-1, h=15)
+        )
+    m-= cylinder(d=M5['d'], h=100)
+    m-= up(ring_h+2)(translate([-16/2, -(2)/2, 0])(cube([16, 2,100])))
+
+    for x in range(6):
+        m-= rotate([0,0,360/6*x])(up(ring_h+2)(translate([-16/2, -(1)/2, 0])(cube([16, 1,100]))))
+    
+    m-= translate([0,0,ring_h+2])(
+            cylinder(d1=pipe_in_d-2, d2 = pipe_in_d-2, h=15.1)
+        )
+
+
+    return m
+
+
+def pipe_holder_b():
+    m = cylinder(d1=14, d2=11, h = M5['m'])
+    m+= up(M5['m'])(cylinder(d1=11, d2=9, h=10))
+    m+= translate([-15/2, -(1.8)/2, 0])(cube([15, 1.8,10+M5['m']]))
+    m-= cylinder(d=M5['d'], h=100)
+    m-= down(clear)(cylinder(d=M5['e'], h=M5['m'], segments=6))
+    return m
+
+def pipe_holder():
+
+    m = pipe_holder_a()
+    m+= up(35)(rotate([180, 0,0])(pipe_holder_b()))
+
+    m = difference()(
+            m,
+            cube(200)
+        )
+    return m
+
+scad_render_to_file(pipe_holder(), "pipe_holder_a")
+
+#model = bolt_hole(M3, l=0, nut=-3, overlap=0, nut_type='nut_pocket', space = 2, align='end')
+#scad_render_to_file(model, '../../scad/111_2003.scad') 
+ 
+************************************************/
