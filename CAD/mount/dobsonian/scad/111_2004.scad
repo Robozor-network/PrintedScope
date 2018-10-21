@@ -5,17 +5,17 @@ difference() {
 		difference() {
 			union() {
 				difference() {
-					cylinder($fn = 20, d = 504.9747468306, h = 30.0500000000);
+					cylinder($fn = 50, d = 504.9747468306, h = 30.0500000000);
 					translate(v = [0, 0, -0.0500000000]) {
-						cylinder($fn = 20, d = 432.2970377067, h = 30.1500000000);
+						cylinder($fn = 50, d = 432.2970377067, h = 30.1500000000);
 					}
 				}
 				translate(v = [0, 0, -0.0500000000]) {
-					cylinder($fn = 20, d = 377.2970377067, h = 30.1500000000);
+					cylinder($fn = 50, d = 377.2970377067, h = 30.1500000000);
 				}
 			}
 			translate(v = [0, 0, -0.0500000000]) {
-				cylinder($fn = 20, d = 337.2970377067, h = 30.1500000000);
+				cylinder($fn = 50, d = 337.2970377067, h = 30.1500000000);
 			}
 		}
 		hull() {
@@ -36,10 +36,10 @@ difference() {
 							rotate(a = [180, 0, 0]) {
 								union() {
 									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+										cylinder($fn = 50, d = 6.5000000000, h = 41.2000000000);
 									}
 									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+										cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
 									}
 								}
 							}
@@ -70,10 +70,10 @@ difference() {
 							rotate(a = [180, 0, 0]) {
 								union() {
 									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+										cylinder($fn = 50, d = 6.5000000000, h = 41.2000000000);
 									}
 									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+										cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
 									}
 								}
 							}
@@ -104,10 +104,10 @@ difference() {
 							rotate(a = [180, 0, 0]) {
 								union() {
 									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+										cylinder($fn = 50, d = 6.5000000000, h = 41.2000000000);
 									}
 									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+										cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
 									}
 								}
 							}
@@ -138,10 +138,10 @@ difference() {
 							rotate(a = [180, 0, 0]) {
 								union() {
 									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 41.2000000000);
+										cylinder($fn = 50, d = 6.5000000000, h = 41.2000000000);
 									}
 									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+										cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
 									}
 								}
 							}
@@ -266,13 +266,12 @@ def s111g2p03():
 			cylinder(d=g2_octangle_do-g2p03_guider_width, h=g2p03_guider_height+clear*2, segments=cq)
 		))
 
-	m+= rotate([0, 0, -360/24])(
+	# krajni listy do stredu s dirou pro srouby
+	m+= (rotate([0, 0, -360/24])(
 			right(g2p03_middle_diameter/2-10)(
 				cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
 			)
-		)
-	
-
+		))
 	m+= rotate([0, 0, 360/24])(
 			right(g2p03_middle_diameter/2-10)(
 				back(g2p03_guider_width)(
@@ -280,16 +279,16 @@ def s111g2p03():
 				)
 			)
 		)
-
-	m+= right(g2p03_middle_diameter/2-g2p03_guider_height)(
+	# Stredni lista dilu
+	m+= (right(g2p03_middle_diameter/2-g2p03_guider_height)(
 			back(50)(
 				cube([g2p03_guider_width, 100, g2p03_guider_height])
 			)
-		)
+		))
 
 	p_bolt = g2p03_guider_bolt
 
-	
+
 	mount_a = cube([p_bolt['dk']*2, p_bolt['l']/2+p_bolt['k']-clear, p_bolt['dk']*2])
 	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
 			rotate([90, 0, 0])(
@@ -343,8 +342,8 @@ def s111g2p03():
 	)
 	m=intersection()(
 		m,
-		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100)
-		)
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
 
 
 	bolt = M6.copy()
@@ -353,60 +352,69 @@ def s111g2p03():
 		m -= mirror([0, x, 0])(
 			up(g2p03_guider_height/2)(
 				rotate([0,0,-360/24])(
-					translate([g2_octangle_do/2-g2p03_guider_height, g2p03_guider_height-bolt['k'], 0])(
-						(bolt_hole(bolt, rotation=[-1,0,0]))	
+					translate([g2_octangle_do/2-g2p03_guider_height, 10, 0])(
+						(bolt_hole(bolt, rotation=[-1,0,0], align='begin'))
+					)
+				),
+				rotate([0,0,360/24])(
+					translate([g2_octangle_di/2-g2p03_guider_height*2.5, -10, 0])(
+						(bolt_hole(bolt, rotation=[1,0,0], align='begin'))
 					)
 				)
 			)
 		)
 
-	for x in [0,180]:
-		m -= mirror([0, x, 0])(
-			up(g2p03_guider_height/2)(
-				rotate([0,0,360/24])(
-					translate([g2_octangle_di/2-g2p03_guider_height*2.5, g2p03_guider_height-bolt['k']-25, 0])(
-						(bolt_hole(bolt, rotation=[1,0,0]))
-					)
-				)
-			)
-		)
-	m-= debug(translate([g2p03_middle_diameter/2, 0, 0])(
-			bolt_hole(bolt, rotation=[0,1,0], align='head')
+	m-= (translate([g2p03_middle_diameter/2-g2p03_guider_height+10, 0, g2p03_guider_height/2])(
+			bolt_hole(bolt, rotation=[0,1,0], align='begin')
 		))
-	m+= cylinder(d=g2p03_middle_diameter-20, )
+	#m+= cylinder(d=g2p03_middle_diameter-20, )
 
 	return m
 
-def s111g2p08_pipe_rectangle(l = 100):
-	m = translate([0, -base_pipe['D']/2-2, -2])(
-			cube([l, base_pipe['D']+4, 2]),
-			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
+def s111g2p08_pipe_rectangle(l = 100, angle = False):
+	shift = 0
+	if angle: shift = base_pipe['D']
+	m = translate([-shift, -base_pipe['D']/2-5, -1])(
+			cube([l+shift, base_pipe['D']+10, 2]),
+			translate([0,base_pipe['D']/2+5,base_pipe['D']/2+3])(
 				rotate([0,90,0])(
-					cylinder(d=base_pipe['D']+4, h=l)
+					cylinder(d=base_pipe['D']+8, h=l+shift)
 				)
 			)
 	)
 	m = hull()(m)
 
-	m-= translate([0, -base_pipe['D']/2-2, -2])(
+	m-= translate([-shift, -base_pipe['D']/2-2, -2])(
 			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
 				rotate([0,90,0])(
-					cylinder(d=base_pipe['D'], h=l+1)
+					cylinder(d=base_pipe['D'], h=l+shift+1)
 				)
 			)
 	)
+
+	m-= debug(translate([l/2,0,base_pipe['D']+2])(
+				bolt_hole(M4, align='begin', l=19, nut_type='trougth', nut = -0.1)
+			)
+		)
+
+	if angle:
+		m-= rotate([0,0,45])(translate([-50, 0, -50])(cube(100)))
 	return m
 
 def s111g2p08():
 	m = s111g2p03()
 	m+= translate([g2_octangle_do/2, 0, g2p03_guider_height])(
-			rotate([0,0,45+90])(
-				s111g2p08_pipe_rectangle()
+			
+			rotate([0,0,+45+90])(
+				s111g2p08_pipe_rectangle(angle = 45)
 			),
-			rotate([0,0,-45-90])(
-				s111g2p08_pipe_rectangle()
+			mirror([0, 1, 0])(
+				rotate([0,0,+45+90])(
+					s111g2p08_pipe_rectangle(angle = 45)
+				)
 			)
 		)
+	'''
 	m+= hull()(translate([g2_octangle_do/2, 0, g2p03_guider_height])(
 			rotate([0,0,45+90])(
 				s111g2p08_pipe_rectangle(1)
@@ -415,6 +423,7 @@ def s111g2p08():
 				s111g2p08_pipe_rectangle(1)
 			)
 		))
+	'''
 
 	m = intersection()(
 		m,
@@ -423,13 +432,33 @@ def s111g2p08():
 			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
 		))
 	)
+
+	m=intersection()(
+		m,
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
+	
 	return m
 
 
 def s111g2p09():
-	m = s111g2p08()
+	m = s111g2p03()
 
+	a = (g2_octangle_do/2)/math.sqrt(2)
 
+	m += translate([a, -75, g2p03_guider_height])(
+			rotate([0,0,90])(
+				s111g2p08_pipe_rectangle(l=150)
+			)
+		)
+
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
 	return m
 
 def s111g2p04():
@@ -681,9 +710,14 @@ if render:
 	generate(s111g2p05(), '111_2005')
 	generate(s111g2p06(), '111_2006')
 	generate(s111g2p07(), '111_2007')
-	generate(s111g2p09(), '111_2008')
-	generate(s111g2p08(), '111_2009')
+	generate(s111g2p08(), '111_2008')
+	generate(s111g2p09(), '111_2009')
 
+
+
+#generate(s111g2p03(), '111_2003')
+#generate(s111g2p08(), '111_2008')
+#generate(s111g2p09(), '111_2009')
 #s111g1_info() 
  
 ************************************************/

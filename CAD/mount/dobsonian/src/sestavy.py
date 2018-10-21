@@ -53,7 +53,7 @@ def s111g2s01():
 	#	m += rotate([0, 0, x*90+45])(s111g2p05())
 	
 	for x in range(4):
-		m += rotate([0, 0, 360/8*(x*2)])(s111g2p03())
+		m += rotate([0, 0, 360/8*(x*2)])(s111g2p09())
 
 	for x in range(4):
 		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())

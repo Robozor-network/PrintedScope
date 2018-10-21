@@ -1,27 +1,194 @@
 
 
 difference() {
-	translate(v = [-16.8000000000, -16.8000000000, -2]) {
-		cube(size = [33.6000000000, 33.6000000000, 35]);
-	}
-	cylinder(d = 16.8000000000, h = 65);
-	translate(v = [0, 0, 41.7500000000]) {
-		rotate(a = [0, 90, 0]) {
-			rotate(a = [180, 0, 0]) {
-				translate(v = [0, 0, -10.4000000000]) {
-					union() {
-						translate(v = [0, 0, false]) {
-							cylinder($fn = 20, d = 3.5000000000, h = 34.0000000000);
-						}
-						translate(v = [0, 0, -13.1500000000]) {
-							cylinder($fn = 20, d = 6.1500000000, h = 13.2000000000);
-						}
-						translate(v = [0, 0, 20.8000000000]) {
-							cylinder($fn = 6, d = 6.7100000000, h = 20.8000000000);
+	union() {
+		difference() {
+			cylinder($fn = 50, d = 105, h = 14.2000000000);
+			translate(v = [0, 0, 10]) {
+				cylinder($fn = 50, d = 85, h = 13.8500000000);
+			}
+			translate(v = [0, 0, 5]) {
+				cylinder($fn = 50, d1 = 75, d2 = 85, h = 5.0500000000);
+			}
+			rotate(a = [0, 0, 0.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
 						}
 					}
 				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
 			}
+			rotate(a = [0, 0, 45.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 90.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 135.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 180.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 225.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 270.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+			rotate(a = [0, 0, 315.0000000000]) {
+				translate(v = [42.5000000000, 0, 9.6000000000]) {
+					rotate(a = [180, -90, 0]) {
+						translate(v = [0, 0, 5.2000000000]) {
+							union() {
+								translate(v = [0, 0, false]) {
+									cylinder($fn = 50, d = 5.5000000000, h = 55.2000000000);
+								}
+								translate(v = [0, 0, -15.1500000000]) {
+									cylinder($fn = 50, d = 9.2000000000, h = 15.2000000000);
+								}
+							}
+						}
+					}
+				}
+				translate(v = [51.0000000000, -50, 0]) {
+					cube(size = 100);
+				}
+			}
+		}
+		cylinder($fn = 50, d = 24, h = 14.2000000000);
+	}
+	translate(v = [0, 0, 0.0500000000]) {
+		cylinder($fn = 50, d = 5.5000000000, h = 14.2000000000);
+	}
+	rotate(a = 30) {
+		translate(v = [0, 0, -0.0500000000]) {
+			cylinder($fn = 6, d = 9.4900000000, h = 9.2500000000);
+		}
+	}
+	rotate(a = [0, 0, 0.0000000000]) {
+		translate(v = [8, 0, -0.0500000000]) {
+			cylinder($fn = 50, d = 6.1500000000, h = 3.2000000000);
+			cylinder($fn = 50, d = 3.5000000000, h = 50);
+		}
+	}
+	rotate(a = [0, 0, 120.0000000000]) {
+		translate(v = [8, 0, -0.0500000000]) {
+			cylinder($fn = 50, d = 6.1500000000, h = 3.2000000000);
+			cylinder($fn = 50, d = 3.5000000000, h = 50);
+		}
+	}
+	rotate(a = [0, 0, 240.0000000000]) {
+		translate(v = [8, 0, -0.0500000000]) {
+			cylinder($fn = 50, d = 6.1500000000, h = 3.2000000000);
+			cylinder($fn = 50, d = 3.5000000000, h = 50);
 		}
 	}
 }
@@ -29,10 +196,10 @@ difference() {
 *********      SolidPython code:      **********
 ************************************************
  
-import os
-cq = 20
-
+cq = 50
 render = False
+
+import os
 os.environ["PRINTEDSCOPE_QUALITY"] = str(cq)
 
 from lib.model_parameters import *
@@ -40,411 +207,545 @@ from solid import *
 from solid.utils import *
 import numpy as np
 
+g2_guider_diameter = 180*2
+g2p03_floar_thickness = 20
+g2p03_floar_width = 60 
+g2p03_guider_height = 30
+g2p03_guider_width = 20
 
-g1p1_bearing = bearing_625
-g1g1_space = 3 # jak velka bude mezera mezi zakladnou na zemi a AZ sestavou
-g1p1_pipe_center_distance = 7 # jak daleko konci trubka od stredu
-g1_pipe_in = 40
-g1p1_diameter = 65
-g1_foot_height = 60
-g1_pipe_bolt = M4
-g1_pipe_bolt['l'] = 35
+g2p03_guider_bolt = M5 # srouby pro spojeni dilu kolejnice
+g2p03_guider_bolt['l'] = 40
+
+g2p2_column_d = 30
+g2p2_border_ind = 85
+g2p2_border_thickness = 10
+g2p2_border_wall = g2p2_border_thickness-1.5
+#g2p2_height = 20
+g2p2_thickness = 5
 
 
-g1_foot_length = 100
-g1_foot_width = 50
-g1_pipe_distance = 40
-g1_pipe = pipe_16_2
-g1_pipe['min_wall'] = 5
-g1p4_wall = 2
-
-g1_foot_bridge_height = 10
-g1_foot_bridge_length =  g1_foot_length-50
-
-#g1_foot_length = g1_pipe_distance+g1_pipe['D']+2*g1_pipe['min_wall']
-
-# kostka, na ktere to lezi na zemi...
-g1p2_width = 50
-g1p2_length = 100
-g1p2_height = g1_foot_height
-
-def s111g1p01():
-	pipe_bolt = g1_pipe_bolt
-	pipe_height = pipe_bolt['l']
-	pipe_height += pipe_bolt['k']
-	#bottom = -(pipe_height-g1_pipe['min_wall']-g1_pipe['D']/2)-clear
-
-	g1p1_cube_length = 65
-	g1p1_base_height = 35+3
-
-	bottom = -(g1p1_base_height/2)-clear
-
-	#zakladni valec s kostkami pro trubky
-	m= cylinder(h=g1p1_base_height, d=115, segments=cq)
-	for x in range(3):
-		m+= rotate([0, 0, 360/3*x])(
-			translate([0, -(g1_pipe['D']+g1_pipe_distance+4*g1_pipe['min_wall'])/2,0])(
-				cube([g1p1_cube_length, g1_pipe['D']+g1_pipe_distance+4*g1_pipe['min_wall'], g1p1_base_height])
-			)
-		)
-	m = down(g1p1_base_height/2)(m)
-	#m = hull()(m)
-
-	m+= up(g1p1_base_height/2-1.1)(
-			difference()(
-				cylinder(h=5, d=80, segments=cq),
-				down(clear/2)(cylinder(h=10+clear, d=80-3, segments=cq))
-			)
-		)
+def s111g2p01():
+	m = cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=g2p2_border_ind+2*g2p2_border_thickness, segments=cq)
+	m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
+	m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
 	
-	m-=(up(g1p1_base_height/2-g1_pipe['min_wall']+1)(cylinder(h=5+clear, d1=80-3-5, d2=80-3, segments=cq)))
-
-
-	for x in range(3):
-		m-= rotate([0, 90, 360/3*x])(
-			# diry pro zastrceni trubky
-			translate([0, -g1_pipe_distance/2, g1p1_pipe_center_distance])(
-				cylinder(d= base_pipe['D'], h=100, segments=cq)
+	for i in range(8):
+		m-=rotate([0,0,360/8*i])(
+			translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
+				(bolt_hole(g2p03_guider_bolt, align='head', rotation=[0,-1,0]))
 			),
-			translate([0, g1_pipe_distance/2, g1p1_pipe_center_distance])(
-				cylinder(d= base_pipe['D'], h=100, segments=cq)
-			),
-			# diry pro srouby skrz trubky
-				translate([2, -g1_pipe_distance/2, g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					bolt_hole(pipe_bolt, nut=-3, align='center')
-				)
-			),
-			translate([2, g1_pipe_distance/2, g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					(bolt_hole(pipe_bolt, nut=-3, align='center'))
-				)
-			),
-
-			# otvor pro srouby pro pridelani lozisek
-			translate([0, 0, (g1p1_bearing['D'])])(
-				left(bottom+g1p1_base_height-2-M3['k']-g1p1_bearing['B'])(
-					rotate([0, 180, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
-					)
-				),
-				left(bottom-1+M3['m']+g1p1_bearing['B'])(
-					rotate([0, 180, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
-					)
-				),
-				left(bottom+105+layer*1.5)(rotate([0, 90, 0])(
-					cylinder(d=M3['d'], h=100, segments=cq)
-				))
+			translate([g2p2_border_ind/2+g2p2_border_wall,-50,0])(
+				(cube(100))
 			)
 		)
 
-	# dira pro vyvedeni kabelu
-	m -= translate([20, g1_pipe_distance/2, bottom+g1p1_base_height/2+clear])(
-			cylinder(d=8, h=g1p1_base_height+clear)
-		)
-	m -= translate([20, -g1_pipe_distance/2, bottom+g1p1_base_height/2+clear])(
-			cylinder(d=8, h=g1p1_base_height+clear)
-		)
+	m+= cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=24, segments=cq)
+	m-= up(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=M5['d'], segments=cq))
+	m-= rotate(30)(down(clear)(cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk']+clear-5, d=M5['e'], segments=6)))
 
-	# diry skrz pro loziska a sroub M5 a osazeni pro pridelani loziska
-	m -= up(bottom)(
-			cylinder(d=g1p1_bearing['D']+4*M3['dk']+1, h=M3['k']+2)
-		)
-	m -= up(bottom+M3['k']+2+layer*1)(
-			debug(cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B'], segments=cq)) # Lozisko spodni
-		)
-	m -= up(bottom+M3['k']+2+layer*2+g1p1_bearing['B'])(
-			cylinder(d=g1p1_bearing['D']-4, h=50, segments=cq)
-		)
-	m -= up(bottom+g1p1_base_height-M3['k']-2- g1p1_bearing['B'])(
-			debug(cylinder(d=g1p1_bearing['D'], h=g1p1_bearing['B'], segments=cq))  # Lozisko horni
-		)
-	m -= up(bottom+g1p1_base_height-M3['k']-2-clear)(
-			cylinder(d=g1p1_bearing['D']+4*M3['dk']+1, h=50)
+	for i in range(3):
+		m-=rotate([0,0,360/3*i])(
+			translate([8, 0, -clear])(
+				cylinder(h=M3['k'], d=M3['dk'], segments=cq),
+				cylinder(h=50, d=M3['d'], segments=cq),
+				)
 		)
 
 	return m
 
-
-def s111g1d01():
-	pipe_bolt = g1_pipe_bolt
-	pipe_height = pipe_bolt['l']
-	pipe_height += pipe_bolt['k']
-	#bottom = -(pipe_height-g1_pipe['min_wall']-g1_pipe['D']/2)-clear
-
-	g1p1_cube_length = 65
-	g1p1_base_height = 35+3
-
-	bottom = -(g1p1_base_height/2)-clear
-
-	#zakladni valec s kostkami pro trubky
-	m= cylinder(h=g1p1_base_height, d=0, segments=3)
-	translate([0, -(g1_pipe['D']+g1_pipe_distance+4*g1_pipe['min_wall'])/2,0])(
-		cube([g1p1_cube_length, g1_pipe['D']+g1_pipe_distance+4*g1_pipe['min_wall'], g1p1_base_height])
-		)
-
-	m = down(g1p1_base_height/2)(m)
-	#m = hull()(m)
-
-	m+= up(g1p1_base_height/2-1.1)(
-			difference()(
-				cylinder(h=5, d=80, segments=cq),
-				down(clear/2)(cylinder(h=10+clear, d=80-3, segments=cq))
-			)
-		)
+def s111g2p02():
+	m = cylinder(h=4, d=24, segments=cq)
+	#m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
+	#m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
 	
-	m-=(up(g1p1_base_height/2-g1_pipe['min_wall']+1)(cylinder(h=5+clear, d1=80-3-5, d2=80-3, segments=cq)))
-
-
-	for x in range(3):
-		m-= rotate([0, 90, 360/3*x])(
-			# diry pro zastrceni trubky
-			translate([0, -g1_pipe_distance/2, g1p1_pipe_center_distance])(
-				cylinder(d= base_pipe['D'], h=100, segments=cq)
+	for i in range(8):
+		m-=rotate([0,0,360/8*i])(
+			translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
+				(bolt_hole(g2p03_guider_bolt, align='head', rotation=[0,-1,0]))
 			),
-			translate([0, g1_pipe_distance/2, g1p1_pipe_center_distance])(
-				cylinder(d= base_pipe['D'], h=100, segments=cq)
-			),
-			# diry pro srouby skrz trubky
-				translate([2, -g1_pipe_distance/2, g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					bolt_hole(pipe_bolt, nut=-3, align='center')
+			translate([g2p2_border_ind/2+g2p2_border_wall,-50,0])(
+				(cube(100))
+			)
+		)
+
+	#m+= cylinder(h=5, d=10)
+	m+= (rotate(30)(cylinder(h=6, d2=M5['d']+4, d1=M5['d']+6, segments=cq)))
+	m-= (rotate(30)(cylinder(h=3, d=M5['e'], segments=6)))
+	m-= (rotate(30)(cylinder(h=10, d=M5['d'], segments=cq)))
+
+	for i in range(3):
+		m-=rotate([0,0,360/3*i])(
+			translate([8, 0, -clear])(
+				up(2)(rotate(30)(cylinder(h=M3['k'], d=M3['e'], segments=6))),
+				cylinder(h=50, d=M3['d'], segments=cq)
 				)
-			),
-			translate([2, g1_pipe_distance/2, g1p1_diameter*0.75])(
-				rotate([0, -90, 0])(
-					(bolt_hole(pipe_bolt, nut=-3, align='center'))
-				)
-			),
+		)
 
-			# otvor pro srouby pro pridelani lozisek
-			translate([0, 0, (g1p1_bearing['D'])])(
-				left(bottom+g1p1_base_height-2-M3['k']-g1p1_bearing['B'])(
-					rotate([0, 180, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
+	return m
+
+def s111g2p03():
+	m = cube(0)
+
+	# lista pro pohyb lozisek AZ
+	m+= down(0)(
+			cylinder(d=g2_octangle_do+g2p03_guider_width, h=g2p03_guider_height, segments=cq)
+		)
+	m-= (down(clear)(
+			cylinder(d=g2_octangle_do-g2p03_guider_width, h=g2p03_guider_height+clear*2, segments=cq)
+		))
+
+	# krajni listy do stredu s dirou pro srouby
+	m+= (rotate([0, 0, -360/24])(
+			right(g2p03_middle_diameter/2-10)(
+				cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
+			)
+		))
+	m+= rotate([0, 0, 360/24])(
+			right(g2p03_middle_diameter/2-10)(
+				back(g2p03_guider_width)(
+					cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
+				)
+			)
+		)
+	# Stredni lista dilu
+	m+= (right(g2p03_middle_diameter/2-g2p03_guider_height)(
+			back(50)(
+				cube([g2p03_guider_width, 100, g2p03_guider_height])
+			)
+		))
+
+	p_bolt = g2p03_guider_bolt
+
+
+	mount_a = cube([p_bolt['dk']*2, p_bolt['l']/2+p_bolt['k']-clear, p_bolt['dk']*2])
+	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
+			rotate([90, 0, 0])(
+				cylinder(h=p_bolt['l'], d=p_bolt['d'], segments=cq)
+			)
+		)
+	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+p_bolt['l'], p_bolt['dk']])(
+			rotate([90, 0, 0])(
+				cylinder(h=p_bolt['l'], d=p_bolt['dk'], segments=cq)
+			)
+		)
+
+	mount_a = rotate([0, 0, -360/12])(
+			right(g2_guider_diameter/2-p_bolt['dk']*2-g2p03_guider_height)(
+				mount_a
+				)
+			)
+
+	mount_b = cube([p_bolt['dk']*2, p_bolt['l']/2-clear, p_bolt['dk']*2])
+	mount_b-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
+			rotate([90, 0, 0])(
+				cylinder(h=p_bolt['l'], d=p_bolt['d'], segments=cq)
+			)
+		)
+	mount_b-= translate([p_bolt['dk'], p_bolt['m'], p_bolt['dk']])(
+			rotate([0, -90, 0])(
+				nut_pocket(p_bolt)
+			)
+		)
+
+	mount_b = rotate([0, 0, 360/12])(
+				right(g2_guider_diameter/2-p_bolt['dk']*2-g2p03_guider_height)(
+					back(p_bolt['l']/2)(
+						mount_b
+					)
+				)
+			)
+
+
+	m += up(g2p03_floar_thickness)(mount_a)
+	m += up(g2p03_floar_thickness)(mount_b)
+
+
+	# oriznuti precnivajicich casti mimo osmiuhelnik
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
+	m=intersection()(
+		m,
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
+
+
+	bolt = M6.copy()
+	bolt['l'] = 20
+	for x in [0,180]:
+		m -= mirror([0, x, 0])(
+			up(g2p03_guider_height/2)(
+				rotate([0,0,-360/24])(
+					translate([g2_octangle_do/2-g2p03_guider_height, 10, 0])(
+						(bolt_hole(bolt, rotation=[-1,0,0], align='begin'))
 					)
 				),
-				left(bottom-1+M3['m']+g1p1_bearing['B'])(
-					rotate([0, 180, 90])(
-						nut_pocket(pipe_bolt, g1p1_bearing['D'])
+				rotate([0,0,360/24])(
+					translate([g2_octangle_di/2-g2p03_guider_height*2.5, -10, 0])(
+						(bolt_hole(bolt, rotation=[1,0,0], align='begin'))
 					)
-				),
-				left(bottom+105+layer*1.5)(rotate([0, 90, 0])(
-					cylinder(d=M3['d'], h=100, segments=cq)
-				))
+				)
 			)
 		)
 
+	m-= (translate([g2p03_middle_diameter/2-g2p03_guider_height+10, 0, g2p03_guider_height/2])(
+			bolt_hole(bolt, rotation=[0,1,0], align='begin')
+		))
+	#m+= cylinder(d=g2p03_middle_diameter-20, )
 
 	return m
 
-def s111g1p02():
-	m = cylinder(d=g1p1_bearing['D']+4*M3['dk'], h=M3['k']+2)
-	m-= down(clear/2)(cylinder(d=g1p1_bearing['bolt']['dk']+1, h=M3['k']+2+clear))
-	for x in range(3):
-		m-=rotate([180, 0, 360/3*x])(
-			translate([-g1p1_bearing['D'], 0, -M3['k']])(
-				bolt_hole(M3, l=30)
+def s111g2p08_pipe_rectangle(l = 100, angle = False):
+	shift = 0
+	if angle: shift = base_pipe['D']
+	m = translate([-shift, -base_pipe['D']/2-5, -1])(
+			cube([l+shift, base_pipe['D']+10, 2]),
+			translate([0,base_pipe['D']/2+5,base_pipe['D']/2+3])(
+				rotate([0,90,0])(
+					cylinder(d=base_pipe['D']+8, h=l+shift)
+				)
 			)
-		)
-
-	return m
-
-def s111g1p03():
-	m = cylinder(d=g1p1_bearing['D']+4*M3['dk'], h=M3['k']+2)
-	m-= down(clear/2)(cylinder(h=3, d=25))
-	m-= down(clear/2)(cylinder(d=g1p1_bearing['D']-3, h=M3['k']+2+clear))
-	for x in range(3):
-		m-=rotate([180, 0, 360/3*x])(
-			translate([-g1p1_bearing['D'], 0, -M3['k']])(
-				bolt_hole(M3, l=30)
-			)
-		)
-
-	return m
-
-def s111g1p04():
-
-	## zakladni tvar nohy
-	m = left(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
-		)
-	m += right(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
-		)
-	m += translate([-g1_foot_length/2, -g1_foot_height, 0])(
-			cube([g1_foot_length, 5, g1_foot_width])
-		)
+	)
 	m = hull()(m)
 
+	m-= translate([-shift, -base_pipe['D']/2-2, -2])(
+			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
+				rotate([0,90,0])(
+					cylinder(d=base_pipe['D'], h=l+shift+1)
+				)
+			)
+	)
 
-	## odebrani premosteni (spodni oblouk)
-	r = left(g1_foot_bridge_length/2)(
-			cylinder(h=g1_foot_width+clear, d=g1_pipe['D'], segments=cq)
+	m-= debug(translate([l/2,0,base_pipe['D']+2])(
+				bolt_hole(M4, align='begin', l=19, nut_type='trougth', nut = -0.1)
+			)
 		)
-	r += right(g1_foot_bridge_length/2)(
-			cylinder(h=g1_foot_width+clear, d=g1_pipe['D'], segments=cq)
-		)
-	r += translate([-(g1_foot_bridge_length+g1_pipe['D'])/2, -g1_foot_bridge_height, 0])(
-			cube([(g1_foot_bridge_length+g1_pipe['D']), 5, g1_foot_width+clear])
-		)
-	r = hull()(translate([0, -g1_foot_height+g1_foot_bridge_height-clear, -clear/2])(r))
-	m-=r
 
+	if angle:
+		m-= rotate([0,0,45])(translate([-50, 0, -50])(cube(100)))
+	return m
 
-	## odebrani diry pro elektroniku
-	r = translate([-g1_pipe_distance/2, -g1p2_height, g1p4_wall])(
-			cube([g1_pipe_distance, g1p2_height, g1_foot_width-2*g1p4_wall])
+def s111g2p08():
+	m = s111g2p03()
+	m+= translate([g2_octangle_do/2, 0, g2p03_guider_height])(
+			
+			rotate([0,0,+45+90])(
+				s111g2p08_pipe_rectangle(angle = 45)
+			),
+			mirror([0, 1, 0])(
+				rotate([0,0,+45+90])(
+					s111g2p08_pipe_rectangle(angle = 45)
+				)
+			)
 		)
-	r += translate([-g1_pipe_distance/2-M3['dk']*1, -g1p2_height, g1p4_wall])(
-			cube([g1_pipe_distance+M3['dk']*2, g1_foot_bridge_height+base_pipe['D']/2+5, g1_foot_width-2*g1p4_wall])
-		)
+	'''
+	m+= hull()(translate([g2_octangle_do/2, 0, g2p03_guider_height])(
+			rotate([0,0,45+90])(
+				s111g2p08_pipe_rectangle(1)
+			),
+			rotate([0,0,-45-90])(
+				s111g2p08_pipe_rectangle(1)
+			)
+		))
+	'''
+
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
+
+	m=intersection()(
+		m,
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
 	
-	r -= left(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+2.5*g1_pipe['min_wall'])
-		)
-	r -= right(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+2.5*g1_pipe['min_wall'])
-		)
-	m-=(r)
+	return m
 
 
-	## Srouby pro pridelani spodniho vicka
-	m-= (union()(
-			translate([g1_foot_width/2-2, -g1_pipe_distance+1, g1_foot_length/2-10])(
-				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=-90, pocket_length=10)
+def s111g2p09():
+	m = s111g2p03()
+
+	a = (g2_octangle_do/2)/math.sqrt(2)
+
+	m += translate([a, -75, g2p03_guider_height])(
+			rotate([0,0,90])(
+				s111g2p08_pipe_rectangle(l=150)
+			)
+		)
+
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
+	return m
+
+def s111g2p04():
+	m = cube(0)
+
+	m = cylinder(h=g2p03_guider_height+clear, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
+	m-= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-25, segments=cq))
+	m+= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-80, segments=cq))
+	m-= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-120, segments=cq))
+	# oriznuti precnivajicich casti mimo osmiuhelnik
+	m = intersection()(
+		m,
+		hull()(
+			rotate([0, 0, 360/48-0.1])(cube([500, 0.1, g2p03_guider_height+clear])),
+			rotate([0, 0, -360/48+0.1])(cube([500, 0.1, g2p03_guider_height+clear]))
+		)
+	)
+
+
+	bolt = M6.copy()
+	bolt['l'] = 25
+	for x in [0,180]:
+		for pos in [g2_octangle_do/2-g2p03_guider_height, g2_octangle_di/2-g2p03_guider_height*2.5]:
+			m -= mirror([0, x, 0])(
+				up(g2p03_guider_height/2)(
+					rotate([0,0,360/48])(
+						translate([pos, g2p03_guider_height-bolt['k'], 0])(
+							union()(
+								rotate([90, 0, 0])(bolt_hole(bolt)),
+								back(28)(rotate([0, 180, 0])(nut_pocket(bolt)))
+							)
+						)
+					)
+				)
+			)
+
+
+
+	return m
+
+
+def s111g2p05():
+	m = s111g2p04() 
+
+
+	t = cylinder(h=base_pipe['D']*2, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
+	t-= down(clear)(cylinder(h=base_pipe['D']*2+2*clear, d=g2p03_middle_diameter, segments=cq))
+	# oriznuti precnivajicich casti mimo osmiuhelnik
+	t = intersection()(
+		t,
+		hull()(
+			forward(g2p03_guider_height)(
+				rotate([0, 0, 360/48-0.5])(
+					cube([500, 0.1, base_pipe['D']*2+clear])
+				)
 			),
-			translate([g1_foot_width/2-2, -g1_pipe_distance+1 , 10])(
-				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=-90, pocket_length=10)
-			),
-			translate([-g1_foot_width/2+2, -g1_pipe_distance+1, 10])(
-				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=90, pocket_length=10)
-			),
-			translate([-g1_foot_width/2+2, -g1_pipe_distance+1, g1_foot_length/2-10])(
-				bolt_hole(M3, l=5, nut=5, nut_type='nut_pocket', rotation=[1,0,0], nut_rotation=90, pocket_length=10)
+			back(g2p03_guider_height)(
+				rotate([0, 0, -360/48+0.5])(
+					cube([500, 0.1, base_pipe['D']*2+clear])
+				)
+			)
+		)
+	)
+
+	m+= up(g2p03_guider_height+clear)(t)
+
+
+	##
+	## diry pro spojovaci tyce
+	##
+	m -=debug(right(g2_octangle_do/2)(
+			up(g2p03_guider_height+base_pipe['D'])(
+				rotate([0, 90, 45*3])(
+					up(base_pipe['D']/2)(
+						cylinder(d=base_pipe['D'], h=100, segments=cq)
+					)
+				)
+			)
+		))
+
+	m -=debug(right(g2_octangle_do/2)(
+			up(g2p03_guider_height+base_pipe['D'])(
+				rotate([0, 90, -45*3])(
+					up(base_pipe['D']/2)(
+						cylinder(d=base_pipe['D'], h=100, segments=cq)
+					)
+				)
 			)
 		))
 
 
 
-	## diry na trubky a srouby skrz trubky
-	m -= translate([-g1_pipe_distance/2, 0, 2])(
-			cylinder(h=g1_foot_width, d=g1_pipe['D'], segments=cq)
+
+	return m
+
+
+def s111g2p06():
+	m = translate([-70, 0, 0])(
+			cube([g3_axis_diameter+40, 30, g3_axis_diameter/3+base_pipe['D']*2])
 		)
-	m -= translate([g1_pipe_distance/2, 0,2])(
-			cylinder(h=g1_foot_width, d=g1_pipe['D'], segments=cq)
-		)
-	m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+
+	m-=translate([0, -clear/2, base_pipe['D']*2+g3_axis_diameter/2])(
+			rotate([-90, 0, 0])(
+				cylinder(d=g3_axis_diameter+2*g3_axis_space, h=30+clear, segments=cq)
 			)
-	m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
 		)
 
-	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+2-g1p1_bearing['B']/2])(
-			hull()(
-				cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
-				forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
-			),
-			bolt_hole(M5, l=20, overlap =8, head_overlap=50, align='center', nut = -0.1, nut_type='nut_pocket', nut_rotation=180)
-		)
-
-	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
-
-def s111g1p05():
-	m = s111g1p04()
-
-	# 12V konektor
-	m -= debug(translate([10,g1p2_height/2-2+layer ,-20])(rotate([90,0,0])(cylinder(h=2, d=el_connector_12v_panel['d']))))
-	m -= debug(translate([10,g1p2_height/2-2+layer ,-10])(rotate([90,0,0])(cylinder(h=2, d=3.3))))
-	return m
-
-def s111g1p06():
-
-	## zakladni tvar nohy
-	m = left(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
-		)
-	m += right(g1_pipe_distance/2)(
-			cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
-		)
-	m = hull()(m)
-
-	## diry na trubky a srouby skrz trubky
-	m -= translate([-g1_pipe_distance/2, 0, -clear])(
-			cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
-		)
-	m -= translate([g1_pipe_distance/2, 0, -clear])(
-			cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
-		)
-	m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+	for x in [-1, 1]:
+		m-=translate([0, 0, base_pipe['D']*2+g3_axis_diameter/2])(
+				rotate([0, 30*x, 0])(
+					translate([0, 10, -g3_axis_diameter/2-g2_bearing_az['D']/2])(
+						rotate([90, 0, 0])(
+							(bolt_hole(g2_bearing_az['bolt'], l=4.7-clear, nut_type='nut_pocket', nut=10))
+						)
+					),
+					translate([0, g2_bearing_az['bolt']['m']+g2_bearing_az['B']+5, -g3_axis_diameter/2-g2_bearing_az['D']/2])(
+						rotate([90, 0, 0])(
+							(cylinder(h=30, d=g2_bearing_az['D']+1, segments=cq))
+						)
+					)
+				)
 			)
-	m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-			bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
-		)
 
-	m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+2-g1p1_bearing['B']/2])(
-			hull()(
-				cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
-				forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
+		m-= translate(np.array([(g3_axis_diameter+10)/2,15,10])*[x, 1, 1])(
+			rotate([90, 0, 0])(
+				nut_pocket(M5)
 			),
-			bolt_hole(M5, l=20, overlap =8, head_overlap=50, align='center', nut = -0.1, nut_type='nut_pocket', nut_rotation=180)
+			up(-10)(
+				bolt_hole(M5, l=20)
+			)
 		)
 
-	return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
 
 
-def s111g1p07():
-	m = up(5/2)(cube([g1_pipe_distance+M3['dk']*2, g1_foot_bridge_height+base_pipe['D']/2+5, 5], center=True))
-	for x in [-10, 10]:
-		for y in [-5, 5]:
-			m-=translate([x,y,0])(cylinder(d=M3['d'], h=10, segments=cq))
-			m-=translate([x,y,2+clear])(cylinder(d=M3['dk'], h=3, segments=cq))
+	return down(base_pipe['D']*2+g3_axis_diameter/2)(m)
+
+def s111g2p07():
+	m = translate([-g3_axis_diameter/2-20, -15, -10])(
+		cube([g3_axis_diameter+40, 30, 15])
+	)
+
+	v = norm_vector([g2_octangle_f/2-30, 15, -600])
+	v2= norm_vector([-g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, -600])
+
+	bolt = get_optimal_bolt(3, base_pipe['D']+5)
+	print("Pouzijte srouby M{}x{}".format(bolt['d'], bolt['l']))
+	pipe_around = bolt['l']+bolt['k']
+
+	m += tube(vector=v, origin=[30, 0, 0], d=pipe_around, l=25)
+	m += tube(vector=v*[-1, 1, 1], origin=[-30, 0, 0], d=pipe_around, l=25)
+	m += tube(vector=v2, origin=[0, 0, 0], d=pipe_around, l=25)
+
+	m -= tube(vector=v, origin=[30, 0, 0], d=base_pipe['D'], l=30)
+	m -= tube(vector=v*[-1, 1, 1], origin=[-30, 0, 0], d=base_pipe['D'], l=30)
+	m -= tube(vector=v2, origin=[0, 0, 0], d=base_pipe['D'], l=30)
+		
+
+	for i in [-1, 1]:
+		m -= translate(([30,0,0]+v*15)*[i, 1, 1])(
+				rotate(get_rotation(v)+[90, 0, 0])(
+					down(bolt['l']/2-bolt['k']/2)(
+						(bolt_hole(bolt, nut=bolt['m']))
+					)
+				)
+		)
+
+	m -= translate([0,0,0]+v2*15)(
+			rotate(get_rotation(v2)+[90, 0, 0])(
+				rotate([0,-120,0])(down(bolt['l']/2-bolt['k']/2)(
+					(bolt_hole(bolt, nut=bolt['m']))
+				))
+			)
+		)
+
+	for y in [-1, 1]:
+		m-= translate(np.array([(g3_axis_diameter+10)/2,0,0-5])*[y, 1, 1])(
+				bolt_hole(M5, l=10)
+			)
+
+	m = intersection()(
+			m,
+			translate([-250, -250, -500+5])(cube(500))
+		)
 	return m
 
 
+model = cube(0)
+
+for x in range(8):
+	model += rotate([0, 0, 360/8*x+360/16])(s111g2p03())
+for x in range(4):
+	pass
+	#model += rotate([0, 0, 360/8*(x+)*2])(s111g2p04())
 
 
-def s111g1d01():
-	m = translate([-g1_pipe['D'], -g1_pipe['D'], -2])(cube([g1_pipe['D']*2, g1_pipe['D']*2, 35]))
-	m-= cylinder(h=g1p1_diameter, d=g1_pipe['D'])
-	m-= translate([0,0,g1p1_diameter*0.75-g1p1_pipe_center_distance])(rotate([0,90,0])(bolt_hole(M3, l=g1_pipe['D']+4, nut=g1_pipe['D']+4, align='center')))
-
-	return m
-
-def s111g1_info():
-	print("\nInformace o dilech 111_10**.scad")
-	print("===============================")
-	print("Staticka zakladna dalekohledu")
-	print("Skrz trubky je sroub", g1_pipe_bolt)
-	print("Stredy trubek jsou vzdaleny", g1_pipe_distance)
-	print("AL tyce o D: {} mm, delka: {} mm, {}ks".format(base_pipe['D'], g2_octangle_do/2+g1p2_width/2-2-g1p1_pipe_center_distance, 6))
+vector = [-g2_octangle_f/2+30, 0, 600]
+origin = [g2_octangle_f/2, g2_octangle_f/2, 30]
 
 
-scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
-scad_render_to_file(s111g1d01(), '../scad/111_2001.scad')
-scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
-scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
-scad_render_to_file(s111g1p04(), '../scad/111_1004.scad')
-scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
-scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
-scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
+model += tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[-g2_octangle_f/2+30, 15, 600], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[g2_octangle_f/2-30, -15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
+model += tube(vector=[g2_octangle_f/2-30, 15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
+
+
+model += tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D'])
+model += tube(vector=[g2_octangle_f/2, g2_octangle_f-base_pipe['D']-15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2+base_pipe['D'], 30], d = base_pipe['D'])
+
+
+
+model += rotate([0, 0, 0*90+45])(s111g2p05())
+model += rotate([0, 0, 1*90+45])(s111g2p05())
+model += rotate([0, 0, 2*90+45])(s111g2p05())
+model += rotate([0, 0, 3*90+45])(s111g2p05())
+
+
+for x in [0, 1]:
+	model += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
+	model += mirror([0, x, 0])(up(632)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
+
+
+#scad_render_to_file(model, '../scad/111_2003.scad')
+#generate_stl(s111g2p01(), '111_2001', '../scad', '../stl')
+#generate_preview(s111g2p01(), '111_2001', '../scad', '../preview')
+#generate_stl(s111g2p02(), '111_2002', '../scad', '../stl')
+#generate_preview(s111g2p02(), '111_2002', '../scad', '../preview')
+
+scad_render_to_file(s111g2p01(), '../scad/111_2001.scad')
+scad_render_to_file(s111g2p02(), '../scad/111_2002.scad')
+scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
+scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
+scad_render_to_file(s111g2p04(), '../scad/111_2004.scad')
+scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
+scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
+scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
+scad_render_to_file(s111g2p08(), '../scad/111_2008.scad')
+scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
+#scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
+
 
 render = False
 if render:
-	cq = 150
-	generate(s111g1p01(), '111_1001')
-	generate(s111g1p02(), '111_1002')
-	generate(s111g1p03(), '111_1003')
-	generate(s111g1p04(), '111_1004')
-	generate(s111g1p05(), '111_1005')
-	generate(s111g1p06(), '111_1006')
-	generate(s111g1p07(), '111_1007')
+	print("Rendering...")
+	cq = 100
+	generate(s111g2p01(), '111_2001')
+	generate(s111g2p02(), '111_2002')
+	generate(s111g2p03(), '111_2003')
+	generate(s111g2p04(), '111_2004')
+	generate(s111g2p05(), '111_2005')
+	generate(s111g2p06(), '111_2006')
+	generate(s111g2p07(), '111_2007')
+	generate(s111g2p08(), '111_2008')
+	generate(s111g2p09(), '111_2009')
 
 
-#cq = 150
-#generate(s111g1p01(), '111_1001') 
+
+#generate(s111g2p03(), '111_2003')
+#generate(s111g2p08(), '111_2008')
+#generate(s111g2p09(), '111_2009')
+#s111g1_info() 
  
 ************************************************/

@@ -343,14 +343,14 @@ def s111g1p06():
     m -= translate([g1_pipe_distance/2, 0, -clear])(
             cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
         )
-    m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-            bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+    m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.5-g1p1_pipe_center_distance])(
+            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4)
             )
-    m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.75-g1p1_pipe_center_distance])(
-            bolt_hole(M3, align='head', rotation=np.array([-1,0,0]), nut=-4)
+    m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.5-g1p1_pipe_center_distance])(
+            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4)
         )
 
-    m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+2-g1p1_bearing['B']/2])(
+    m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+1.5-g1p1_bearing['B']/2])(
             hull()(
                 cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
                 forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
@@ -391,11 +391,11 @@ scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
 scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
 scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
 
-render = True
+render = False
 if render:
     cq = 150
-    #generate(s111g1p01(), '111_1001')
-    #generate(s111g1d01(), '111_1301')
+    generate(s111g1p01(), '111_1001')
+    generate(s111g1d01(), '111_1301')
     generate(s111g1p02(), '111_1002')
     generate(s111g1p03(), '111_1003')
     generate(s111g1p04(), '111_1004')

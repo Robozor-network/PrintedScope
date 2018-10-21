@@ -1,77 +1,79 @@
 
 
 intersection() {
-	union() {
-		difference() {
-			intersection() {
+	intersection() {
+		union() {
+			difference() {
 				intersection() {
-					union() {
-						difference() {
-							union() {
-								cube(size = 0);
-								translate(v = [0, 0, 0]) {
-									cylinder($fn = 20, d = 514.9747468306, h = 30);
+					intersection() {
+						union() {
+							difference() {
+								union() {
+									cube(size = 0);
+									translate(v = [0, 0, 0]) {
+										cylinder($fn = 50, d = 514.9747468306, h = 30);
+									}
+								}
+								translate(v = [0, 0, -0.0500000000]) {
+									cylinder($fn = 50, d = 474.9747468306, h = 30.1000000000);
 								}
 							}
-							translate(v = [0, 0, -0.0500000000]) {
-								cylinder($fn = 20, d = 474.9747468306, h = 30.1000000000);
-							}
-						}
-						rotate(a = [0, 0, -15.0000000000]) {
-							translate(v = [140.0000000000, 0, 0]) {
-								cube(size = [194.9747468306, 20, 30]);
-							}
-						}
-						rotate(a = [0, 0, 15.0000000000]) {
-							translate(v = [140.0000000000, 0, 0]) {
-								translate(v = [0, -20, 0]) {
+							rotate(a = [0, 0, -15.0000000000]) {
+								translate(v = [140.0000000000, 0, 0]) {
 									cube(size = [194.9747468306, 20, 30]);
 								}
 							}
-						}
-						translate(v = [120.0000000000, 0, 0]) {
-							translate(v = [0, -50, 0]) {
-								cube(size = [20, 100, 30]);
+							rotate(a = [0, 0, 15.0000000000]) {
+								translate(v = [140.0000000000, 0, 0]) {
+									translate(v = [0, -20, 0]) {
+										cube(size = [194.9747468306, 20, 30]);
+									}
+								}
 							}
-						}
-						translate(v = [0, 0, 20]) {
-							rotate(a = [0, 0, -30.0000000000]) {
-								translate(v = [131.6000000000, 0, 0]) {
-									difference() {
-										cube(size = [18.4000000000, 25.1500000000, 18.4000000000]);
-										translate(v = [9.2000000000, 20.0500000000, 9.2000000000]) {
-											rotate(a = [90, 0, 0]) {
-												cylinder($fn = 20, d = 5.5000000000, h = 40);
+							translate(v = [120.0000000000, 0, 0]) {
+								translate(v = [0, -50, 0]) {
+									cube(size = [20, 100, 30]);
+								}
+							}
+							translate(v = [0, 0, 20]) {
+								rotate(a = [0, 0, -30.0000000000]) {
+									translate(v = [131.6000000000, 0, 0]) {
+										difference() {
+											cube(size = [18.4000000000, 25.1500000000, 18.4000000000]);
+											translate(v = [9.2000000000, 20.0500000000, 9.2000000000]) {
+												rotate(a = [90, 0, 0]) {
+													cylinder($fn = 50, d = 5.5000000000, h = 40);
+												}
 											}
-										}
-										translate(v = [9.2000000000, 60.0000000000, 9.2000000000]) {
-											rotate(a = [90, 0, 0]) {
-												cylinder($fn = 20, d = 9.2000000000, h = 40);
+											translate(v = [9.2000000000, 60.0000000000, 9.2000000000]) {
+												rotate(a = [90, 0, 0]) {
+													cylinder($fn = 50, d = 9.2000000000, h = 40);
+												}
 											}
 										}
 									}
 								}
 							}
-						}
-						translate(v = [0, 0, 20]) {
-							rotate(a = [0, 0, 30.0000000000]) {
-								translate(v = [131.6000000000, 0, 0]) {
-									translate(v = [0, -20.0000000000, 0]) {
-										difference() {
-											cube(size = [18.4000000000, 19.9500000000, 18.4000000000]);
-											translate(v = [9.2000000000, 20.0500000000, 9.2000000000]) {
-												rotate(a = [90, 0, 0]) {
-													cylinder($fn = 20, d = 5.5000000000, h = 40);
+							translate(v = [0, 0, 20]) {
+								rotate(a = [0, 0, 30.0000000000]) {
+									translate(v = [131.6000000000, 0, 0]) {
+										translate(v = [0, -20.0000000000, 0]) {
+											difference() {
+												cube(size = [18.4000000000, 19.9500000000, 18.4000000000]);
+												translate(v = [9.2000000000, 20.0500000000, 9.2000000000]) {
+													rotate(a = [90, 0, 0]) {
+														cylinder($fn = 50, d = 5.5000000000, h = 40);
+													}
 												}
-											}
-											translate(v = [9.2000000000, 4.6000000000, 9.2000000000]) {
-												rotate(a = [0, -90, 0]) {
-													union() {
-														rotate(a = [-90, 90, 0]) {
-															cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
-														}
-														translate(v = [-4.2500000000, 0, 0]) {
-															cube(size = [8.5000000000, 4.6000000000, 100]);
+												translate(v = [9.2000000000, 4.6000000000, 9.2000000000]) {
+													rotate(a = [0, -90, 0]) {
+														union() {
+															rotate(a = [-90, 90, 0]) {
+																cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+															}
+															translate(v = [-4.2500000000, 0, 0]) {
+																cube(size = [8.5000000000, 4.6000000000, 100]);
+															}
 														}
 													}
 												}
@@ -81,191 +83,176 @@ intersection() {
 								}
 							}
 						}
-					}
-					translate(v = [0, 0, -250]) {
-						hull() {
-							rotate(a = [0, 0, 15.0000000000]) {
-								cube(size = [500, 0.1000000000, 500]);
-							}
-							rotate(a = [0, 0, -15.0000000000]) {
-								cube(size = [500, 0.1000000000, 500]);
+						translate(v = [0, 0, -250]) {
+							hull() {
+								rotate(a = [0, 0, 15.0000000000]) {
+									cube(size = [500, 0.1000000000, 500]);
+								}
+								rotate(a = [0, 0, -15.0000000000]) {
+									cube(size = [500, 0.1000000000, 500]);
+								}
 							}
 						}
 					}
+					cylinder($fn = 50, d = 514.9747468306, h = 100);
 				}
-				cylinder(d = 514.9747468306, h = 100);
-			}
-			mirror(v = [0, 0, 0]) {
-				translate(v = [0, 0, 15.0000000000]) {
-					rotate(a = [0, 0, -15.0000000000]) {
-						translate(v = [217.4873734153, 23.8000000000, 0]) {
-							rotate(a = [90, 0, 0]) {
-								union() {
-									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 36.2000000000);
+				mirror(v = [0, 0, 0]) {
+					translate(v = [0, 0, 15.0000000000]) {
+						rotate(a = [0, 0, -15.0000000000]) {
+							translate(v = [217.4873734153, 10, 0]) {
+								rotate(a = [90, 0, 0]) {
+									union() {
+										translate(v = [0, 0, false]) {
+											cylinder($fn = 50, d = 6.5000000000, h = 36.2000000000);
+										}
+										translate(v = [0, 0, -16.1500000000]) {
+											cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
+										}
 									}
-									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+								}
+							}
+						}
+						rotate(a = [0, 0, 15.0000000000]) {
+							translate(v = [153.6485188534, -10, 0]) {
+								rotate(a = [270, 0, 0]) {
+									union() {
+										translate(v = [0, 0, false]) {
+											cylinder($fn = 50, d = 6.5000000000, h = 36.2000000000);
+										}
+										translate(v = [0, 0, -16.1500000000]) {
+											cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
+										}
 									}
 								}
 							}
 						}
 					}
 				}
-			}
-			mirror(v = [0, 180, 0]) {
-				translate(v = [0, 0, 15.0000000000]) {
-					rotate(a = [0, 0, -15.0000000000]) {
-						translate(v = [217.4873734153, 23.8000000000, 0]) {
-							rotate(a = [90, 0, 0]) {
-								union() {
-									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 36.2000000000);
+				mirror(v = [0, 180, 0]) {
+					translate(v = [0, 0, 15.0000000000]) {
+						rotate(a = [0, 0, -15.0000000000]) {
+							translate(v = [217.4873734153, 10, 0]) {
+								rotate(a = [90, 0, 0]) {
+									union() {
+										translate(v = [0, 0, false]) {
+											cylinder($fn = 50, d = 6.5000000000, h = 36.2000000000);
+										}
+										translate(v = [0, 0, -16.1500000000]) {
+											cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
+										}
 									}
-									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+								}
+							}
+						}
+						rotate(a = [0, 0, 15.0000000000]) {
+							translate(v = [153.6485188534, -10, 0]) {
+								rotate(a = [270, 0, 0]) {
+									union() {
+										translate(v = [0, 0, false]) {
+											cylinder($fn = 50, d = 6.5000000000, h = 36.2000000000);
+										}
+										translate(v = [0, 0, -16.1500000000]) {
+											cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
+										}
 									}
 								}
 							}
 						}
 					}
 				}
-			}
-			mirror(v = [0, 0, 0]) {
-				translate(v = [0, 0, 15.0000000000]) {
-					rotate(a = [0, 0, 15.0000000000]) {
-						translate(v = [153.6485188534, -1.2000000000, 0]) {
-							rotate(a = [270, 0, 0]) {
-								union() {
-									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 36.2000000000);
-									}
-									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			mirror(v = [0, 180, 0]) {
-				translate(v = [0, 0, 15.0000000000]) {
-					rotate(a = [0, 0, 15.0000000000]) {
-						translate(v = [153.6485188534, -1.2000000000, 0]) {
-							rotate(a = [270, 0, 0]) {
-								union() {
-									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 6.5000000000, h = 36.2000000000);
-									}
-									translate(v = [0, 0, -16.1500000000]) {
-										cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			#translate(v = [150.0000000000, 0, 0]) {
-				rotate(a = [180, 90, 0]) {
-					translate(v = [0, 0, 6.2000000000]) {
+				translate(v = [130.0000000000, 0, 15.0000000000]) {
+					rotate(a = [180, 90, 0]) {
 						union() {
 							translate(v = [0, 0, false]) {
-								cylinder($fn = 20, d = 6.5000000000, h = 36.2000000000);
+								cylinder($fn = 50, d = 6.5000000000, h = 36.2000000000);
 							}
 							translate(v = [0, 0, -16.1500000000]) {
-								cylinder($fn = 20, d = 10.5000000000, h = 16.2000000000);
+								cylinder($fn = 50, d = 10.5000000000, h = 16.2000000000);
 							}
 						}
 					}
 				}
 			}
-		}
-		cylinder(d = 280);
-		translate(v = [247.4873734153, 0, 30]) {
-			rotate(a = [0, 0, 135]) {
-				difference() {
-					hull() {
-						translate(v = [0, -10.4000000000, -2]) {
-							cube(size = [100, 20.8000000000, 2]);
-							translate(v = [0, 10.4000000000, 10.4000000000]) {
-								rotate(a = [0, 90, 0]) {
-									cylinder(d = 20.8000000000, h = 100);
-								}
-							}
-						}
-					}
-					translate(v = [0, -10.4000000000, -2]) {
-						translate(v = [0, 10.4000000000, 10.4000000000]) {
-							rotate(a = [0, 90, 0]) {
-								cylinder(d = 16.8000000000, h = 101);
-							}
-						}
-					}
-				}
-			}
-			rotate(a = [0, 0, -135]) {
-				difference() {
-					hull() {
-						translate(v = [0, -10.4000000000, -2]) {
-							cube(size = [100, 20.8000000000, 2]);
-							translate(v = [0, 10.4000000000, 10.4000000000]) {
-								rotate(a = [0, 90, 0]) {
-									cylinder(d = 20.8000000000, h = 100);
-								}
-							}
-						}
-					}
-					translate(v = [0, -10.4000000000, -2]) {
-						translate(v = [0, 10.4000000000, 10.4000000000]) {
-							rotate(a = [0, 90, 0]) {
-								cylinder(d = 16.8000000000, h = 101);
-							}
-						}
-					}
-				}
-			}
-		}
-		hull() {
 			translate(v = [247.4873734153, 0, 30]) {
 				rotate(a = [0, 0, 135]) {
 					difference() {
 						hull() {
-							translate(v = [0, -10.4000000000, -2]) {
-								cube(size = [1, 20.8000000000, 2]);
-								translate(v = [0, 10.4000000000, 10.4000000000]) {
+							translate(v = [-17.0000000000, -13.5000000000, -1]) {
+								cube(size = [117.0000000000, 27.0000000000, 2]);
+								translate(v = [0, 13.5000000000, 11.5000000000]) {
 									rotate(a = [0, 90, 0]) {
-										cylinder(d = 20.8000000000, h = 1);
+										cylinder(d = 25.0000000000, h = 117.0000000000);
 									}
 								}
 							}
 						}
-						translate(v = [0, -10.4000000000, -2]) {
-							translate(v = [0, 10.4000000000, 10.4000000000]) {
+						translate(v = [-17.0000000000, -10.5000000000, -2]) {
+							translate(v = [0, 10.5000000000, 10.5000000000]) {
 								rotate(a = [0, 90, 0]) {
-									cylinder(d = 16.8000000000, h = 2);
+									cylinder(d = 17.0000000000, h = 118.0000000000);
 								}
+							}
+						}
+						#translate(v = [50.0000000000, 0, 19.0000000000]) {
+							rotate(a = [180, 0, 0]) {
+								union() {
+									translate(v = [0, 0, false]) {
+										cylinder($fn = 50, d = 4.5000000000, h = 33.2000000000);
+									}
+									translate(v = [0, 0, -14.1500000000]) {
+										cylinder($fn = 50, d = 7.5000000000, h = 14.2000000000);
+									}
+									translate(v = [0, 0, 18.9000000000]) {
+										cylinder($fn = 6, d = 8.1600000000, h = 10);
+									}
+								}
+							}
+						}
+						rotate(a = [0, 0, 45]) {
+							translate(v = [-50, 0, -50]) {
+								cube(size = 100);
 							}
 						}
 					}
 				}
-				rotate(a = [0, 0, -135]) {
-					difference() {
-						hull() {
-							translate(v = [0, -10.4000000000, -2]) {
-								cube(size = [1, 20.8000000000, 2]);
-								translate(v = [0, 10.4000000000, 10.4000000000]) {
-									rotate(a = [0, 90, 0]) {
-										cylinder(d = 20.8000000000, h = 1);
+				mirror(v = [0, 1, 0]) {
+					rotate(a = [0, 0, 135]) {
+						difference() {
+							hull() {
+								translate(v = [-17.0000000000, -13.5000000000, -1]) {
+									cube(size = [117.0000000000, 27.0000000000, 2]);
+									translate(v = [0, 13.5000000000, 11.5000000000]) {
+										rotate(a = [0, 90, 0]) {
+											cylinder(d = 25.0000000000, h = 117.0000000000);
+										}
 									}
 								}
 							}
-						}
-						translate(v = [0, -10.4000000000, -2]) {
-							translate(v = [0, 10.4000000000, 10.4000000000]) {
-								rotate(a = [0, 90, 0]) {
-									cylinder(d = 16.8000000000, h = 2);
+							translate(v = [-17.0000000000, -10.5000000000, -2]) {
+								translate(v = [0, 10.5000000000, 10.5000000000]) {
+									rotate(a = [0, 90, 0]) {
+										cylinder(d = 17.0000000000, h = 118.0000000000);
+									}
+								}
+							}
+							#translate(v = [50.0000000000, 0, 19.0000000000]) {
+								rotate(a = [180, 0, 0]) {
+									union() {
+										translate(v = [0, 0, false]) {
+											cylinder($fn = 50, d = 4.5000000000, h = 33.2000000000);
+										}
+										translate(v = [0, 0, -14.1500000000]) {
+											cylinder($fn = 50, d = 7.5000000000, h = 14.2000000000);
+										}
+										translate(v = [0, 0, 18.9000000000]) {
+											cylinder($fn = 6, d = 8.1600000000, h = 10);
+										}
+									}
+								}
+							}
+							rotate(a = [0, 0, 45]) {
+								translate(v = [-50, 0, -50]) {
+									cube(size = 100);
 								}
 							}
 						}
@@ -273,17 +260,18 @@ intersection() {
 				}
 			}
 		}
-	}
-	translate(v = [0, 0, -250]) {
-		hull() {
-			rotate(a = [0, 0, 15.0000000000]) {
-				cube(size = [500, 0.1000000000, 500]);
-			}
-			rotate(a = [0, 0, -15.0000000000]) {
-				cube(size = [500, 0.1000000000, 500]);
+		translate(v = [0, 0, -250]) {
+			hull() {
+				rotate(a = [0, 0, 15.0000000000]) {
+					cube(size = [500, 0.1000000000, 500]);
+				}
+				rotate(a = [0, 0, -15.0000000000]) {
+					cube(size = [500, 0.1000000000, 500]);
+				}
 			}
 		}
 	}
+	cylinder($fn = 50, d = 514.9747468306, h = 100);
 }
 /***********************************************
 *********      SolidPython code:      **********
@@ -387,13 +375,12 @@ def s111g2p03():
 			cylinder(d=g2_octangle_do-g2p03_guider_width, h=g2p03_guider_height+clear*2, segments=cq)
 		))
 
-	m+= rotate([0, 0, -360/24])(
+	# krajni listy do stredu s dirou pro srouby
+	m+= (rotate([0, 0, -360/24])(
 			right(g2p03_middle_diameter/2-10)(
 				cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
 			)
-		)
-	
-
+		))
 	m+= rotate([0, 0, 360/24])(
 			right(g2p03_middle_diameter/2-10)(
 				back(g2p03_guider_width)(
@@ -401,16 +388,16 @@ def s111g2p03():
 				)
 			)
 		)
-
-	m+= right(g2p03_middle_diameter/2-g2p03_guider_height)(
+	# Stredni lista dilu
+	m+= (right(g2p03_middle_diameter/2-g2p03_guider_height)(
 			back(50)(
 				cube([g2p03_guider_width, 100, g2p03_guider_height])
 			)
-		)
+		))
 
 	p_bolt = g2p03_guider_bolt
 
-	
+
 	mount_a = cube([p_bolt['dk']*2, p_bolt['l']/2+p_bolt['k']-clear, p_bolt['dk']*2])
 	mount_a-= translate([p_bolt['dk'], p_bolt['l']/2+clear, p_bolt['dk']])(
 			rotate([90, 0, 0])(
@@ -464,8 +451,8 @@ def s111g2p03():
 	)
 	m=intersection()(
 		m,
-		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100)
-		)
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
 
 
 	bolt = M6.copy()
@@ -474,60 +461,69 @@ def s111g2p03():
 		m -= mirror([0, x, 0])(
 			up(g2p03_guider_height/2)(
 				rotate([0,0,-360/24])(
-					translate([g2_octangle_do/2-g2p03_guider_height, g2p03_guider_height-bolt['k'], 0])(
-						(bolt_hole(bolt, rotation=[-1,0,0]))	
+					translate([g2_octangle_do/2-g2p03_guider_height, 10, 0])(
+						(bolt_hole(bolt, rotation=[-1,0,0], align='begin'))
+					)
+				),
+				rotate([0,0,360/24])(
+					translate([g2_octangle_di/2-g2p03_guider_height*2.5, -10, 0])(
+						(bolt_hole(bolt, rotation=[1,0,0], align='begin'))
 					)
 				)
 			)
 		)
 
-	for x in [0,180]:
-		m -= mirror([0, x, 0])(
-			up(g2p03_guider_height/2)(
-				rotate([0,0,360/24])(
-					translate([g2_octangle_di/2-g2p03_guider_height*2.5, g2p03_guider_height-bolt['k']-25, 0])(
-						(bolt_hole(bolt, rotation=[1,0,0]))
-					)
-				)
-			)
-		)
-	m-= debug(translate([g2p03_middle_diameter/2, 0, 0])(
-			bolt_hole(bolt, rotation=[0,1,0], align='head')
+	m-= (translate([g2p03_middle_diameter/2-g2p03_guider_height+10, 0, g2p03_guider_height/2])(
+			bolt_hole(bolt, rotation=[0,1,0], align='begin')
 		))
-	m+= cylinder(d=g2p03_middle_diameter-20, )
+	#m+= cylinder(d=g2p03_middle_diameter-20, )
 
 	return m
 
-def s111g2p08_pipe_rectangle(l = 100):
-	m = translate([0, -base_pipe['D']/2-2, -2])(
-			cube([l, base_pipe['D']+4, 2]),
-			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
+def s111g2p08_pipe_rectangle(l = 100, angle = False):
+	shift = 0
+	if angle: shift = base_pipe['D']
+	m = translate([-shift, -base_pipe['D']/2-5, -1])(
+			cube([l+shift, base_pipe['D']+10, 2]),
+			translate([0,base_pipe['D']/2+5,base_pipe['D']/2+3])(
 				rotate([0,90,0])(
-					cylinder(d=base_pipe['D']+4, h=l)
+					cylinder(d=base_pipe['D']+8, h=l+shift)
 				)
 			)
 	)
 	m = hull()(m)
 
-	m-= translate([0, -base_pipe['D']/2-2, -2])(
+	m-= translate([-shift, -base_pipe['D']/2-2, -2])(
 			translate([0,base_pipe['D']/2+2,base_pipe['D']/2+2])(
 				rotate([0,90,0])(
-					cylinder(d=base_pipe['D'], h=l+1)
+					cylinder(d=base_pipe['D'], h=l+shift+1)
 				)
 			)
 	)
+
+	m-= debug(translate([l/2,0,base_pipe['D']+2])(
+				bolt_hole(M4, align='begin', l=19, nut_type='trougth', nut = -0.1)
+			)
+		)
+
+	if angle:
+		m-= rotate([0,0,45])(translate([-50, 0, -50])(cube(100)))
 	return m
 
 def s111g2p08():
 	m = s111g2p03()
 	m+= translate([g2_octangle_do/2, 0, g2p03_guider_height])(
-			rotate([0,0,45+90])(
-				s111g2p08_pipe_rectangle()
+			
+			rotate([0,0,+45+90])(
+				s111g2p08_pipe_rectangle(angle = 45)
 			),
-			rotate([0,0,-45-90])(
-				s111g2p08_pipe_rectangle()
+			mirror([0, 1, 0])(
+				rotate([0,0,+45+90])(
+					s111g2p08_pipe_rectangle(angle = 45)
+				)
 			)
 		)
+	'''
 	m+= hull()(translate([g2_octangle_do/2, 0, g2p03_guider_height])(
 			rotate([0,0,45+90])(
 				s111g2p08_pipe_rectangle(1)
@@ -536,6 +532,7 @@ def s111g2p08():
 				s111g2p08_pipe_rectangle(1)
 			)
 		))
+	'''
 
 	m = intersection()(
 		m,
@@ -544,13 +541,33 @@ def s111g2p08():
 			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
 		))
 	)
+
+	m=intersection()(
+		m,
+		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
+	)
+	
 	return m
 
 
 def s111g2p09():
-	m = s111g2p08()
+	m = s111g2p03()
 
+	a = (g2_octangle_do/2)/math.sqrt(2)
 
+	m += translate([a, -75, g2p03_guider_height])(
+			rotate([0,0,90])(
+				s111g2p08_pipe_rectangle(l=150)
+			)
+		)
+
+	m = intersection()(
+		m,
+		up(-250)(hull()(
+			rotate([0, 0, 360/24])(cube([500, 0.1, 500])),
+			rotate([0, 0, -360/24])(cube([500, 0.1, 500]))
+		))
+	)
 	return m
 
 def s111g2p04():
@@ -802,9 +819,14 @@ if render:
 	generate(s111g2p05(), '111_2005')
 	generate(s111g2p06(), '111_2006')
 	generate(s111g2p07(), '111_2007')
-	generate(s111g2p09(), '111_2008')
-	generate(s111g2p08(), '111_2009')
+	generate(s111g2p08(), '111_2008')
+	generate(s111g2p09(), '111_2009')
 
+
+
+#generate(s111g2p03(), '111_2003')
+#generate(s111g2p08(), '111_2008')
+#generate(s111g2p09(), '111_2009')
 #s111g1_info() 
  
 ************************************************/
