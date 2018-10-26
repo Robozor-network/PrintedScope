@@ -52,11 +52,20 @@ def s111g2s01():
 	#for x in range(4):
 	#	m += rotate([0, 0, x*90+45])(s111g2p05())
 	
+
+	## Dily osmiuhelniku (pro pridelani trubky)
 	for x in range(4):
 		m += rotate([0, 0, 360/8*(x*2)])(s111g2p09())
 
 	for x in range(4):
 		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
+
+	## Casti osmiuhelniku
+	for x in range(8):
+		m += rotate([0, 0, 360/8*(x+0.5)])(s111g2p04())
+
+	for x in range(8):
+		m += rotate([0, 0, 360/8*(x+0.5)])(s111g2p05())
 
 	for x in [0, 1]:
 		m += mirror([0, x, 0])(up(telescope_axis_height)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))

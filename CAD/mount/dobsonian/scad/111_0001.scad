@@ -1,90 +1,21 @@
 
 
 difference() {
-	union() {
+	translate(v = [-10, -10, 0]) {
+		cube(size = [20, 20, 7]);
+	}
+	translate(v = [0, 0, 5]) {
 		difference() {
-			union() {
-				cylinder(d = 8, h = 5);
-				translate(v = [0, 0, 5]) {
-					cylinder(d = 12, h = 2);
-				}
-				translate(v = [0, 0, 7]) {
-					cylinder(d1 = 12, d2 = 11, h = 15);
-				}
-			}
-			cylinder(d = 5.5000000000, h = 100);
-			translate(v = [0, 0, 7]) {
-				translate(v = [-8.0000000000, -1.0000000000, 0]) {
-					cube(size = [16, 2, 100]);
-				}
-			}
-			rotate(a = [0, 0, 0.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			rotate(a = [0, 0, 60.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			rotate(a = [0, 0, 120.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			rotate(a = [0, 0, 180.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			rotate(a = [0, 0, 240.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			rotate(a = [0, 0, 300.0000000000]) {
-				translate(v = [0, 0, 7]) {
-					translate(v = [-8.0000000000, -0.5000000000, 0]) {
-						cube(size = [16, 1, 100]);
-					}
-				}
-			}
-			translate(v = [0, 0, 7]) {
-				cylinder(d1 = 10, d2 = 10, h = 15.1000000000);
-			}
-		}
-		translate(v = [0, 0, 35]) {
-			rotate(a = [180, 0, 0]) {
-				difference() {
-					union() {
-						cylinder(d1 = 14, d2 = 11, h = 4.6000000000);
-						translate(v = [0, 0, 4.6000000000]) {
-							cylinder(d1 = 11, d2 = 9, h = 10);
-						}
-						translate(v = [-7.5000000000, -0.9000000000, 0]) {
-							cube(size = [15, 1.8000000000, 14.6000000000]);
-						}
-					}
-					cylinder(d = 5.5000000000, h = 100);
-					translate(v = [0, 0, -0.0500000000]) {
-						cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
-					}
-				}
-			}
+			cylinder($fn = 50, d = 17.0000000000, h = 11);
+			cylinder($fn = 50, d = 13.0000000000, h = 11);
 		}
 	}
-	cube(size = 200);
+	translate(v = [0, 0, 3.4000000000]) {
+		cylinder($fn = 50, d = 5.5000000000, h = 15);
+	}
+	translate(v = [0, 0, -0.0500000000]) {
+		cylinder($fn = 50, d = 9.2000000000, h = 3);
+	}
 }
 /***********************************************
 *********      SolidPython code:      **********

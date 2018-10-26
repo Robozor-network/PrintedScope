@@ -98,12 +98,12 @@ def s111g2p03():
 
 	# krajni listy do stredu s dirou pro srouby
 	m+= (rotate([0, 0, -360/24])(
-			right(g2p03_middle_diameter/2-10)(
+			right(g2p03_middle_diameter/2-15)(
 				cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
 			)
 		))
 	m+= rotate([0, 0, 360/24])(
-			right(g2p03_middle_diameter/2-10)(
+			right(g2p03_middle_diameter/2-15)(
 				back(g2p03_guider_width)(
 					cube([(g2_octangle_do-g2p03_middle_diameter), g2p03_guider_width, g2p03_guider_height])
 				)
@@ -190,6 +190,11 @@ def s111g2p03():
 					translate([g2_octangle_di/2-g2p03_guider_height*2.5, -10, 0])(
 						(bolt_hole(bolt, rotation=[1,0,0], align='begin'))
 					)
+				),
+				rotate([0,0,360/24])(
+					translate([g2_octangle_do/2, -10, 0])(
+						(bolt_hole(bolt, rotation=[1,0,0], align='begin', head_overlap = 100))
+					)
 				)
 			)
 		)
@@ -204,9 +209,9 @@ def s111g2p03():
 def s111g2p08_pipe_rectangle(l = 100, angle = False):
 	shift = 0
 	if angle: shift = base_pipe['D']
-	m = translate([-shift, -base_pipe['D']/2-5, -1])(
-			cube([l+shift, base_pipe['D']+10, 2]),
-			translate([0,base_pipe['D']/2+5,base_pipe['D']/2+3])(
+	m = translate([-shift, -base_pipe['D']/2-5, -3])(
+			cube([l+shift, base_pipe['D']+10, 4]),
+			translate([0,base_pipe['D']/2+5,base_pipe['D']/2+5])(
 				rotate([0,90,0])(
 					cylinder(d=base_pipe['D']+8, h=l+shift)
 				)
@@ -222,10 +227,13 @@ def s111g2p08_pipe_rectangle(l = 100, angle = False):
 			)
 	)
 
-	m-= debug(translate([l/2,0,base_pipe['D']+2])(
+	m-= (translate([l/2,0,base_pipe['D']+1])(
 				bolt_hole(M4, align='begin', l=19, nut_type='trougth', nut = -0.1)
 			)
 		)
+	m+= (translate([l/2-5,-5,-3])(
+		cube([10, 10, layer])
+		))
 
 	if angle:
 		m-= rotate([0,0,45])(translate([-50, 0, -50])(cube(100)))
@@ -244,16 +252,6 @@ def s111g2p08():
 				)
 			)
 		)
-	'''
-	m+= hull()(translate([g2_octangle_do/2, 0, g2p03_guider_height])(
-			rotate([0,0,45+90])(
-				s111g2p08_pipe_rectangle(1)
-			),
-			rotate([0,0,-45-90])(
-				s111g2p08_pipe_rectangle(1)
-			)
-		))
-	'''
 
 	m = intersection()(
 		m,
@@ -267,9 +265,40 @@ def s111g2p08():
 		m,
 		cylinder(d=g2_octangle_do+g2p03_guider_width, h=100, segments=cq)
 	)
-	
 	return m
 
+
+def s111g2d08(l=100):
+	m = back(20)(
+			cube([base_pipe['D']*2, 80, base_pipe['D']*2], center=True)
+		)
+	m-= translate([0,0,base_pipe['D']*0.75])(
+			rotate(-45)(
+				cube([2, 100, base_pipe['D']*2.5], center=True)
+			)
+		)
+	m-= translate([0, base_pipe['D']/2+1, 0])(
+			rotate([90,0,0])(cylinder(d=base_pipe['D'], h=200, segments=cq))
+		)
+	m-= translate([0,-l/2, 0])(
+			cylinder(h=100, d=M4['d'], center=True, segments=cq)
+		)
+	#m = s111g2p08_pipe_rectangle(angle = 45)
+	return m
+
+
+def s111g2d09(l=100):
+	m = cube([base_pipe['D']*2, 40, base_pipe['D']*2], center=True)
+	
+	m-= (translate([0, 100, 0])(
+			rotate([90,0,0])(cylinder(d=base_pipe['D'], h=200, segments=cq))
+		))
+
+	m-= translate([0,0, 0])(
+			cylinder(h=100, d=M4['d'], center=True, segments=cq)
+		)
+	#m = s111g2p08_pipe_rectangle(angle = 45)
+	return m
 
 def s111g2p09():
 	m = s111g2p03()
@@ -292,93 +321,86 @@ def s111g2p09():
 	return m
 
 def s111g2p04():
-	m = cube(0)
+	m= down(0)(
+			cylinder(d=g2_octangle_do+g2p03_guider_width, h=g2p03_guider_height, segments=cq)
+		)
+	m-= (down(clear)(
+			cylinder(d=g2_octangle_di-g2p03_guider_width*2, h=g2p03_guider_height+clear*2, segments=cq)
+		))
 
-	m = cylinder(h=g2p03_guider_height+clear, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
-	m-= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-25, segments=cq))
-	m+= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-80, segments=cq))
-	m-= down(clear)(cylinder(h=g2p03_guider_height+3*clear, d=g2_octangle_di-120, segments=cq))
-	# oriznuti precnivajicich casti mimo osmiuhelnik
+	r= up(g2p03_guider_height/2+M6['dk'])(
+			cylinder(d=g2_octangle_do-g2p03_guider_width, h=g2p03_guider_height, segments=cq)
+		)
+
+	m -= (r)
 	m = intersection()(
 		m,
-		hull()(
+		(hull()(
 			rotate([0, 0, 360/48-0.1])(cube([500, 0.1, g2p03_guider_height+clear])),
 			rotate([0, 0, -360/48+0.1])(cube([500, 0.1, g2p03_guider_height+clear]))
-		)
+		))
 	)
 
 
 	bolt = M6.copy()
-	bolt['l'] = 25
+	bolt['l'] = 5
 	for x in [0,180]:
-		for pos in [g2_octangle_do/2-g2p03_guider_height, g2_octangle_di/2-g2p03_guider_height*2.5]:
-			m -= mirror([0, x, 0])(
-				up(g2p03_guider_height/2)(
-					rotate([0,0,360/48])(
-						translate([pos, g2p03_guider_height-bolt['k'], 0])(
-							union()(
-								rotate([90, 0, 0])(bolt_hole(bolt)),
-								back(28)(rotate([0, 180, 0])(nut_pocket(bolt)))
-							)
-						)
+		m -= mirror([0, x, 0])(
+			up(g2p03_guider_height/2)(
+				rotate([0,0,360/48])(
+					translate([g2_octangle_do/2-g2p03_guider_height, 0, 0])(
+						(bolt_hole(bolt, rotation=[-1,0,0], align='begin', nut_type='nut_pocket', nut=10, overlap = 10))
+					)
+				),
+				rotate([0,0,360/48])(
+					translate([g2_octangle_do/2, 0, 0])(
+						(bolt_hole(bolt, rotation=[-1,0.5,0], align='begin', nut_type='nut_pocket', nut=10, overlap = 10))
 					)
 				)
 			)
-
+		)
 
 
 	return m
 
 
+
+def s111g2m04():
+	m = down(0)(
+			cylinder(d=g2_octangle_do+g2p03_guider_width, h=10, segments=cq)
+		)
+	m-= (down(clear)(
+			cylinder(d=g2_octangle_di-g2p03_guider_width*2, h=g2p03_guider_height+clear*2, segments=cq)
+		))
+	return m
+
 def s111g2p05():
-	m = s111g2p04() 
+	m = translate([g2_octangle_di/2-g2p03_guider_height*3+5,-100,5])(
+		cube([g2p03_guider_height-10, 200, g2p03_guider_height-10]))
+	
+
+	m = intersection()(
+		m,
+		(hull()(
+			rotate([0, 0, 360/48-0.1])(cube([500, 0.1, g2p03_guider_height+clear])),
+			rotate([0, 0, -360/48+0.1])(cube([500, 0.1, g2p03_guider_height+clear]))
+		))
+	)
 
 
-	t = cylinder(h=base_pipe['D']*2, d=g2_octangle_do+g2p03_guider_width/2, segments=cq)
-	t-= down(clear)(cylinder(h=base_pipe['D']*2+2*clear, d=g2p03_middle_diameter, segments=cq))
-	# oriznuti precnivajicich casti mimo osmiuhelnik
-	t = intersection()(
-		t,
-		hull()(
-			forward(g2p03_guider_height)(
-				rotate([0, 0, 360/48-0.5])(
-					cube([500, 0.1, base_pipe['D']*2+clear])
-				)
-			),
-			back(g2p03_guider_height)(
-				rotate([0, 0, -360/48+0.5])(
-					cube([500, 0.1, base_pipe['D']*2+clear])
+
+	bolt = M6.copy()
+	bolt['l'] = 5
+	for x in [0,180]:
+		m -= mirror([0, x, 0])(
+			up(g2p03_guider_height/2)(
+				rotate([0,0,360/48])(
+					translate([g2_octangle_di/2-g2p03_guider_height*2.5, 0, 0])(
+						(bolt_hole(bolt, rotation=[-1,0,0], align='begin', nut_type='nut_pocket', nut=10, overlap = 10))
+					)
 				)
 			)
 		)
-	)
-
-	m+= up(g2p03_guider_height+clear)(t)
-
-
-	##
-	## diry pro spojovaci tyce
-	##
-	m -=debug(right(g2_octangle_do/2)(
-			up(g2p03_guider_height+base_pipe['D'])(
-				rotate([0, 90, 45*3])(
-					up(base_pipe['D']/2)(
-						cylinder(d=base_pipe['D'], h=100, segments=cq)
-					)
-				)
-			)
-		))
-
-	m -=debug(right(g2_octangle_do/2)(
-			up(g2p03_guider_height+base_pipe['D'])(
-				rotate([0, 90, -45*3])(
-					up(base_pipe['D']/2)(
-						cylinder(d=base_pipe['D'], h=100, segments=cq)
-					)
-				)
-			)
-		))
-
 
 
 
@@ -519,13 +541,15 @@ for x in [0, 1]:
 scad_render_to_file(s111g2p01(), '../scad/111_2001.scad')
 scad_render_to_file(s111g2p02(), '../scad/111_2002.scad')
 scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
-scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p04(), '../scad/111_2004.scad')
+scad_render_to_file(s111g2m04(), '../scad/111_2204.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
 scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
 scad_render_to_file(s111g2p08(), '../scad/111_2008.scad')
+scad_render_to_file(s111g2d08(), '../scad/111_2308.scad')
 scad_render_to_file(s111g2p09(), '../scad/111_2009.scad')
+scad_render_to_file(s111g2d09(), '../scad/111_2309.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
@@ -537,11 +561,14 @@ if render:
 	generate(s111g2p02(), '111_2002')
 	generate(s111g2p03(), '111_2003')
 	generate(s111g2p04(), '111_2004')
+	generate(s111g2m04(), '111_2204')
 	generate(s111g2p05(), '111_2005')
 	generate(s111g2p06(), '111_2006')
 	generate(s111g2p07(), '111_2007')
 	generate(s111g2p08(), '111_2008')
 	generate(s111g2p09(), '111_2009')
+	generate(s111g2d08(), '111_2308')
+	generate(s111g2d09(), '111_2309')
 
 
 
