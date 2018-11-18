@@ -28,24 +28,24 @@ def s111g0p01():
 
 
 def pipe_holder_a():
-    pipe_in_d = 16-2*2
+    pipe_in_d = 12
     ring_h = 5
 
-    m = cylinder(d=pipe_in_d-4, h = ring_h)
-    m+= translate([0,0,ring_h])(
-            cylinder(d=pipe_in_d, h=2)
+    #m = cylinder(d=pipe_in_d-4, h = ring_h, segments = cq)
+    m= translate([0,0,ring_h])(
+            cylinder(d=pipe_in_d, h=2, segments=cq)
         )
     m+= translate([0,0,ring_h+2])(
-            cylinder(d1=pipe_in_d, d2 = pipe_in_d-1, h=15)
+            cylinder(d1=pipe_in_d, d2 = pipe_in_d-1, h=15, segments = cq)
         )
-    m-= cylinder(d=M5['d'], h=100)
+    m-= cylinder(d=M5['d']+1, h=100, segments = cq)
     m-= up(ring_h+2)(translate([-16/2, -(2)/2, 0])(cube([16, 2,100])))
 
     for x in range(6):
         m-= rotate([0,0,360/6*x])(up(ring_h+2)(translate([-16/2, -(1)/2, 0])(cube([16, 1,100]))))
     
     m-= translate([0,0,ring_h+2])(
-            cylinder(d1=pipe_in_d-2, d2 = pipe_in_d-2, h=15.1)
+            cylinder(d1=pipe_in_d-3, d2 = pipe_in_d-3, h=15.1, segments = cq)
         )
 
 
@@ -53,11 +53,13 @@ def pipe_holder_a():
 
 
 def pipe_holder_b():
-    m = cylinder(d1=14, d2=11, h = M5['m'])
-    m+= up(M5['m'])(cylinder(d1=11, d2=9, h=10))
-    m+= translate([-15/2, -(1.8)/2, 0])(cube([15, 1.8,10+M5['m']]))
-    m-= cylinder(d=M5['d'], h=100)
+    m = cylinder(d1=11, d2=10, h = M5['m'], segments=cq)
+    m+= up(M5['m'])(cylinder(d1=10, d2=7, h=10, segments=cq))
+    m+= translate([-11/2, -(1.5)/2, 0])(cube([11, 1.5,10+M5['m']]))
+    m-= cylinder(d=M5['d']+1, h=100, segments=cq)
     m-= down(clear)(cylinder(d=M5['e'], h=M5['m'], segments=6))
+
+    #m+= translate([0,0,30])(rotate([180, 0, 0])(pipe_holder_a()))
     return m
 
 def pipe_holder():
@@ -84,7 +86,7 @@ scad_render_to_file(pipe_holder_b(), '../scad/111_0003.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-render = False
+render = True
 if render:
 	print("Rendering...")
 	cq = 100

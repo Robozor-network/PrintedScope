@@ -451,8 +451,13 @@ def s111g1d01():
     m = down(g1p1_base_height/2)(m)
     #m = hull()(m)
 
-    m-= debug(rotate([0,0,60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 2, 100]))))
-    m-= debug(rotate([0,0,-60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 2, 100]))))
+    #m-= debug(rotate([0,0,60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 50, 100]))))
+    #m-= debug(rotate([0,0,-60])(translate([0,-50+1, -base_pipe['D']/2])(cube([200, 50, 100]))))
+
+    # Uplne zariznuti...
+    m-= (rotate([0,0,60])(translate([0,-1, -base_pipe['D']])(cube([200, 50, 100]))))
+    m-= (rotate([0,0,-60])(translate([0,-50+1, -base_pipe['D']])(cube([200, 50, 100]))))
+
     #m-= debug(rotate([0,0,-90-60])(down(50)(cube(200))))
 
 
@@ -698,6 +703,7 @@ if render:
 
 
 #cq = 150
-#generate(s111g1p01(), '111_1001') 
+#generate(s111g1p01(), '111_1001')
+#generate(s111g1d01(), '111_1301') 
  
 ************************************************/

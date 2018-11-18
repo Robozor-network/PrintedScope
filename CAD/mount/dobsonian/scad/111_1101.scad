@@ -602,19 +602,19 @@ translate(v = [0, 0, -15]) {
 											translate(v = [0, 0, -10.0000000000]) {
 												union() {
 													translate(v = [0, 0, false]) {
-														cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+														cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 													}
-													translate(v = [0, 0, -55.1500000000]) {
-														cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+													translate(v = [0, 0, -55.4500000000]) {
+														cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 													}
 													translate(v = [0, 0, 19.9000000000]) {
 														rotate(a = [90, 0, 180]) {
 															union() {
 																rotate(a = [-90, 90, 0]) {
-																	cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																	cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 																}
 																translate(v = [-4.2500000000, 0, 0]) {
-																	cube(size = [8.5000000000, 4.6000000000, 100]);
+																	cube(size = [8.5000000000, 4.5000000000, 100]);
 																}
 															}
 														}
@@ -706,19 +706,19 @@ translate(v = [0, 0, -15]) {
 										translate(v = [0, 0, -10.0000000000]) {
 											union() {
 												translate(v = [0, 0, false]) {
-													cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+													cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 												}
-												translate(v = [0, 0, -55.1500000000]) {
-													cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+												translate(v = [0, 0, -55.4500000000]) {
+													cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 												}
 												translate(v = [0, 0, 19.9000000000]) {
 													rotate(a = [90, 0, 180]) {
 														union() {
 															rotate(a = [-90, 90, 0]) {
-																cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 															}
 															translate(v = [-4.2500000000, 0, 0]) {
-																cube(size = [8.5000000000, 4.6000000000, 100]);
+																cube(size = [8.5000000000, 4.5000000000, 100]);
 															}
 														}
 													}
@@ -947,19 +947,19 @@ translate(v = [0, 0, -15]) {
 											translate(v = [0, 0, -10.0000000000]) {
 												union() {
 													translate(v = [0, 0, false]) {
-														cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+														cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 													}
-													translate(v = [0, 0, -55.1500000000]) {
-														cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+													translate(v = [0, 0, -55.4500000000]) {
+														cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 													}
 													translate(v = [0, 0, 19.9000000000]) {
 														rotate(a = [90, 0, 180]) {
 															union() {
 																rotate(a = [-90, 90, 0]) {
-																	cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																	cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 																}
 																translate(v = [-4.2500000000, 0, 0]) {
-																	cube(size = [8.5000000000, 4.6000000000, 100]);
+																	cube(size = [8.5000000000, 4.5000000000, 100]);
 																}
 															}
 														}
@@ -1051,19 +1051,19 @@ translate(v = [0, 0, -15]) {
 										translate(v = [0, 0, -10.0000000000]) {
 											union() {
 												translate(v = [0, 0, false]) {
-													cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+													cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 												}
-												translate(v = [0, 0, -55.1500000000]) {
-													cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+												translate(v = [0, 0, -55.4500000000]) {
+													cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 												}
 												translate(v = [0, 0, 19.9000000000]) {
 													rotate(a = [90, 0, 180]) {
 														union() {
 															rotate(a = [-90, 90, 0]) {
-																cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 															}
 															translate(v = [-4.2500000000, 0, 0]) {
-																cube(size = [8.5000000000, 4.6000000000, 100]);
+																cube(size = [8.5000000000, 4.5000000000, 100]);
 															}
 														}
 													}
@@ -1292,19 +1292,19 @@ translate(v = [0, 0, -15]) {
 											translate(v = [0, 0, -10.0000000000]) {
 												union() {
 													translate(v = [0, 0, false]) {
-														cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+														cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 													}
-													translate(v = [0, 0, -55.1500000000]) {
-														cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+													translate(v = [0, 0, -55.4500000000]) {
+														cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 													}
 													translate(v = [0, 0, 19.9000000000]) {
 														rotate(a = [90, 0, 180]) {
 															union() {
 																rotate(a = [-90, 90, 0]) {
-																	cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																	cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 																}
 																translate(v = [-4.2500000000, 0, 0]) {
-																	cube(size = [8.5000000000, 4.6000000000, 100]);
+																	cube(size = [8.5000000000, 4.5000000000, 100]);
 																}
 															}
 														}
@@ -1396,19 +1396,19 @@ translate(v = [0, 0, -15]) {
 										translate(v = [0, 0, -10.0000000000]) {
 											union() {
 												translate(v = [0, 0, false]) {
-													cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+													cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 												}
-												translate(v = [0, 0, -55.1500000000]) {
-													cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+												translate(v = [0, 0, -55.4500000000]) {
+													cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 												}
 												translate(v = [0, 0, 19.9000000000]) {
 													rotate(a = [90, 0, 180]) {
 														union() {
 															rotate(a = [-90, 90, 0]) {
-																cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+																cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 															}
 															translate(v = [-4.2500000000, 0, 0]) {
-																cube(size = [8.5000000000, 4.6000000000, 100]);
+																cube(size = [8.5000000000, 4.5000000000, 100]);
 															}
 														}
 													}
@@ -1483,38 +1483,67 @@ scad_render_to_file(s111g0s01(), '../scad/111_0102.scad')
 
 
 def s111g2s01():
-	m = color([0.2,0.2,0.3])(tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D']))
-	
-	m += color([0.2,0.2,0.3])(tube(vector=[-g2_octangle_f/2+30, 15, 600], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D']))
-	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2-30, -15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D']))
-	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2-30, 15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D']))
+	m = color([0.2,0.2,0.3])(tube(vector=[-g2_octangle_f/2+30, -15, telescope_axis_height-110], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D']))
+	m += color([0.2,0.2,0.3])(tube(vector=[-g2_octangle_f/2+30, 15, telescope_axis_height-110], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D']))
+	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2-30, -15, telescope_axis_height-110], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D']))
+	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2-30, 15, telescope_axis_height-110], origin=[-g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D']))
 
-	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D']))
-	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, g2_octangle_f-base_pipe['D']-15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2+base_pipe['D'], 30], d = base_pipe['D']))
+	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, telescope_axis_height-110], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D']))
+	m += color([0.2,0.2,0.3])(tube(vector=[g2_octangle_f/2, g2_octangle_f-base_pipe['D']-15, telescope_axis_height-110], origin=[-g2_octangle_f/2, -g2_octangle_f/2+base_pipe['D'], 30], d = base_pipe['D']))
 
 	m += color([0.3,0.3,0.5])(up(g2p2_thickness+g2p03_guider_bolt['dk'])(rotate([180,0,0])(s111g2p01())))
 
 	#for x in range(4):
 	#	m += rotate([0, 0, x*90+45])(s111g2p05())
 	
+	#m += cube([350-8, 242, 80], center=True)
 
 	## Dily osmiuhelniku (pro pridelani trubky)
 	for x in range(4):
 		m += rotate([0, 0, 360/8*(x*2)])(s111g2p09())
 
-	for x in range(4):
-		m += rotate([0, 0, 360/8*(x*2+1)])(s111g2p08())
+	m +=rotate([0, 0, 360/8*1])(
+			(s111g2p08_a())
+	)
+	m +=rotate([0, 0, 360/8*3])(
+			(s111g2p08_b())
+	)
+	m +=rotate([0, 0, 360/8*5])(
+			(s111g2p08_c())
+	)
+	m +=rotate([0, 0, 360/8*7])(
+			(s111g2p08_d())
+	)
+	'''
+	m +=rotate([0, 0, 360/8*5])(
+		mirror([0,0,0])(
+			(s111g2p08_b())
+		)
+	)
+	m +=rotate([0, 0, 360/8*7])(
+		mirror([0,0,0])(
+			(s111g2p08_c())
+		)
+	)
+	m +=rotate([0, 0, 360/8*1])(
+		mirror([0,0,0])(
+			(s111g2p08_d())
+		)
+	)
+	'''
+
 
 	## Casti osmiuhelniku
 	for x in range(8):
+		pass
 		m += rotate([0, 0, 360/8*(x+0.5)])(s111g2p04())
 
 	for x in range(8):
 		m += rotate([0, 0, 360/8*(x+0.5)])(s111g2p05())
 
 	for x in [0, 1]:
-		m += mirror([0, x, 0])(up(telescope_axis_height)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
-		m += mirror([0, x, 0])(up(telescope_axis_height-89)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
+		m += mirror([0, x, 0])(translate([0, telescope_tube_diameter/2+telescope_side_space,telescope_axis_height])(s111g2p06()))
+		m += mirror([0, x, 0])(translate([0, telescope_tube_diameter/2+telescope_side_space+10,telescope_axis_height-90])(s111g2p07()))
 	return m
 
 scad_render_to_file(s111g2s01(), '../scad/111_2101.scad')
@@ -1523,6 +1552,9 @@ scad_render_to_file(s111g2s01(), '../scad/111_2101.scad')
 def dobson():
 	m = s111g1s01()
 	m+= s111g2s01()
+	## zacatek a konec trubky
+	#m+= translate([-g2_octangle_f/2, -g2_octangle_f/2, g2p03_guider_height+20])(cylinder(h=100, d=5))
+	#m+= translate([-base_pipe['D']*2, -(telescope_tube_diameter/2+telescope_side_space+10),telescope_axis_height-100])(cylinder(h=100, d=5))
 	return m
 scad_render_to_file(dobson(), '../scad/111_0101.scad') 
  

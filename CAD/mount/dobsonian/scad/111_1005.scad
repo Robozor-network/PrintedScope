@@ -198,19 +198,19 @@ difference() {
 							translate(v = [0, 0, -10.0000000000]) {
 								union() {
 									translate(v = [0, 0, false]) {
-										cylinder($fn = 20, d = 5.5000000000, h = 33.2000000000);
+										cylinder($fn = 20, d = 5.6000000000, h = 33.5000000000);
 									}
-									translate(v = [0, 0, -55.1500000000]) {
-										cylinder($fn = 20, d = 9.2000000000, h = 55.2000000000);
+									translate(v = [0, 0, -55.4500000000]) {
+										cylinder($fn = 20, d = 9.2000000000, h = 55.5000000000);
 									}
 									translate(v = [0, 0, 19.9000000000]) {
 										rotate(a = [90, 0, 180]) {
 											union() {
 												rotate(a = [-90, 90, 0]) {
-													cylinder($fn = 6, d = 9.4900000000, h = 4.6000000000);
+													cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
 												}
 												translate(v = [-4.2500000000, 0, 0]) {
-													cube(size = [8.5000000000, 4.6000000000, 100]);
+													cube(size = [8.5000000000, 4.5000000000, 100]);
 												}
 											}
 										}
@@ -417,8 +417,13 @@ def s111g1d01():
     m = down(g1p1_base_height/2)(m)
     #m = hull()(m)
 
-    m-= debug(rotate([0,0,60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 2, 100]))))
-    m-= debug(rotate([0,0,-60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 2, 100]))))
+    #m-= debug(rotate([0,0,60])(translate([0,-1, -base_pipe['D']/2])(cube([200, 50, 100]))))
+    #m-= debug(rotate([0,0,-60])(translate([0,-50+1, -base_pipe['D']/2])(cube([200, 50, 100]))))
+
+    # Uplne zariznuti...
+    m-= (rotate([0,0,60])(translate([0,-1, -base_pipe['D']])(cube([200, 50, 100]))))
+    m-= (rotate([0,0,-60])(translate([0,-50+1, -base_pipe['D']])(cube([200, 50, 100]))))
+
     #m-= debug(rotate([0,0,-90-60])(down(50)(cube(200))))
 
 
@@ -664,6 +669,7 @@ if render:
 
 
 #cq = 150
-#generate(s111g1p01(), '111_1001') 
+#generate(s111g1p01(), '111_1001')
+#generate(s111g1d01(), '111_1301') 
  
 ************************************************/
