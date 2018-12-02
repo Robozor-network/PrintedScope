@@ -7,10 +7,10 @@ translate(v = [0, 27.0000000000, 0]) {
 				hull() {
 					union() {
 						translate(v = [-20.0000000000, 0, 0]) {
-							cylinder($fn = 20, d = 27.0000000000, h = 50);
+							cylinder($fn = 20, d = 27.1000000000, h = 50);
 						}
 						translate(v = [20.0000000000, 0, 0]) {
-							cylinder($fn = 20, d = 27.0000000000, h = 50);
+							cylinder($fn = 20, d = 27.1000000000, h = 50);
 						}
 						translate(v = [-50.0000000000, -60, 0]) {
 							cube(size = [100, 5, 50]);
@@ -21,13 +21,13 @@ translate(v = [0, 27.0000000000, 0]) {
 					translate(v = [0, -50.0500000000, -0.0250000000]) {
 						union() {
 							translate(v = [-25.0000000000, 0, 0]) {
-								cylinder($fn = 20, d = 17.0000000000, h = 50.0500000000);
+								cylinder($fn = 20, d = 17.1000000000, h = 50.0500000000);
 							}
 							translate(v = [25.0000000000, 0, 0]) {
-								cylinder($fn = 20, d = 17.0000000000, h = 50.0500000000);
+								cylinder($fn = 20, d = 17.1000000000, h = 50.0500000000);
 							}
-							translate(v = [-33.5000000000, -10, 0]) {
-								cube(size = [67.0000000000, 5, 50.0500000000]);
+							translate(v = [-33.5500000000, -10, 0]) {
+								cube(size = [67.1000000000, 5, 50.0500000000]);
 							}
 						}
 					}
@@ -38,14 +38,14 @@ translate(v = [0, 27.0000000000, 0]) {
 							cube(size = [40, 60, 46]);
 						}
 						translate(v = [-26.1500000000, -60, 2]) {
-							cube(size = [52.3000000000, 23.5000000000, 46]);
+							cube(size = [52.3000000000, 23.5500000000, 46]);
 						}
 					}
 					translate(v = [-20.0000000000, 0, 0]) {
-						cylinder(d = 29.5000000000, h = 50);
+						cylinder(d = 29.6000000000, h = 50);
 					}
 					translate(v = [20.0000000000, 0, 0]) {
-						cylinder(d = 29.5000000000, h = 50);
+						cylinder(d = 29.6000000000, h = 50);
 					}
 				}
 				union() {
@@ -147,12 +147,12 @@ translate(v = [0, 27.0000000000, 0]) {
 					}
 				}
 				translate(v = [-20.0000000000, 0, 2]) {
-					cylinder($fn = 20, d = 17.0000000000, h = 50);
+					cylinder($fn = 20, d = 17.1000000000, h = 50);
 				}
 				translate(v = [20.0000000000, 0, 2]) {
-					cylinder($fn = 20, d = 17.0000000000, h = 50);
+					cylinder($fn = 20, d = 17.1000000000, h = 50);
 				}
-				translate(v = [20.0000000000, 13.5000000000, 27.5000000000]) {
+				translate(v = [20.0000000000, 13.5500000000, 27.5000000000]) {
 					rotate(a = [90, 0, 0]) {
 						translate(v = [0, 0, 4.2000000000]) {
 							union() {
@@ -169,7 +169,7 @@ translate(v = [0, 27.0000000000, 0]) {
 						}
 					}
 				}
-				translate(v = [-20.0000000000, 13.5000000000, 27.5000000000]) {
+				translate(v = [-20.0000000000, 13.5500000000, 27.5000000000]) {
 					rotate(a = [90, 0, 0]) {
 						translate(v = [0, 0, 4.2000000000]) {
 							union() {
@@ -186,7 +186,7 @@ translate(v = [0, 27.0000000000, 0]) {
 						}
 					}
 				}
-				translate(v = [0, 8.3000000000, 24.3500000000]) {
+				translate(v = [0, 8.3500000000, 24.3500000000]) {
 					hull() {
 						cylinder(d = 18.4000000000, h = 7.3000000000);
 						translate(v = [0, 16.4000000000, 0]) {
@@ -222,11 +222,11 @@ translate(v = [0, 27.0000000000, 0]) {
 			translate(v = [-5, 0, 0]) {
 				cube(size = [10, 0.8000000000, 50]);
 			}
-			translate(v = [-10, 12.7000000000, 0]) {
+			translate(v = [-10, 12.7500000000, 0]) {
 				cube(size = [20, 0.8000000000, 50]);
 			}
 			translate(v = [-10, 0, 49.2000000000]) {
-				cube(size = [20, 13.5000000000, 0.8000000000]);
+				cube(size = [20, 13.5500000000, 0.8000000000]);
 			}
 		}
 	}
@@ -302,7 +302,7 @@ def s111g1p01():
                 down(clear/2)(cylinder(h=10+clear, d=80-3, segments=cq))
             )
         )
-    
+
     m-=(up(g1p1_base_height/2-g1_pipe['min_wall']+1)(cylinder(h=5+clear, d1=80-3-5, d2=80-3, segments=cq)))
 
 
@@ -495,7 +495,7 @@ def s111g1p04(blind = True):
     r += translate([-g1_pipe_distance/2-M3['dk']*1, -g1p2_height, g1p4_wall])(
             cube([g1_pipe_distance+M3['dk']*2, g1_foot_bridge_height+base_pipe['D']/2+5, g1_foot_width-2*g1p4_wall])
         )
-    
+
     r -= left(g1_pipe_distance/2)(
             cylinder(h=g1_foot_width, d=g1_pipe['D']+2.5*g1_pipe['min_wall'])
         )
@@ -564,17 +564,19 @@ def s111g1p05():
 
     m -= (translate([-g1p2_width/2+12,g1p2_height/2-10 ,-20])(rotate([0,-20,0])(cylinder(h=20, d=10))))
     m -= (translate([g1p2_width/2-12,g1p2_height/2-10 ,-20])(rotate([0,20,0])(cylinder(h=20, d=10))))
-    
+
     return m
+
+g2p6_thickness = g1_pipe['D']+g1_pipe['min_wall']*2
 
 def s111g1p06():
 
     ## zakladni tvar nohy
     m = left(g1_pipe_distance/2)(
-            cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
+            cylinder(h=g1_foot_width, d= g2p6_thickness , segments=cq)
         )
     m += right(g1_pipe_distance/2)(
-            cylinder(h=g1_foot_width, d=g1_pipe['D']+g1_pipe['min_wall']*2, segments=cq)
+            cylinder(h=g1_foot_width, d= g2p6_thickness , segments=cq)
         )
     m = hull()(m)
 
@@ -585,22 +587,24 @@ def s111g1p06():
     m -= translate([g1_pipe_distance/2, 0, -clear])(
             cylinder(h=g1_foot_width+2*clear, d=g1_pipe['D'], segments=cq)
         )
-    m -= translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.5-g1p1_pipe_center_distance])(
-            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4)
-            )
-    m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], 2+g1p1_diameter*0.5-g1p1_pipe_center_distance])(
-            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4)
+    m -= (translate([g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], g1_foot_width/2])(
+            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4, l=g2p6_thickness-4)
+        ))
+    m -=translate([-g1_pipe_distance/2, g1_pipe['D']/2+g1_pipe['min_wall'], g1_foot_width/2])(
+            bolt_hole(M4, align='head', rotation=np.array([-1,0,0]), nut=-4, l=g2p6_thickness-4)
         )
 
-    m-= translate([0, g1_pipe['D']/2+g1_pipe['min_wall']-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2+1.5-g1p1_bearing['B']/2])(
+    m-= translate([0, g2p6_thickness/2-g1p1_bearing['D']/2+g1g1_space, g1_foot_width/2-(g1p1_bearing['B']+2)/2])(
             hull()(
-                cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2),
-                forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2))
+                cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2, segments=cq),
+                forward(g1p1_bearing['D'])(cylinder(d=g1p1_bearing['D']+2, h=g1p1_bearing['B']+2, segments=cq))
             ),
-            bolt_hole(M5, l=20, overlap =8, head_overlap=50, align='center', nut = -0.1, nut_type='nut_pocket', nut_rotation=180)
+            up(2)(
+                debug(bolt_hole(M5, l=25, overlap =5, head_overlap=50, align='center', nut = -2, nut_type='nut_pocket', nut_rotation=180))
+            )
         )
 
-    return forward(g1_foot_width/2+2)(rotate([90, 0, 0])(m))
+    return forward(g1_foot_width/2)(rotate([0, 0, 0])(m))
 
 
 def s111g1p07():
@@ -646,8 +650,9 @@ if render:
     generate(s111g1p07(), '111_1007')
 
 
-#cq = 150
+cq = 150
 #generate(s111g1p01(), '111_1001')
-#generate(s111g1d01(), '111_1301') 
+generate(s111g1p06(), '111_1006')
+ 
  
 ************************************************/
