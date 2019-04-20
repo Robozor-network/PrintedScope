@@ -1,128 +1,94 @@
 
 
-translate(v = [0, 0, -79.0000000000]) {
+translate(v = [0, 0, -62.4000000000]) {
 	difference() {
 		translate(v = [-70, 0, 0]) {
-			cube(size = [130, 30, 64.0000000000]);
+			cube(size = [100, 30, 52.4000000000]);
 		}
-		translate(v = [0, -0.0250000000, 79.0000000000]) {
+		translate(v = [0, -0.1000000000, 62.4000000000]) {
 			rotate(a = [-90, 0, 0]) {
-				cylinder($fn = 50, d = 93.0000000000, h = 30.0500000000);
+				cylinder($fn = 50, d = 70, h = 30.2000000000);
 			}
 		}
-		translate(v = [0, 0, 79.0000000000]) {
+		translate(v = [0, 0, 62.4000000000]) {
 			rotate(a = [0, -30, 0]) {
-				translate(v = [0, 10, -53.2000000000]) {
+				translate(v = [0, 10, -38.0000000000]) {
 					rotate(a = [90, 0, 0]) {
-						rotate(a = [180, 0, 0]) {
+						rotate(a = [0,0,0]) {
 							union() {
-								translate(v = [0, 0, false]) {
-									cylinder($fn = 50, d = 5.6000000000, h = 20.1500000000);
+								cube(size = 0);
+								translate(v = [0, 0, -0.1000000000]) {
+									cylinder(d = 9.0000000000, h = 25.2000000000);
 								}
-								translate(v = [0, 0, -15.4500000000]) {
-									cylinder($fn = 50, d = 9.2000000000, h = 15.5000000000);
-								}
-								translate(v = [0, 0, 10]) {
-									rotate(a = [90, 0, 0]) {
-										union() {
-											rotate(a = [-90, 90, 0]) {
-												cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
-											}
-											translate(v = [-4.2500000000, 0, 0]) {
-												cube(size = [8.5000000000, 4.5000000000, 100]);
-											}
-										}
-									}
+								translate(v = [0, 0, -14.5000000000]) {
+									cylinder(d = 5.3000000000, h = 14.5000000000);
 								}
 							}
 						}
 					}
 				}
-				translate(v = [0, 14.8000000000, -53.2000000000]) {
+				translate(v = [0, 20, -38.0000000000]) {
 					rotate(a = [90, 0, 0]) {
-						cylinder($fn = 50, d = 17.4000000000, h = 30);
+						cylinder($fn = 50, d = 17, h = 30);
 					}
 				}
 			}
 		}
-		translate(v = [-50., 15., 10.]) {
+		translate(v = [-35., 15., 10.]) {
 			rotate(a = [90, 0, 0]) {
-				union() {
-					rotate(a = [-90, 90, 0]) {
-						cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
-					}
-					translate(v = [-4.2500000000, 0, 0]) {
-						cube(size = [8.5000000000, 4.5000000000, 100]);
-					}
-				}
+				cylinder(d = 2, h = 3);
 			}
 			translate(v = [0, 0, -10]) {
-				rotate(a = [180, 0, 0]) {
+				rotate(a = [0,0,0]) {
 					union() {
-						translate(v = [0, 0, false]) {
-							cylinder($fn = 50, d = 5.6000000000, h = 35.5000000000);
+						cube(size = 0);
+						translate(v = [0, 0, -0.1000000000]) {
+							cylinder(d = 9.0000000000, h = 25.2000000000);
 						}
-						translate(v = [0, 0, -15.4500000000]) {
-							cylinder($fn = 50, d = 9.2000000000, h = 15.5000000000);
+						translate(v = [0, 0, -30]) {
+							cylinder(d = 5.3000000000, h = 30);
 						}
 					}
 				}
 			}
 		}
-		translate(v = [0, 0, 79.0000000000]) {
+		translate(v = [0, 0, 62.4000000000]) {
 			rotate(a = [0, 30, 0]) {
-				translate(v = [0, 10, -53.2000000000]) {
+				translate(v = [0, 10, -38.0000000000]) {
 					rotate(a = [90, 0, 0]) {
-						rotate(a = [180, 0, 0]) {
+						rotate(a = [0,0,0]) {
 							union() {
-								translate(v = [0, 0, false]) {
-									cylinder($fn = 50, d = 5.6000000000, h = 20.1500000000);
+								cube(size = 0);
+								translate(v = [0, 0, -0.1000000000]) {
+									cylinder(d = 9.0000000000, h = 25.2000000000);
 								}
-								translate(v = [0, 0, -15.4500000000]) {
-									cylinder($fn = 50, d = 9.2000000000, h = 15.5000000000);
-								}
-								translate(v = [0, 0, 10]) {
-									rotate(a = [90, 0, 0]) {
-										union() {
-											rotate(a = [-90, 90, 0]) {
-												cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
-											}
-											translate(v = [-4.2500000000, 0, 0]) {
-												cube(size = [8.5000000000, 4.5000000000, 100]);
-											}
-										}
-									}
+								translate(v = [0, 0, -14.5000000000]) {
+									cylinder(d = 5.3000000000, h = 14.5000000000);
 								}
 							}
 						}
 					}
 				}
-				translate(v = [0, 14.8000000000, -53.2000000000]) {
+				translate(v = [0, 20, -38.0000000000]) {
 					rotate(a = [90, 0, 0]) {
-						cylinder($fn = 50, d = 17.4000000000, h = 30);
+						cylinder($fn = 50, d = 17, h = 30);
 					}
 				}
 			}
 		}
-		translate(v = [50.,15.,10.]) {
+		translate(v = [ 35., 15., 10.]) {
 			rotate(a = [90, 0, 0]) {
-				union() {
-					rotate(a = [-90, 90, 0]) {
-						cylinder($fn = 6, d = 9.3900000000, h = 4.5000000000);
-					}
-					translate(v = [-4.2500000000, 0, 0]) {
-						cube(size = [8.5000000000, 4.5000000000, 100]);
-					}
-				}
+				cylinder(d = 2, h = 3);
 			}
 			translate(v = [0, 0, -10]) {
-				rotate(a = [180, 0, 0]) {
+				rotate(a = [0,0,0]) {
 					union() {
-						translate(v = [0, 0, false]) {
-							cylinder($fn = 50, d = 5.6000000000, h = 35.5000000000);
+						cube(size = 0);
+						translate(v = [0, 0, -0.1000000000]) {
+							cylinder(d = 9.0000000000, h = 25.2000000000);
 						}
-						translate(v = [0, 0, -15.4500000000]) {
-							cylinder($fn = 50, d = 9.2000000000, h = 15.5000000000);
+						translate(v = [0, 0, -30]) {
+							cylinder(d = 5.3000000000, h = 30);
 						}
 					}
 				}
@@ -145,12 +111,32 @@ from solid import *
 from solid.utils import *
 import numpy as np
 
+g2p03_guider_bolt = M5
+g2p03_guider_bolt['l'] = 35
+g2p03_guider_bolt['m'] = 10
+g2p03_floar_thickness = 20
+g2_guider_diameter = 400
+g2p2_thickness = 15
+g2p2_border_ind = 10
+g2p2_border_thickness = 10
+g2p2_border_wall = 10
+
+g2_octangle_do = 494.975
+g2_octangle_di = g2_octangle_do - 30
+g2_octangle_f = 350
+
+g2_axis_distance = 100
+telescope_axis_height = 600
+
+g3_axis_diameter = 60
+g3_axis_space = 5
+g2_bearing_az = bearing_625
 
 def s111g2p01():
     m = cylinder(h=g2p2_thickness+g2p03_guider_bolt['dk'], d=g2p2_border_ind+2*g2p2_border_thickness, segments=cq)
     m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
     m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
-    
+
     for i in range(8):
         m-=rotate([0,0,360/8*i])(
             translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
@@ -179,7 +165,7 @@ def s111g2p02():
     m = cylinder(h=4, d=24, segments=cq)
     #m-= up(g2p2_thickness+5)(cylinder(d=g2p2_border_ind, h=g2p03_guider_bolt['dk']*1.5+clear, segments=cq))
     #m-= (up(g2p2_thickness)(cylinder(d1=g2p2_border_ind-10, d2=g2p2_border_ind, h=5+clear, segments=cq)))
-    
+
     for i in range(8):
         m-=rotate([0,0,360/8*i])(
             translate([g2p2_border_ind/2,0,g2p2_thickness+g2p03_guider_bolt['dk']*0.5])(
@@ -300,17 +286,17 @@ def s111g2p03():
     for x in [0,180]:
         m -= mirror([0, x, 0])(
             up(g2p03_guider_height/2)(
-                rotate([0,0,-360/24])(
+                rotate([0,0,-360/24.0])(
                     translate([g2_octangle_do/2-g2p03_guider_height, 10, 0])(
                         (bolt_hole(p_bolt, rotation=[-1,0,0], align='begin'))
                     )
                 ),
-                rotate([0,0,360/24])(
+                rotate([0,0,360/24.0])(
                     translate([g2_octangle_di/2-g2p03_guider_height*2.5, -10, 0])(
                         (bolt_hole(p_bolt, rotation=[1,0,0], align='begin'))
                     )
                 ),
-                rotate([0,0,360/24])(
+                rotate([0,0,360/24.0])(
                     translate([g2_octangle_do/2, -10, 0])(
                         (bolt_hole(p_bolt, rotation=[1,0,0], align='begin', head_overlap = 100))
                     )
@@ -327,9 +313,7 @@ def s111g2p03():
 
 def s111g2m05():
 
-
     p_bolt = M8.copy()
-
 
     m = cube(0)
     p_bolt['l'] = 20
@@ -395,7 +379,7 @@ def s111g2p08_pipe_rectangle(l = 100, angle = False):
 
 def s111g2p08_a():
     m = s111g2p03()
-    
+
     # Dily pro pridelani trubek skrz
     m+= intersection()(
             translate([g2_octangle_do/2-6, 0, g2p03_guider_height])(
@@ -413,7 +397,7 @@ def s111g2p08_a():
             ),
             (back(300)(cube(300)))
         )
-    
+
     # kostka pro lepší tisk podpory na spodní straně.
     m+= (translate([g2_octangle_do/2-6, 0, g2p03_guider_height])(
             rotate([0,0,-45-90])(
@@ -507,7 +491,7 @@ def s111g2p08_b():
 
 def s111g2p08_c():
     m = s111g2p08_a()
-    
+
 
     vect2 = np.array([g2_octangle_di/2 + 30, g2_octangle_di/2 - 20, g2p03_guider_height]) - np.array([0, -g2_axis_distance/2-15, telescope_axis_height])
     vect2 *= [1,1,-1]
@@ -585,7 +569,7 @@ def s111g2d08(l=100):
 
 def s111g2d09(l=100):
     m = cube([base_pipe['D']*2, 40, base_pipe['D']*2], center=True)
-    
+
     m-= (translate([0, 100, 0])(
             rotate([90,0,0])(cylinder(d=base_pipe['D'], h=200, segments=cq))
         ))
@@ -672,7 +656,7 @@ def s111g2m04():
 def s111g2p05():
     m = translate([g2_octangle_di/2-g2p03_guider_height*3+5,-100,5])(
         cube([g2p03_guider_height-10, 200, g2p03_guider_height-10]))
-    
+
 
     m = intersection()(
         m,
@@ -751,9 +735,11 @@ def s111g2p07():
     v2= norm_vector([-g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, -600])
 
     bolt = get_optimal_bolt(3, base_pipe['D']+5)
-    print("Pouzijte srouby M{}x{}".format(bolt['d'], bolt['l']))
+    print(bolt)
+    #print("Pouzijte srouby M{}x{}".format(bolt['d'], bolt['l']))
     pipe_around = bolt['l']+bolt['k']
 
+    '''
     m += tube(vector=v, origin=[30, 0, 0], d=pipe_around, l=25)
     m += tube(vector=v*[-1, 1, 1], origin=[-30, 0, 0], d=pipe_around, l=25)
     m += tube(vector=v2, origin=[0, 0, 0], d=pipe_around, l=25)
@@ -761,7 +747,7 @@ def s111g2p07():
     m -= tube(vector=v, origin=[30, 0, 0], d=base_pipe['D'], l=30)
     m -= tube(vector=v*[-1, 1, 1], origin=[-30, 0, 0], d=base_pipe['D'], l=30)
     m -= tube(vector=v2, origin=[0, 0, 0], d=base_pipe['D'], l=30)
-        
+    '''
 
     for i in [-1, 1]:
         m -= translate(([30,0,0]+v*15)*[i, 1, 1])(
@@ -804,7 +790,7 @@ for x in range(4):
 vector = [-g2_octangle_f/2+30, 0, 600]
 origin = [g2_octangle_f/2, g2_octangle_f/2, 30]
 
-
+'''
 model += tube(vector=[-g2_octangle_f/2+30, -15, 600], origin=[g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
 model += tube(vector=[-g2_octangle_f/2+30, 15, 600], origin=[g2_octangle_f/2, -g2_octangle_f/2, 30], d = base_pipe['D'])
 model += tube(vector=[g2_octangle_f/2-30, -15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2, 30], d = base_pipe['D'])
@@ -813,7 +799,7 @@ model += tube(vector=[g2_octangle_f/2-30, 15, 600], origin=[-g2_octangle_f/2, -g
 
 model += tube(vector=[g2_octangle_f/2, -g2_octangle_f+base_pipe['D']+15, 600], origin=[-g2_octangle_f/2, g2_octangle_f/2-base_pipe['D'], 30], d = base_pipe['D'])
 model += tube(vector=[g2_octangle_f/2, g2_octangle_f-base_pipe['D']-15, 600], origin=[-g2_octangle_f/2, -g2_octangle_f/2+base_pipe['D'], 30], d = base_pipe['D'])
-
+'''
 
 
 model += rotate([0, 0, 0*90+45])(s111g2p05())
@@ -821,11 +807,11 @@ model += rotate([0, 0, 1*90+45])(s111g2p05())
 model += rotate([0, 0, 2*90+45])(s111g2p05())
 model += rotate([0, 0, 3*90+45])(s111g2p05())
 
-
+'''
 for x in [0, 1]:
     model += mirror([0, x, 0])(up(720)(forward(telescope_tube_diameter/2+telescope_side_space)(s111g2p06())))
     model += mirror([0, x, 0])(up(632)(forward(telescope_tube_diameter/2+telescope_side_space+15)(s111g2p07())))
-
+'''
 
 #scad_render_to_file(model, '../scad/111_2003.scad')
 #generate_stl(s111g2p01(), '111_2001', '../scad', '../stl')
@@ -841,7 +827,7 @@ scad_render_to_file(s111g2m04(), '../scad/111_2204.scad')
 scad_render_to_file(s111g2m05(), '../scad/111_2205.scad')
 scad_render_to_file(s111g2p05(), '../scad/111_2005.scad')
 scad_render_to_file(s111g2p06(), '../scad/111_2006.scad')
-scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
+#scad_render_to_file(s111g2p07(), '../scad/111_2007.scad')
 scad_render_to_file(s111g2p08_a(), '../scad/111_2008a.scad')
 scad_render_to_file(s111g2p08_b(), '../scad/111_2008b.scad')
 scad_render_to_file(s111g2p08_c(), '../scad/111_2008c.scad')
@@ -852,22 +838,22 @@ scad_render_to_file(s111g2d09(), '../scad/111_2309.scad')
 #scad_render_to_file(s111g2p03(), '../scad/111_2003.scad')
 
 
-render = False
+render = True
 if render:
     print("Rendering...")
     cq = 100
-    generate(s111g2p01(), '111_2001')
-    generate(s111g2p02(), '111_2002')
-    generate(s111g2p03(), '111_2003')
-    generate(s111g2p04(), '111_2004')
-    generate(s111g2m04(), '111_2204')
-    generate(s111g2m05(), '111_2205')
-    generate(s111g2p05(), '111_2005')
-    generate(s111g2p06(), '111_2006')
-    generate(s111g2p07(), '111_2007')
-    generate(s111g2p08_a(), '111_2008a')
-    generate(s111g2p08_b(), '111_2008b')
-    generate(s111g2p08_c(), '111_2008c')
+    # generate(s111g2p01(), '111_2001')
+    # generate(s111g2p02(), '111_2002')
+    # generate(s111g2p03(), '111_2003')
+    # generate(s111g2p04(), '111_2004')
+    # generate(s111g2m04(), '111_2204')
+    # generate(s111g2m05(), '111_2205')
+    # generate(s111g2p05(), '111_2005')
+    # generate(s111g2p06(), '111_2006')
+    # #generate(s111g2p07(), '111_2007')
+    # generate(s111g2p08_a(), '111_2008a')
+    # generate(s111g2p08_b(), '111_2008b')
+    # generate(s111g2p08_c(), '111_2008c')
     generate(s111g2p08_d(), '111_2008d')
     generate(s111g2p09(), '111_2009')
     generate(s111g2d08(), '111_2308')
@@ -875,7 +861,7 @@ if render:
 
 
 #generate(s111g2p08_c(), '111_2008c')
-    
+
 #generate(s111g2p04(), '111_2004')
 #generate(s111g2p05(), '111_2005')
 #generate(s111g2p09(), '111_2009')
@@ -884,7 +870,8 @@ if render:
 
 #generate(s111g2p08_a(), '111_2008a')
 #generate(s111g2p08_b(), '111_2008b')
-generate(s111g2p08_c(), '111_2008c')
-generate(s111g2p08_d(), '111_2008d') 
+#generate(s111g2p08_c(), '111_2008c')
+#generate(s111g2p08_d(), '111_2008d')
+ 
  
 ************************************************/

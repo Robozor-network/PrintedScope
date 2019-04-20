@@ -94,12 +94,14 @@ def s111g1p01():
             translate([0, 0, (g1p1_bearing['D'])])(
                 left(bottom+g1p1_base_height-2-M3['k']-g1p1_bearing['B'])(
                     rotate([0, 180, 90])(
-                        nut_pocket(pipe_bolt, g1p1_bearing['D'])
+                        #nut_pocket(pipe_bolt, g1p1_bearing['D'])
+                        nut_pocket(pipe_bolt)
                     )
                 ),
                 left(bottom-1+M3['m']+g1p1_bearing['B'])(
                     rotate([0, 180, 90])(
-                        nut_pocket(pipe_bolt, g1p1_bearing['D'])
+                        #nut_pocket(pipe_bolt, g1p1_bearing['D'])
+                        nut_pocket(pipe_bolt)
                     )
                 ),
                 left(bottom+105+layer*1.5)(rotate([0, 90, 0])(
@@ -390,17 +392,29 @@ def s111g1_info():
     print("Stredy trubek jsou vzdaleny", g1_pipe_distance)
     print("AL tyce o D: {} mm, delka: {} mm, {}ks".format(base_pipe['D'], g2_octangle_do/2+g1p2_width/2-2-g1p1_pipe_center_distance, 6))
 
+#
+# scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
+# scad_render_to_file(s111g1d01(), '../scad/111_1301.scad')
+# scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
+# scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
+# scad_render_to_file(s111g1p04(), '../scad/111_1004.scad')
+# scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
+# scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
+# scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
 
-scad_render_to_file(s111g1p01(), '../scad/111_1001.scad')
-scad_render_to_file(s111g1d01(), '../scad/111_1301.scad')
-scad_render_to_file(s111g1p02(), '../scad/111_1002.scad')
-scad_render_to_file(s111g1p03(), '../scad/111_1003.scad')
-scad_render_to_file(s111g1p04(), '../scad/111_1004.scad')
-scad_render_to_file(s111g1p05(), '../scad/111_1005.scad')
-scad_render_to_file(s111g1p06(), '../scad/111_1006.scad')
-scad_render_to_file(s111g1p07(), '../scad/111_1007.scad')
 
-render = False
+def bolt_hole(bolt, nut = False, align = 'end', nut_type = '', l = 20, rotation = 0, nut_rotation = 0, pocket_length = 0, overlap = 10, head_overlap = 2):
+    m = cylinder(d = bolt['d'], h = l, segments = 100)
+    m += translate((0, 0, -bolt['dk']))(
+        cylinder(d = bolt['dk'], h = 10))
+
+    return m
+
+
+m = bolt_hole(M5)
+scad_render_to_file(m, '../scad/111_atest.scad')
+
+render = True
 if render:
     cq = 150
     generate(s111g1p01(), '111_1001')
@@ -415,4 +429,4 @@ if render:
 
 cq = 150
 #generate(s111g1p01(), '111_1001')
-generate(s111g1p06(), '111_1006')
+#generate(s111g1p06(), '111_1006')

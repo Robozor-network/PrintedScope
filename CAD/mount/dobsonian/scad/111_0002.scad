@@ -9,7 +9,7 @@ difference() {
 			cylinder($fn = 100, d1 = 12, d2 = 11, h = 15);
 		}
 	}
-	cylinder($fn = 100, d = 6.6000000000, h = 100);
+	cylinder($fn = 100, d = 6.3000000000, h = 100);
 	translate(v = [0, 0, 7]) {
 		translate(v = [-8.0000000000, -1.0000000000, 0]) {
 			cube(size = [16, 2, 100]);

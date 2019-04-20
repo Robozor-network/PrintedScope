@@ -24,9 +24,6 @@ def s111g0p01():
 	return m
 
 
-
-
-
 def pipe_holder_a():
     pipe_in_d = 12
     ring_h = 5
@@ -43,7 +40,7 @@ def pipe_holder_a():
 
     for x in range(6):
         m-= rotate([0,0,360/6*x])(up(ring_h+2)(translate([-16/2, -(1)/2, 0])(cube([16, 1,100]))))
-    
+
     m-= translate([0,0,ring_h+2])(
             cylinder(d1=pipe_in_d-3, d2 = pipe_in_d-3, h=15.1, segments = cq)
         )
@@ -53,11 +50,14 @@ def pipe_holder_a():
 
 
 def pipe_holder_b():
+    #TODO... vůbec netusim, co melo znamenat M5['m']
+    M5['m'] = 0
     m = cylinder(d1=11, d2=10, h = M5['m'], segments=cq)
     m+= up(M5['m'])(cylinder(d1=10, d2=7, h=10, segments=cq))
     m+= translate([-11/2, -(1.5)/2, 0])(cube([11, 1.5,10+M5['m']]))
     m-= cylinder(d=M5['d']+1, h=100, segments=cq)
-    m-= down(clear)(cylinder(d=M5['e'], h=M5['m'], segments=6))
+    m-= down(clear)(
+            cylinder(d=M5['d'], h=M5['m'], segments=6))
 
     #m+= translate([0,0,30])(rotate([180, 0, 0])(pipe_holder_a()))
     return m
